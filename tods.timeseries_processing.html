@@ -1,0 +1,1886 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tods.timeseries_processing package &mdash; TODS 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tods.feature_analysis package" href="tods.feature_analysis.html" />
+    <link rel="prev" title="tods.data_processing package" href="tods.data_processing.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="doctree.html" class="icon icon-home" alt="Documentation Home"> TODS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Documents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tods.data_processing.html">tods.data_processing package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tods.timeseries_processing package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-timeseries-processing-holtsmoothing-module">tods.timeseries_processing.HoltSmoothing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-timeseries-processing-holtwintersexponentialsmoothing-module">tods.timeseries_processing.HoltWintersExponentialSmoothing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-timeseries-processing-movingaveragetransform-module">tods.timeseries_processing.MovingAverageTransform module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-timeseries-processing-skaxiswisescaler-module">tods.timeseries_processing.SKAxiswiseScaler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-timeseries-processing-skpowertransformer-module">tods.timeseries_processing.SKPowerTransformer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-timeseries-processing-skquantiletransformer-module">tods.timeseries_processing.SKQuantileTransformer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-timeseries-processing-skstandardscaler-module">tods.timeseries_processing.SKStandardScaler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-timeseries-processing-simpleexponentialsmoothing-module">tods.timeseries_processing.SimpleExponentialSmoothing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-timeseries-processing-timeseriesseasonalitytrenddecomposition-module">tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tods.feature_analysis.html">tods.feature_analysis package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.detection_algorithm.html">tods.detection_algorithm package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.reinforcement.html">tods.reinforcement package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="doctree.html">TODS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="doctree.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>tods.timeseries_processing package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tods.timeseries_processing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tods-timeseries-processing-package">
+<h1>tods.timeseries_processing package<a class="headerlink" href="#tods-timeseries-processing-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="tods-timeseries-processing-holtsmoothing-module">
+<h2>tods.timeseries_processing.HoltSmoothing module<a class="headerlink" href="#tods-timeseries-processing-holtsmoothing-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.HoltSmoothing.</code><code class="sig-name descname">HoltSmoothing</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.unsupervised_learning.UnsupervisedLearnerPrimitiveBase</span></code></p>
+<p>Normalize samples individually to unit norm.</p>
+<p>Each sample (i.e. each row of the data matrix) with at least one
+non zero component is rescaled independently of other samples so
+that its norm (l1 or l2) equals one.</p>
+<p>This transformer is able to work both with dense numpy arrays and
+scipy.sparse matrix (use CSR format if you want to avoid the burden of
+a copy / conversion).</p>
+<p>Scaling inputs to unit norms is a common operation for text
+classification or clustering for instance. For instance the dot
+product of two l2-normalized TF-IDF vectors is the cosine similarity
+of the vectors and is the base similarity metric for the Vector
+Space Model commonly used by the Information Retrieval community.</p>
+<p>Read more in the <span class="xref std std-ref">User Guide</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>norm</strong> (<em>'l1'</em><em>, </em><em>'l2'</em><em>, or </em><em>'max'</em><em>, </em><em>optional</em><em> (</em><em>'l2' by default</em><em>)</em>) – The norm to use to normalize each non zero sample.</p></li>
+<li><p><strong>copy</strong> (<em>boolean</em><em>, </em><em>optional</em><em>, </em><em>default True</em>) – set to False to perform inplace row normalization and avoid a
+copy (if the input is already a numpy array or a scipy.sparse
+CSR matrix).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Normalizer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="gp">... </span>     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>     <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># fit does nothing.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span>
+<span class="go">Normalizer()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="go">array([[0.8, 0.2, 0.4, 0.4],</span>
+<span class="go">       [0.1, 0.3, 0.9, 0.3],</span>
+<span class="go">       [0.5, 0.7, 0.5, 0.1]])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This estimator is stateless (besides constructor parameters), the
+fit method does nothing but is useful when used in a pipeline.</p>
+<p>For a comparison of the different scalers, transformers, and normalizers,
+see <span class="xref std std-ref">examples/preprocessing/plot_all_scaling.py</span>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">normalize</span></code></dt><dd><p>Equivalent function without the estimator API.</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>None<span class="p">]</span></dt>
+<dd><p>Fits primitive using inputs and outputs (if any) using currently set training data.</p>
+<p>The returned value should be a <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> object with <code class="docutils literal notranslate"><span class="pre">value</span></code> set to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">fit</span></code> has already been called in the past on different training data,
+this method fits it <strong>again from scratch</strong> using currently set training data.</p>
+<p>On the other hand, caller can call <code class="docutils literal notranslate"><span class="pre">fit</span></code> multiple times on the same training data
+to continue fitting.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">fit</span></code> fully fits using provided training data, there is no point in making further
+calls to this method with same training data, and in fact further calls can be noops,
+or a primitive can decide to fully refit from scratch.</p>
+<p>In the case fitting can continue with same training data (even if it is maybe not reasonable,
+because the internal metric primitive is using looks like fitting will be degrading), if <code class="docutils literal notranslate"><span class="pre">fit</span></code>
+is called again (without setting training data), the primitive has to continue fitting.</p>
+<p>Caller can provide <code class="docutils literal notranslate"><span class="pre">timeout</span></code> information to guide the length of the fitting process.
+Ideally, a primitive should adapt its fitting process to try to do the best fitting possible
+inside the time allocated. If this is not possible and the primitive reaches the timeout
+before fitting, it should raise a <code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> exception to signal that fitting was
+unsuccessful in the given time. The state of the primitive after the exception should be
+as the method call has never happened and primitive should continue to operate normally.
+The purpose of <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is to give opportunity to a primitive to cleanly manage
+its state instead of interrupting execution from outside. Maintaining stable internal state
+should have precedence over respecting the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (caller can terminate the misbehaving
+primitive from outside anyway). If a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> would produce different fitting,
+then <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>’s <code class="docutils literal notranslate"><span class="pre">has_finished</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Some primitives have internal fitting iterations (for example, epochs). For those, caller
+can provide how many of primitive’s internal iterations should a primitive do before returning.
+Primitives should make iterations as small as reasonable. If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+then there is no limit on how many iterations the primitive should do and primitive should
+choose the best amount of iterations on its own (potentially controlled through
+hyper-parameters). If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is a number, a primitive has to do those number of
+iterations (even if not reasonable), if possible. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> should still be respected
+and potentially less iterations can be done because of that. Primitives with internal
+iterations should make <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> contain correct values.</p>
+<p>For primitives which do not have internal iterations, any value of <code class="docutils literal notranslate"><span class="pre">iterations</span></code>
+means that they should fit fully, respecting only <code class="docutils literal notranslate"><span class="pre">timeout</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timeout</strong> – A maximum time this primitive should be fitting during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tods.timeseries_processing.HoltSmoothing.Params</dt>
+<dd><p>Returns parameters of this primitive.</p>
+<p>Parameters are all parameters of the primitive which can potentially change during a life-time of
+a primitive. Parameters which cannot are passed through constructor.</p>
+<p>Parameters should include all data which is necessary to create a new instance of this primitive
+behaving exactly the same as this instance, when the new instance is created by passing the same
+parameters to the class constructor and calling <code class="docutils literal notranslate"><span class="pre">set_params</span></code>.</p>
+<p>No other arguments to the method are allowed (except for private arguments).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Produce primitive’s best choice of the output for each of the inputs.</p>
+<p>The output value should be wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> object before returning.</p>
+<p>In many cases producing an output is a quick operation in comparison with <code class="docutils literal notranslate"><span class="pre">fit</span></code>, but not
+all cases are like that. For example, a primitive can start a potentially long optimization
+process to compute outputs. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> and <code class="docutils literal notranslate"><span class="pre">iterations</span></code> can serve as a way for a caller
+to guide the length of this process.</p>
+<p>Ideally, a primitive should adapt its call to try to produce the best outputs possible
+inside the time allocated. If this is not possible and the primitive reaches the timeout
+before producing outputs, it should raise a <code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> exception to signal that the
+call was unsuccessful in the given time. The state of the primitive after the exception
+should be as the method call has never happened and primitive should continue to operate
+normally. The purpose of <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is to give opportunity to a primitive to cleanly
+manage its state instead of interrupting execution from outside. Maintaining stable internal
+state should have precedence over respecting the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (caller can terminate the
+misbehaving primitive from outside anyway). If a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> would produce
+different outputs, then <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>’s <code class="docutils literal notranslate"><span class="pre">has_finished</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Some primitives have internal iterations (for example, optimization iterations).
+For those, caller can provide how many of primitive’s internal iterations
+should a primitive do before returning outputs. Primitives should make iterations as
+small as reasonable. If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then there is no limit on
+how many iterations the primitive should do and primitive should choose the best amount
+of iterations on its own (potentially controlled through hyper-parameters).
+If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is a number, a primitive has to do those number of iterations,
+if possible. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> should still be respected and potentially less iterations
+can be done because of that. Primitives with internal iterations should make
+<code class="docutils literal notranslate"><span class="pre">CallResult</span></code> contain correct values.</p>
+<p>For primitives which do not have internal iterations, any value of <code class="docutils literal notranslate"><span class="pre">iterations</span></code>
+means that they should run fully, respecting only <code class="docutils literal notranslate"><span class="pre">timeout</span></code>.</p>
+<p>If primitive should have been fitted before calling this method, but it has not been,
+primitive should raise a <code class="docutils literal notranslate"><span class="pre">PrimitiveNotFittedError</span></code> exception.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">tods.timeseries_processing.HoltSmoothing.Params</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Sets parameters of this primitive.</p>
+<p>Parameters are all parameters of the primitive which can potentially change during a life-time of
+a primitive. Parameters which cannot are passed through constructor.</p>
+<p>No other arguments to the method are allowed (except for private arguments).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>params</strong> – An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_training_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Sets training data of this primitive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> – The inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.HoltSmoothing.</code><code class="sig-name descname">Hyperparams</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.metadata.hyperparams.Hyperparams</span></code></p>
+<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Hyperparams</span></code>
+type argument in primitive interfaces. An instance of this subclass
+is passed as a <code class="docutils literal notranslate"><span class="pre">hyperparams</span></code> argument to primitive’s constructor.</p>
+<p>You should subclass the class and configure class attributes to
+hyper-parameters you want. They will be extracted out and put into
+the <code class="docutils literal notranslate"><span class="pre">configuration</span></code> attribute. They have to be an instance of the
+<cite>Hyperparameter</cite> class for this to happen.</p>
+<p>You can define additional methods and attributes on the class.
+Prefix them with <cite>_</cite> to not conflict with future standard ones.</p>
+<p>When creating an instance of the class, all hyper-parameters have
+to be provided. Default values have to be explicitly passed.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">configuration</code></dt>
+<dd><p>A hyper-parameters configuration.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.HoltSmoothing.</code><code class="sig-name descname">Params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">values</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.metadata.params.Params</span></code></p>
+<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Params</span></code> type
+argument in primitive interfaces. An instance of this subclass should
+be returned from primitive’s <code class="docutils literal notranslate"><span class="pre">get_params</span></code> method, and accepted in
+<code class="docutils literal notranslate"><span class="pre">set_params</span></code>.</p>
+<p>You should subclass the class and set type annotations on class attributes
+for params available in the class.</p>
+<p>When creating an instance of the class, all parameters have to be provided.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="tods-timeseries-processing-holtwintersexponentialsmoothing-module">
+<h2>tods.timeseries_processing.HoltWintersExponentialSmoothing module<a class="headerlink" href="#tods-timeseries-processing-holtwintersexponentialsmoothing-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.HoltWintersExponentialSmoothing.</code><code class="sig-name descname">HoltWintersExponentialSmoothing</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.unsupervised_learning.UnsupervisedLearnerPrimitiveBase</span></code></p>
+<p>Normalize samples individually to unit norm.</p>
+<p>Each sample (i.e. each row of the data matrix) with at least one
+non zero component is rescaled independently of other samples so
+that its norm (l1 or l2) equals one.</p>
+<p>This transformer is able to work both with dense numpy arrays and
+scipy.sparse matrix (use CSR format if you want to avoid the burden of
+a copy / conversion).</p>
+<p>Scaling inputs to unit norms is a common operation for text
+classification or clustering for instance. For instance the dot
+product of two l2-normalized TF-IDF vectors is the cosine similarity
+of the vectors and is the base similarity metric for the Vector
+Space Model commonly used by the Information Retrieval community.</p>
+<p>Read more in the <span class="xref std std-ref">User Guide</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>norm</strong> (<em>'l1'</em><em>, </em><em>'l2'</em><em>, or </em><em>'max'</em><em>, </em><em>optional</em><em> (</em><em>'l2' by default</em><em>)</em>) – The norm to use to normalize each non zero sample.</p></li>
+<li><p><strong>copy</strong> (<em>boolean</em><em>, </em><em>optional</em><em>, </em><em>default True</em>) – set to False to perform inplace row normalization and avoid a
+copy (if the input is already a numpy array or a scipy.sparse
+CSR matrix).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Normalizer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="gp">... </span>     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>     <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># fit does nothing.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span>
+<span class="go">Normalizer()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="go">array([[0.8, 0.2, 0.4, 0.4],</span>
+<span class="go">       [0.1, 0.3, 0.9, 0.3],</span>
+<span class="go">       [0.5, 0.7, 0.5, 0.1]])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This estimator is stateless (besides constructor parameters), the
+fit method does nothing but is useful when used in a pipeline.</p>
+<p>For a comparison of the different scalers, transformers, and normalizers,
+see <span class="xref std std-ref">examples/preprocessing/plot_all_scaling.py</span>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">normalize</span></code></dt><dd><p>Equivalent function without the estimator API.</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>None<span class="p">]</span></dt>
+<dd><p>Fits primitive using inputs and outputs (if any) using currently set training data.</p>
+<p>The returned value should be a <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> object with <code class="docutils literal notranslate"><span class="pre">value</span></code> set to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">fit</span></code> has already been called in the past on different training data,
+this method fits it <strong>again from scratch</strong> using currently set training data.</p>
+<p>On the other hand, caller can call <code class="docutils literal notranslate"><span class="pre">fit</span></code> multiple times on the same training data
+to continue fitting.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">fit</span></code> fully fits using provided training data, there is no point in making further
+calls to this method with same training data, and in fact further calls can be noops,
+or a primitive can decide to fully refit from scratch.</p>
+<p>In the case fitting can continue with same training data (even if it is maybe not reasonable,
+because the internal metric primitive is using looks like fitting will be degrading), if <code class="docutils literal notranslate"><span class="pre">fit</span></code>
+is called again (without setting training data), the primitive has to continue fitting.</p>
+<p>Caller can provide <code class="docutils literal notranslate"><span class="pre">timeout</span></code> information to guide the length of the fitting process.
+Ideally, a primitive should adapt its fitting process to try to do the best fitting possible
+inside the time allocated. If this is not possible and the primitive reaches the timeout
+before fitting, it should raise a <code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> exception to signal that fitting was
+unsuccessful in the given time. The state of the primitive after the exception should be
+as the method call has never happened and primitive should continue to operate normally.
+The purpose of <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is to give opportunity to a primitive to cleanly manage
+its state instead of interrupting execution from outside. Maintaining stable internal state
+should have precedence over respecting the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (caller can terminate the misbehaving
+primitive from outside anyway). If a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> would produce different fitting,
+then <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>’s <code class="docutils literal notranslate"><span class="pre">has_finished</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Some primitives have internal fitting iterations (for example, epochs). For those, caller
+can provide how many of primitive’s internal iterations should a primitive do before returning.
+Primitives should make iterations as small as reasonable. If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+then there is no limit on how many iterations the primitive should do and primitive should
+choose the best amount of iterations on its own (potentially controlled through
+hyper-parameters). If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is a number, a primitive has to do those number of
+iterations (even if not reasonable), if possible. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> should still be respected
+and potentially less iterations can be done because of that. Primitives with internal
+iterations should make <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> contain correct values.</p>
+<p>For primitives which do not have internal iterations, any value of <code class="docutils literal notranslate"><span class="pre">iterations</span></code>
+means that they should fit fully, respecting only <code class="docutils literal notranslate"><span class="pre">timeout</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timeout</strong> – A maximum time this primitive should be fitting during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tods.timeseries_processing.HoltWintersExponentialSmoothing.Params</dt>
+<dd><p>Returns parameters of this primitive.</p>
+<p>Parameters are all parameters of the primitive which can potentially change during a life-time of
+a primitive. Parameters which cannot are passed through constructor.</p>
+<p>Parameters should include all data which is necessary to create a new instance of this primitive
+behaving exactly the same as this instance, when the new instance is created by passing the same
+parameters to the class constructor and calling <code class="docutils literal notranslate"><span class="pre">set_params</span></code>.</p>
+<p>No other arguments to the method are allowed (except for private arguments).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Produce primitive’s best choice of the output for each of the inputs.</p>
+<p>The output value should be wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> object before returning.</p>
+<p>In many cases producing an output is a quick operation in comparison with <code class="docutils literal notranslate"><span class="pre">fit</span></code>, but not
+all cases are like that. For example, a primitive can start a potentially long optimization
+process to compute outputs. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> and <code class="docutils literal notranslate"><span class="pre">iterations</span></code> can serve as a way for a caller
+to guide the length of this process.</p>
+<p>Ideally, a primitive should adapt its call to try to produce the best outputs possible
+inside the time allocated. If this is not possible and the primitive reaches the timeout
+before producing outputs, it should raise a <code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> exception to signal that the
+call was unsuccessful in the given time. The state of the primitive after the exception
+should be as the method call has never happened and primitive should continue to operate
+normally. The purpose of <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is to give opportunity to a primitive to cleanly
+manage its state instead of interrupting execution from outside. Maintaining stable internal
+state should have precedence over respecting the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (caller can terminate the
+misbehaving primitive from outside anyway). If a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> would produce
+different outputs, then <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>’s <code class="docutils literal notranslate"><span class="pre">has_finished</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Some primitives have internal iterations (for example, optimization iterations).
+For those, caller can provide how many of primitive’s internal iterations
+should a primitive do before returning outputs. Primitives should make iterations as
+small as reasonable. If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then there is no limit on
+how many iterations the primitive should do and primitive should choose the best amount
+of iterations on its own (potentially controlled through hyper-parameters).
+If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is a number, a primitive has to do those number of iterations,
+if possible. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> should still be respected and potentially less iterations
+can be done because of that. Primitives with internal iterations should make
+<code class="docutils literal notranslate"><span class="pre">CallResult</span></code> contain correct values.</p>
+<p>For primitives which do not have internal iterations, any value of <code class="docutils literal notranslate"><span class="pre">iterations</span></code>
+means that they should run fully, respecting only <code class="docutils literal notranslate"><span class="pre">timeout</span></code>.</p>
+<p>If primitive should have been fitted before calling this method, but it has not been,
+primitive should raise a <code class="docutils literal notranslate"><span class="pre">PrimitiveNotFittedError</span></code> exception.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">tods.timeseries_processing.HoltWintersExponentialSmoothing.Params</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Sets parameters of this primitive.</p>
+<p>Parameters are all parameters of the primitive which can potentially change during a life-time of
+a primitive. Parameters which cannot are passed through constructor.</p>
+<p>No other arguments to the method are allowed (except for private arguments).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>params</strong> – An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_training_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Sets training data of this primitive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> – The inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.HoltWintersExponentialSmoothing.</code><code class="sig-name descname">Hyperparams</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.metadata.hyperparams.Hyperparams</span></code></p>
+<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Hyperparams</span></code>
+type argument in primitive interfaces. An instance of this subclass
+is passed as a <code class="docutils literal notranslate"><span class="pre">hyperparams</span></code> argument to primitive’s constructor.</p>
+<p>You should subclass the class and configure class attributes to
+hyper-parameters you want. They will be extracted out and put into
+the <code class="docutils literal notranslate"><span class="pre">configuration</span></code> attribute. They have to be an instance of the
+<cite>Hyperparameter</cite> class for this to happen.</p>
+<p>You can define additional methods and attributes on the class.
+Prefix them with <cite>_</cite> to not conflict with future standard ones.</p>
+<p>When creating an instance of the class, all hyper-parameters have
+to be provided. Default values have to be explicitly passed.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">configuration</code></dt>
+<dd><p>A hyper-parameters configuration.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.HoltWintersExponentialSmoothing.</code><code class="sig-name descname">Params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">values</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.metadata.params.Params</span></code></p>
+<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Params</span></code> type
+argument in primitive interfaces. An instance of this subclass should
+be returned from primitive’s <code class="docutils literal notranslate"><span class="pre">get_params</span></code> method, and accepted in
+<code class="docutils literal notranslate"><span class="pre">set_params</span></code>.</p>
+<p>You should subclass the class and set type annotations on class attributes
+for params available in the class.</p>
+<p>When creating an instance of the class, all parameters have to be provided.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="tods-timeseries-processing-movingaveragetransform-module">
+<h2>tods.timeseries_processing.MovingAverageTransform module<a class="headerlink" href="#tods-timeseries-processing-movingaveragetransform-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.MovingAverageTransform.</code><code class="sig-name descname">Hyperparams</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.metadata.hyperparams.Hyperparams</span></code></p>
+<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Hyperparams</span></code>
+type argument in primitive interfaces. An instance of this subclass
+is passed as a <code class="docutils literal notranslate"><span class="pre">hyperparams</span></code> argument to primitive’s constructor.</p>
+<p>You should subclass the class and configure class attributes to
+hyper-parameters you want. They will be extracted out and put into
+the <code class="docutils literal notranslate"><span class="pre">configuration</span></code> attribute. They have to be an instance of the
+<cite>Hyperparameter</cite> class for this to happen.</p>
+<p>You can define additional methods and attributes on the class.
+Prefix them with <cite>_</cite> to not conflict with future standard ones.</p>
+<p>When creating an instance of the class, all hyper-parameters have
+to be provided. Default values have to be explicitly passed.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">configuration</code></dt>
+<dd><p>A hyper-parameters configuration.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.MovingAverageTransform.</code><code class="sig-name descname">MovingAverageTransform</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.unsupervised_learning.UnsupervisedLearnerPrimitiveBase</span></code></p>
+<p>Normalize samples individually to unit norm.</p>
+<p>Each sample (i.e. each row of the data matrix) with at least one
+non zero component is rescaled independently of other samples so
+that its norm (l1 or l2) equals one.</p>
+<p>This transformer is able to work both with dense numpy arrays and
+scipy.sparse matrix (use CSR format if you want to avoid the burden of
+a copy / conversion).</p>
+<p>Scaling inputs to unit norms is a common operation for text
+classification or clustering for instance. For instance the dot
+product of two l2-normalized TF-IDF vectors is the cosine similarity
+of the vectors and is the base similarity metric for the Vector
+Space Model commonly used by the Information Retrieval community.</p>
+<p>Read more in the <span class="xref std std-ref">User Guide</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>norm</strong> (<em>'l1'</em><em>, </em><em>'l2'</em><em>, or </em><em>'max'</em><em>, </em><em>optional</em><em> (</em><em>'l2' by default</em><em>)</em>) – The norm to use to normalize each non zero sample.</p></li>
+<li><p><strong>copy</strong> (<em>boolean</em><em>, </em><em>optional</em><em>, </em><em>default True</em>) – set to False to perform inplace row normalization and avoid a
+copy (if the input is already a numpy array or a scipy.sparse
+CSR matrix).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Normalizer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="gp">... </span>     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>     <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># fit does nothing.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span>
+<span class="go">Normalizer()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="go">array([[0.8, 0.2, 0.4, 0.4],</span>
+<span class="go">       [0.1, 0.3, 0.9, 0.3],</span>
+<span class="go">       [0.5, 0.7, 0.5, 0.1]])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This estimator is stateless (besides constructor parameters), the
+fit method does nothing but is useful when used in a pipeline.</p>
+<p>For a comparison of the different scalers, transformers, and normalizers,
+see <span class="xref std std-ref">examples/preprocessing/plot_all_scaling.py</span>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">normalize</span></code></dt><dd><p>Equivalent function without the estimator API.</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>None<span class="p">]</span></dt>
+<dd><p>Fits primitive using inputs and outputs (if any) using currently set training data.</p>
+<p>The returned value should be a <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> object with <code class="docutils literal notranslate"><span class="pre">value</span></code> set to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">fit</span></code> has already been called in the past on different training data,
+this method fits it <strong>again from scratch</strong> using currently set training data.</p>
+<p>On the other hand, caller can call <code class="docutils literal notranslate"><span class="pre">fit</span></code> multiple times on the same training data
+to continue fitting.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">fit</span></code> fully fits using provided training data, there is no point in making further
+calls to this method with same training data, and in fact further calls can be noops,
+or a primitive can decide to fully refit from scratch.</p>
+<p>In the case fitting can continue with same training data (even if it is maybe not reasonable,
+because the internal metric primitive is using looks like fitting will be degrading), if <code class="docutils literal notranslate"><span class="pre">fit</span></code>
+is called again (without setting training data), the primitive has to continue fitting.</p>
+<p>Caller can provide <code class="docutils literal notranslate"><span class="pre">timeout</span></code> information to guide the length of the fitting process.
+Ideally, a primitive should adapt its fitting process to try to do the best fitting possible
+inside the time allocated. If this is not possible and the primitive reaches the timeout
+before fitting, it should raise a <code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> exception to signal that fitting was
+unsuccessful in the given time. The state of the primitive after the exception should be
+as the method call has never happened and primitive should continue to operate normally.
+The purpose of <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is to give opportunity to a primitive to cleanly manage
+its state instead of interrupting execution from outside. Maintaining stable internal state
+should have precedence over respecting the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (caller can terminate the misbehaving
+primitive from outside anyway). If a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> would produce different fitting,
+then <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>’s <code class="docutils literal notranslate"><span class="pre">has_finished</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Some primitives have internal fitting iterations (for example, epochs). For those, caller
+can provide how many of primitive’s internal iterations should a primitive do before returning.
+Primitives should make iterations as small as reasonable. If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+then there is no limit on how many iterations the primitive should do and primitive should
+choose the best amount of iterations on its own (potentially controlled through
+hyper-parameters). If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is a number, a primitive has to do those number of
+iterations (even if not reasonable), if possible. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> should still be respected
+and potentially less iterations can be done because of that. Primitives with internal
+iterations should make <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> contain correct values.</p>
+<p>For primitives which do not have internal iterations, any value of <code class="docutils literal notranslate"><span class="pre">iterations</span></code>
+means that they should fit fully, respecting only <code class="docutils literal notranslate"><span class="pre">timeout</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timeout</strong> – A maximum time this primitive should be fitting during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tods.timeseries_processing.MovingAverageTransform.Params</dt>
+<dd><p>Returns parameters of this primitive.</p>
+<p>Parameters are all parameters of the primitive which can potentially change during a life-time of
+a primitive. Parameters which cannot are passed through constructor.</p>
+<p>Parameters should include all data which is necessary to create a new instance of this primitive
+behaving exactly the same as this instance, when the new instance is created by passing the same
+parameters to the class constructor and calling <code class="docutils literal notranslate"><span class="pre">set_params</span></code>.</p>
+<p>No other arguments to the method are allowed (except for private arguments).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Produce primitive’s best choice of the output for each of the inputs.</p>
+<p>The output value should be wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> object before returning.</p>
+<p>In many cases producing an output is a quick operation in comparison with <code class="docutils literal notranslate"><span class="pre">fit</span></code>, but not
+all cases are like that. For example, a primitive can start a potentially long optimization
+process to compute outputs. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> and <code class="docutils literal notranslate"><span class="pre">iterations</span></code> can serve as a way for a caller
+to guide the length of this process.</p>
+<p>Ideally, a primitive should adapt its call to try to produce the best outputs possible
+inside the time allocated. If this is not possible and the primitive reaches the timeout
+before producing outputs, it should raise a <code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> exception to signal that the
+call was unsuccessful in the given time. The state of the primitive after the exception
+should be as the method call has never happened and primitive should continue to operate
+normally. The purpose of <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is to give opportunity to a primitive to cleanly
+manage its state instead of interrupting execution from outside. Maintaining stable internal
+state should have precedence over respecting the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (caller can terminate the
+misbehaving primitive from outside anyway). If a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> would produce
+different outputs, then <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>’s <code class="docutils literal notranslate"><span class="pre">has_finished</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Some primitives have internal iterations (for example, optimization iterations).
+For those, caller can provide how many of primitive’s internal iterations
+should a primitive do before returning outputs. Primitives should make iterations as
+small as reasonable. If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then there is no limit on
+how many iterations the primitive should do and primitive should choose the best amount
+of iterations on its own (potentially controlled through hyper-parameters).
+If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is a number, a primitive has to do those number of iterations,
+if possible. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> should still be respected and potentially less iterations
+can be done because of that. Primitives with internal iterations should make
+<code class="docutils literal notranslate"><span class="pre">CallResult</span></code> contain correct values.</p>
+<p>For primitives which do not have internal iterations, any value of <code class="docutils literal notranslate"><span class="pre">iterations</span></code>
+means that they should run fully, respecting only <code class="docutils literal notranslate"><span class="pre">timeout</span></code>.</p>
+<p>If primitive should have been fitted before calling this method, but it has not been,
+primitive should raise a <code class="docutils literal notranslate"><span class="pre">PrimitiveNotFittedError</span></code> exception.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">tods.timeseries_processing.MovingAverageTransform.Params</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Sets parameters of this primitive.</p>
+<p>Parameters are all parameters of the primitive which can potentially change during a life-time of
+a primitive. Parameters which cannot are passed through constructor.</p>
+<p>No other arguments to the method are allowed (except for private arguments).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>params</strong> – An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_training_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Sets training data of this primitive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> – The inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.MovingAverageTransform.</code><code class="sig-name descname">Params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">values</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.metadata.params.Params</span></code></p>
+<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Params</span></code> type
+argument in primitive interfaces. An instance of this subclass should
+be returned from primitive’s <code class="docutils literal notranslate"><span class="pre">get_params</span></code> method, and accepted in
+<code class="docutils literal notranslate"><span class="pre">set_params</span></code>.</p>
+<p>You should subclass the class and set type annotations on class attributes
+for params available in the class.</p>
+<p>When creating an instance of the class, all parameters have to be provided.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="tods-timeseries-processing-skaxiswisescaler-module">
+<h2>tods.timeseries_processing.SKAxiswiseScaler module<a class="headerlink" href="#tods-timeseries-processing-skaxiswisescaler-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.SKAxiswiseScaler.</code><code class="sig-name descname">SKAxiswiseScaler</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Standardize a dataset along any axis, and center to the mean and component wise scale to unit variance.
+See <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.scale.html?highlight=scale#sklearn.preprocessing.scale">sklearn documentation</a> for more details.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axis</strong> (<em>int</em><em> (</em><em>0 by default</em><em>)</em><em></em>) – axis used to compute the means and standard deviations along. If 0, independently standardize each feature, otherwise (if 1) standardize each sample.</p></li>
+<li><p><strong>with_mean</strong> (<em>boolean</em><em>, </em><em>True by default.</em>) – If True, center the data before scaling.</p></li>
+<li><p><strong>with_std</strong> (<em>boolean</em><em>, </em><em>True by default.</em>) – If True, scale the data to unit variance (or equivalently, unit standard deviation).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Process the testing data.
+:param inputs: Container DataFrame. Time series data up to scale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Container DataFrame after scaling.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-timeseries-processing-skpowertransformer-module">
+<h2>tods.timeseries_processing.SKPowerTransformer module<a class="headerlink" href="#tods-timeseries-processing-skpowertransformer-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.SKPowerTransformer.</code><code class="sig-name descname">SKPowerTransformer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.unsupervised_learning.UnsupervisedLearnerPrimitiveBase</span></code></p>
+<p>PowerTransformer primitive using sklearn to make data more Gaussian-like.
+See <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PowerTransformer.html#">sklearn documentation</a> for more details.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">lambda_</code></dt>
+<dd><p>The parameters of the power transformation for the selected features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy array of float, shape (n_features,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>str</em><em> (</em><em>'yeo-johnson'</em><em> or </em><em>'box-cox'</em><em>)</em>) – PowerTransforming algorithm to use.</p></li>
+<li><p><strong>standardize</strong> (<em>bool</em>) – Set to True to apply zero-mean, unit-variance normalization to the transformed output.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>None<span class="p">]</span></dt>
+<dd><p>Fit model with training data.
+:param *: Container DataFrame. Time series data up to fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>timeout</strong> – A maximum time this primitive should be fitting during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tods.timeseries_processing.SKPowerTransformer.Params</dt>
+<dd><p>Return parameters.
+:param None:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>class Params</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Process the testing data.
+:param inputs: Container DataFrame. Time series data up to powertransformation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Container DataFrame after powertransformation.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">tods.timeseries_processing.SKPowerTransformer.Params</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Set parameters for Powertransformer.
+:param params: class Params</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>params</strong> – An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_training_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Set training data for Powertransformer.
+:param inputs: Container DataFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>inputs</strong> – The inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-timeseries-processing-skquantiletransformer-module">
+<h2>tods.timeseries_processing.SKQuantileTransformer module<a class="headerlink" href="#tods-timeseries-processing-skquantiletransformer-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.SKQuantileTransformer.</code><code class="sig-name descname">SKQuantileTransformer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.unsupervised_learning.UnsupervisedLearnerPrimitiveBase</span></code></p>
+<p>Transform features using quantiles information.</p>
+<p>This method transforms the features to follow a uniform or a normal
+distribution. Therefore, for a given feature, this transformation tends
+to spread out the most frequent values. It also reduces the impact of
+(marginal) outliers: this is therefore a robust preprocessing scheme.</p>
+<p>The transformation is applied on each feature independently. First an
+estimate of the cumulative distribution function of a feature is
+used to map the original values to a uniform distribution. The obtained
+values are then mapped to the desired output distribution using the
+associated quantile function. Features values of new/unseen data that fall
+below or above the fitted range will be mapped to the bounds of the output
+distribution. Note that this transform is non-linear. It may distort linear
+correlations between variables measured at the same scale but renders
+variables measured at different scales more directly comparable.</p>
+<p>Read more in the <span class="xref std std-ref">User Guide</span>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.19.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_quantiles</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>default=1000</em><em> or </em><em>n_samples</em><em>)</em>) – Number of quantiles to be computed. It corresponds to the number
+of landmarks used to discretize the cumulative distribution function.
+If n_quantiles is larger than the number of samples, n_quantiles is set
+to the number of samples as a larger number of quantiles does not give
+a better approximation of the cumulative distribution function
+estimator.</p></li>
+<li><p><strong>output_distribution</strong> (<em>str</em><em>, </em><em>optional</em><em> (</em><em>default='uniform'</em><em>)</em>) – Marginal distribution for the transformed data. The choices are
+‘uniform’ (default) or ‘normal’.</p></li>
+<li><p><strong>ignore_implicit_zeros</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default=False</em><em>)</em>) – Only applies to sparse matrices. If True, the sparse entries of the
+matrix are discarded to compute the quantile statistics. If False,
+these entries are treated as zeros.</p></li>
+<li><p><strong>subsample</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>default=1e5</em><em>)</em>) – Maximum number of samples used to estimate the quantiles for
+computational efficiency. Note that the subsampling procedure may
+differ for value-identical sparse and dense matrices.</p></li>
+<li><p><strong>random_state</strong> (<em>int</em><em>, </em><em>RandomState instance</em><em> or </em><em>None</em><em>, </em><em>optional</em><em> (</em><em>default=None</em><em>)</em>) – If int, random_state is the seed used by the random number generator;
+If RandomState instance, random_state is the random number generator;
+If None, the random number generator is the RandomState instance used
+by np.random. Note that this is used by subsampling and smoothing
+noise.</p></li>
+<li><p><strong>copy</strong> (<em>boolean</em><em>, </em><em>optional</em><em>, </em><em>(</em><em>default=True</em><em>)</em>) – Set to False to perform inplace transformation and avoid a copy (if the
+input is already a numpy array).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">n_quantiles_</code></dt>
+<dd><p>The actual number of quantiles used to discretize the cumulative
+distribution function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">quantiles_</code></dt>
+<dd><p>The values corresponding the quantiles of reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray, shape (n_quantiles, n_features)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">references_</code></dt>
+<dd><p>Quantiles of references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray, shape(n_quantiles, )</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">QuantileTransformer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qt</span> <span class="o">=</span> <span class="n">QuantileTransformer</span><span class="p">(</span><span class="n">n_quantiles</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qt</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="go">array([...])</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">quantile_transform</span></code></dt><dd><p>Equivalent function without the estimator API.</p>
+</dd>
+<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerTransformer</span></code></dt><dd><p>Perform mapping to a normal distribution using a power transform.</p>
+</dd>
+<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">StandardScaler</span></code></dt><dd><p>Perform standardization that is faster, but less robust to outliers.</p>
+</dd>
+<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">RobustScaler</span></code></dt><dd><p>Perform robust standardization that removes the influence of outliers but does not put outliers and inliers on the same scale.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>NaNs are treated as missing values: disregarded in fit, and maintained in
+transform.</p>
+<p>For a comparison of the different scalers, transformers, and normalizers,
+see <span class="xref std std-ref">examples/preprocessing/plot_all_scaling.py</span>.</p>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>None<span class="p">]</span></dt>
+<dd><p>Fit model with training data.
+:param *: Container DataFrame. Time series data up to fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>timeout</strong> – A maximum time this primitive should be fitting during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tods.timeseries_processing.SKQuantileTransformer.Params</dt>
+<dd><p>Return parameters.
+:param None:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>class Params</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Process the testing data.
+:param inputs: Container DataFrame. Time series data up to Quantile Transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Container DataFrame after Quantile Transformation.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">tods.timeseries_processing.SKQuantileTransformer.Params</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Set parameters for QuantileTransformer.
+:param params: class Params</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>params</strong> – An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_training_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Set training data for QuantileTransformer.
+:param inputs: Container DataFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>inputs</strong> – The inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-timeseries-processing-skstandardscaler-module">
+<h2>tods.timeseries_processing.SKStandardScaler module<a class="headerlink" href="#tods-timeseries-processing-skstandardscaler-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.SKStandardScaler.</code><code class="sig-name descname">SKStandardScaler</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.unsupervised_learning.UnsupervisedLearnerPrimitiveBase</span></code></p>
+<p>Standardize features by removing the mean and scaling to unit variance.
+See <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html?highlight=standardscaler#sklearn.preprocessing.StandardScaler">sklearn documentation</a> for more details.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">scale_</code></dt>
+<dd><p>Per feature relative scaling of the data. This is calculated using np.sqrt(<a href="#id3"><span class="problematic" id="id4">var_</span></a>). Equal to None when with_std=False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray or None, shape (n_features,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">mean_</code></dt>
+<dd><p>The mean value for each feature in the training set. Equal to None when with_mean=False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray or None, shape (n_features,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">var_</code></dt>
+<dd><p>The variance for each feature in the training set. Used to compute <a href="#id5"><span class="problematic" id="id6">scale_</span></a>. Equal to None when with_std=False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray or None, shape (n_features,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">n_samples_seen_</code></dt>
+<dd><p>The number of samples processed by the estimator for each feature. If there are not missing samples, the n_samples_seen will be an integer, otherwise it will be an array. Will be reset on new calls to fit, but increments across partial_fit calls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int or array, shape (n_features,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>with_mean</strong> (<em>bool</em>) – If True, center the data before scaling. This does not work (and will raise an exception) when attempted on sparse matrices, because centering them entails building a dense matrix which in common use cases is likely to be too large to fit in memory.</p></li>
+<li><p><strong>with_std</strong> (<em>bool</em>) – If True, scale the data to unit variance (or equivalently, unit standard deviation).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>None<span class="p">]</span></dt>
+<dd><p>Fit model with training data.
+:param *: Container DataFrame. Time series data up to fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>timeout</strong> – A maximum time this primitive should be fitting during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tods.timeseries_processing.SKStandardScaler.Params</dt>
+<dd><p>Return parameters.
+:param None:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>class Params</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Process the testing data.
+:param inputs: Container DataFrame. Time series data up to standardlize.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Container DataFrame after standardlization.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">tods.timeseries_processing.SKStandardScaler.Params</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Set parameters for Standardizer.
+:param params: class Params</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>params</strong> – An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_training_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Set training data for Standardizer.
+:param inputs: Container DataFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>inputs</strong> – The inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-timeseries-processing-simpleexponentialsmoothing-module">
+<h2>tods.timeseries_processing.SimpleExponentialSmoothing module<a class="headerlink" href="#tods-timeseries-processing-simpleexponentialsmoothing-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.SimpleExponentialSmoothing.</code><code class="sig-name descname">Hyperparams</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.metadata.hyperparams.Hyperparams</span></code></p>
+<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Hyperparams</span></code>
+type argument in primitive interfaces. An instance of this subclass
+is passed as a <code class="docutils literal notranslate"><span class="pre">hyperparams</span></code> argument to primitive’s constructor.</p>
+<p>You should subclass the class and configure class attributes to
+hyper-parameters you want. They will be extracted out and put into
+the <code class="docutils literal notranslate"><span class="pre">configuration</span></code> attribute. They have to be an instance of the
+<cite>Hyperparameter</cite> class for this to happen.</p>
+<p>You can define additional methods and attributes on the class.
+Prefix them with <cite>_</cite> to not conflict with future standard ones.</p>
+<p>When creating an instance of the class, all hyper-parameters have
+to be provided. Default values have to be explicitly passed.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">configuration</code></dt>
+<dd><p>A hyper-parameters configuration.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.SimpleExponentialSmoothing.</code><code class="sig-name descname">Params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">values</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.metadata.params.Params</span></code></p>
+<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Params</span></code> type
+argument in primitive interfaces. An instance of this subclass should
+be returned from primitive’s <code class="docutils literal notranslate"><span class="pre">get_params</span></code> method, and accepted in
+<code class="docutils literal notranslate"><span class="pre">set_params</span></code>.</p>
+<p>You should subclass the class and set type annotations on class attributes
+for params available in the class.</p>
+<p>When creating an instance of the class, all parameters have to be provided.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.SimpleExponentialSmoothing.</code><code class="sig-name descname">SimpleExponentialSmoothing</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.unsupervised_learning.UnsupervisedLearnerPrimitiveBase</span></code></p>
+<p>Normalize samples individually to unit norm.</p>
+<p>Each sample (i.e. each row of the data matrix) with at least one
+non zero component is rescaled independently of other samples so
+that its norm (l1 or l2) equals one.</p>
+<p>This transformer is able to work both with dense numpy arrays and
+scipy.sparse matrix (use CSR format if you want to avoid the burden of
+a copy / conversion).</p>
+<p>Scaling inputs to unit norms is a common operation for text
+classification or clustering for instance. For instance the dot
+product of two l2-normalized TF-IDF vectors is the cosine similarity
+of the vectors and is the base similarity metric for the Vector
+Space Model commonly used by the Information Retrieval community.</p>
+<p>Read more in the <span class="xref std std-ref">User Guide</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>norm</strong> (<em>'l1'</em><em>, </em><em>'l2'</em><em>, or </em><em>'max'</em><em>, </em><em>optional</em><em> (</em><em>'l2' by default</em><em>)</em>) – The norm to use to normalize each non zero sample.</p></li>
+<li><p><strong>copy</strong> (<em>boolean</em><em>, </em><em>optional</em><em>, </em><em>default True</em>) – set to False to perform inplace row normalization and avoid a
+copy (if the input is already a numpy array or a scipy.sparse
+CSR matrix).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Normalizer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="gp">... </span>     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>     <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># fit does nothing.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span>
+<span class="go">Normalizer()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="go">array([[0.8, 0.2, 0.4, 0.4],</span>
+<span class="go">       [0.1, 0.3, 0.9, 0.3],</span>
+<span class="go">       [0.5, 0.7, 0.5, 0.1]])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This estimator is stateless (besides constructor parameters), the
+fit method does nothing but is useful when used in a pipeline.</p>
+<p>For a comparison of the different scalers, transformers, and normalizers,
+see <span class="xref std std-ref">examples/preprocessing/plot_all_scaling.py</span>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">normalize</span></code></dt><dd><p>Equivalent function without the estimator API.</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>None<span class="p">]</span></dt>
+<dd><p>Fits primitive using inputs and outputs (if any) using currently set training data.</p>
+<p>The returned value should be a <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> object with <code class="docutils literal notranslate"><span class="pre">value</span></code> set to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">fit</span></code> has already been called in the past on different training data,
+this method fits it <strong>again from scratch</strong> using currently set training data.</p>
+<p>On the other hand, caller can call <code class="docutils literal notranslate"><span class="pre">fit</span></code> multiple times on the same training data
+to continue fitting.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">fit</span></code> fully fits using provided training data, there is no point in making further
+calls to this method with same training data, and in fact further calls can be noops,
+or a primitive can decide to fully refit from scratch.</p>
+<p>In the case fitting can continue with same training data (even if it is maybe not reasonable,
+because the internal metric primitive is using looks like fitting will be degrading), if <code class="docutils literal notranslate"><span class="pre">fit</span></code>
+is called again (without setting training data), the primitive has to continue fitting.</p>
+<p>Caller can provide <code class="docutils literal notranslate"><span class="pre">timeout</span></code> information to guide the length of the fitting process.
+Ideally, a primitive should adapt its fitting process to try to do the best fitting possible
+inside the time allocated. If this is not possible and the primitive reaches the timeout
+before fitting, it should raise a <code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> exception to signal that fitting was
+unsuccessful in the given time. The state of the primitive after the exception should be
+as the method call has never happened and primitive should continue to operate normally.
+The purpose of <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is to give opportunity to a primitive to cleanly manage
+its state instead of interrupting execution from outside. Maintaining stable internal state
+should have precedence over respecting the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (caller can terminate the misbehaving
+primitive from outside anyway). If a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> would produce different fitting,
+then <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>’s <code class="docutils literal notranslate"><span class="pre">has_finished</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Some primitives have internal fitting iterations (for example, epochs). For those, caller
+can provide how many of primitive’s internal iterations should a primitive do before returning.
+Primitives should make iterations as small as reasonable. If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+then there is no limit on how many iterations the primitive should do and primitive should
+choose the best amount of iterations on its own (potentially controlled through
+hyper-parameters). If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is a number, a primitive has to do those number of
+iterations (even if not reasonable), if possible. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> should still be respected
+and potentially less iterations can be done because of that. Primitives with internal
+iterations should make <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> contain correct values.</p>
+<p>For primitives which do not have internal iterations, any value of <code class="docutils literal notranslate"><span class="pre">iterations</span></code>
+means that they should fit fully, respecting only <code class="docutils literal notranslate"><span class="pre">timeout</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timeout</strong> – A maximum time this primitive should be fitting during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tods.timeseries_processing.SimpleExponentialSmoothing.Params</dt>
+<dd><p>Returns parameters of this primitive.</p>
+<p>Parameters are all parameters of the primitive which can potentially change during a life-time of
+a primitive. Parameters which cannot are passed through constructor.</p>
+<p>Parameters should include all data which is necessary to create a new instance of this primitive
+behaving exactly the same as this instance, when the new instance is created by passing the same
+parameters to the class constructor and calling <code class="docutils literal notranslate"><span class="pre">set_params</span></code>.</p>
+<p>No other arguments to the method are allowed (except for private arguments).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Produce primitive’s best choice of the output for each of the inputs.</p>
+<p>The output value should be wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> object before returning.</p>
+<p>In many cases producing an output is a quick operation in comparison with <code class="docutils literal notranslate"><span class="pre">fit</span></code>, but not
+all cases are like that. For example, a primitive can start a potentially long optimization
+process to compute outputs. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> and <code class="docutils literal notranslate"><span class="pre">iterations</span></code> can serve as a way for a caller
+to guide the length of this process.</p>
+<p>Ideally, a primitive should adapt its call to try to produce the best outputs possible
+inside the time allocated. If this is not possible and the primitive reaches the timeout
+before producing outputs, it should raise a <code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> exception to signal that the
+call was unsuccessful in the given time. The state of the primitive after the exception
+should be as the method call has never happened and primitive should continue to operate
+normally. The purpose of <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is to give opportunity to a primitive to cleanly
+manage its state instead of interrupting execution from outside. Maintaining stable internal
+state should have precedence over respecting the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (caller can terminate the
+misbehaving primitive from outside anyway). If a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> would produce
+different outputs, then <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>’s <code class="docutils literal notranslate"><span class="pre">has_finished</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Some primitives have internal iterations (for example, optimization iterations).
+For those, caller can provide how many of primitive’s internal iterations
+should a primitive do before returning outputs. Primitives should make iterations as
+small as reasonable. If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then there is no limit on
+how many iterations the primitive should do and primitive should choose the best amount
+of iterations on its own (potentially controlled through hyper-parameters).
+If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is a number, a primitive has to do those number of iterations,
+if possible. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> should still be respected and potentially less iterations
+can be done because of that. Primitives with internal iterations should make
+<code class="docutils literal notranslate"><span class="pre">CallResult</span></code> contain correct values.</p>
+<p>For primitives which do not have internal iterations, any value of <code class="docutils literal notranslate"><span class="pre">iterations</span></code>
+means that they should run fully, respecting only <code class="docutils literal notranslate"><span class="pre">timeout</span></code>.</p>
+<p>If primitive should have been fitted before calling this method, but it has not been,
+primitive should raise a <code class="docutils literal notranslate"><span class="pre">PrimitiveNotFittedError</span></code> exception.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">tods.timeseries_processing.SimpleExponentialSmoothing.Params</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Sets parameters of this primitive.</p>
+<p>Parameters are all parameters of the primitive which can potentially change during a life-time of
+a primitive. Parameters which cannot are passed through constructor.</p>
+<p>No other arguments to the method are allowed (except for private arguments).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>params</strong> – An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_training_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Sets training data of this primitive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> – The inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-timeseries-processing-timeseriesseasonalitytrenddecomposition-module">
+<h2>tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition module<a class="headerlink" href="#tods-timeseries-processing-timeseriesseasonalitytrenddecomposition-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition.</code><code class="sig-name descname">TimeSeriesSeasonalityTrendDecompositionPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>A primitive to decompose time series in trend , seasonality and residual
+Decomposition is done based on period(frequency) passed as hyperparameter
+The columns for which decomposition is done is passed as hyperparameter .Default is all value columns</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing decomposed time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tods.feature_analysis.html" class="btn btn-neutral float-right" title="tods.feature_analysis package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tods.data_processing.html" class="btn btn-neutral float-left" title="tods.data_processing package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, DataLab@Texas A&amp;M University
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,3053 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tods.feature_analysis package &mdash; TODS 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tods.detection_algorithm package" href="tods.detection_algorithm.html" />
+    <link rel="prev" title="tods.timeseries_processing package" href="tods.timeseries_processing.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="doctree.html" class="icon icon-home" alt="Documentation Home"> TODS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Documents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tods.data_processing.html">tods.data_processing package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.timeseries_processing.html">tods.timeseries_processing package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tods.feature_analysis package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-autocorrelation-module">tods.feature_analysis.AutoCorrelation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-bkfilter-module">tods.feature_analysis.BKFilter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-discretecosinetransform-module">tods.feature_analysis.DiscreteCosineTransform module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-fastfouriertransform-module">tods.feature_analysis.FastFourierTransform module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-hpfilter-module">tods.feature_analysis.HPFilter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-nonnegativematrixfactorization-module">tods.feature_analysis.NonNegativeMatrixFactorization module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-sktruncatedsvd-module">tods.feature_analysis.SKTruncatedSVD module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-spectralresidualtransform-module">tods.feature_analysis.SpectralResidualTransform module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalabsenergy-module">tods.feature_analysis.StatisticalAbsEnergy module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalabssum-module">tods.feature_analysis.StatisticalAbsSum module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalgmean-module">tods.feature_analysis.StatisticalGmean module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalhmean-module">tods.feature_analysis.StatisticalHmean module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalkurtosis-module">tods.feature_analysis.StatisticalKurtosis module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalmaximum-module">tods.feature_analysis.StatisticalMaximum module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalmean-module">tods.feature_analysis.StatisticalMean module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalmeanabs-module">tods.feature_analysis.StatisticalMeanAbs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalmeanabstemporalderivative-module">tods.feature_analysis.StatisticalMeanAbsTemporalDerivative module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalmeantemporalderivative-module">tods.feature_analysis.StatisticalMeanTemporalDerivative module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalmedian-module">tods.feature_analysis.StatisticalMedian module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalmedianabsolutedeviation-module">tods.feature_analysis.StatisticalMedianAbsoluteDeviation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalminimum-module">tods.feature_analysis.StatisticalMinimum module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalskew-module">tods.feature_analysis.StatisticalSkew module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalstd-module">tods.feature_analysis.StatisticalStd module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalvar-module">tods.feature_analysis.StatisticalVar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalvariation-module">tods.feature_analysis.StatisticalVariation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalvecsum-module">tods.feature_analysis.StatisticalVecSum module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalwillisonamplitude-module">tods.feature_analysis.StatisticalWillisonAmplitude module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-statisticalzerocrossing-module">tods.feature_analysis.StatisticalZeroCrossing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-trmf-module">tods.feature_analysis.TRMF module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-feature-analysis-wavelettransform-module">tods.feature_analysis.WaveletTransform module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tods.detection_algorithm.html">tods.detection_algorithm package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.reinforcement.html">tods.reinforcement package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="doctree.html">TODS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="doctree.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>tods.feature_analysis package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tods.feature_analysis.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tods-feature-analysis-package">
+<h1>tods.feature_analysis package<a class="headerlink" href="#tods-feature-analysis-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="tods-feature-analysis-autocorrelation-module">
+<h2>tods.feature_analysis.AutoCorrelation module<a class="headerlink" href="#tods-feature-analysis-autocorrelation-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.AutoCorrelation.</code><code class="sig-name descname">AutoCorrelation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>A primitive that performs autocorrelation on a DataFrame
+acf() function documentation: <a class="reference external" href="https://www.statsmodels.org/dev/generated/statsmodels.tsa.stattools.acf.html">https://www.statsmodels.org/dev/generated/statsmodels.tsa.stattools.acf.html</a></p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing moving average of selected columns</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-bkfilter-module">
+<h2>tods.feature_analysis.BKFilter module<a class="headerlink" href="#tods-feature-analysis-bkfilter-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.BKFilter.</code><code class="sig-name descname">BKFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Filter a time series using the Baxter-King bandpass filter.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>low</strong> (<em>int</em>) – Minimum period for oscillations, ie., Baxter and King suggest that the Burns-Mitchell U.S. business cycle has 6 for quarterly data and 1.5 for annual data.</p></li>
+<li><p><strong>high</strong> (<em>int</em>) – Maximum period for oscillations BK suggest that the U.S. business cycle has 32 for quarterly data and 8 for annual data.</p></li>
+<li><p><strong>K</strong> (<em>int</em>) – Lead-lag length of the filter. Baxter and King propose a truncation length of 12 for quarterly data and 3 for annual data.</p></li>
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>return_result</strong> (<em>Enumeration</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p></li>
+<li><p><strong>use_semantic_types</strong> (<em>Bool</em>) – Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe.</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
+<li><p><strong>error_on_no_input</strong> (<em>Bool</em><em>(</em>) – Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p></li>
+<li><p><strong>return_semantic_type</strong> (<em>Enumeration</em><em>[</em><em>str</em><em>]</em><em>(</em>) – Decides what semantic type to attach to generated attributes’</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Process the testing data.
+:param inputs: Container DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Container DataFrame after BKFilter.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-discretecosinetransform-module">
+<h2>tods.feature_analysis.DiscreteCosineTransform module<a class="headerlink" href="#tods-feature-analysis-discretecosinetransform-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.DiscreteCosineTransform.</code><code class="sig-name descname">DiscreteCosineTransform</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Compute the 1-D discrete Cosine Transform.
+Return the Discrete Cosine Transform of arbitrary type sequence x.</p>
+<p>scipy documentation: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.dct.html#scipy.fft.dct">https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.dct.html#scipy.fft.dct</a></p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>int</em>) – Type of the DCT. Default is 2</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – Length of the transformed axis of the output. If n is smaller than the length of the input, the input is cropped. If it is larger, the input is padded with zeros.</p></li>
+<li><p><strong>axis</strong> (<em>int</em>) – Axis over which to compute the DCT. If not given, the last axis is used.</p></li>
+<li><p><strong>norm</strong> (<em>str</em>) – Normalization mode. Default is None, meaning no normalization on the forward transforms and scaling by 1/n on the ifft. For norm=””ortho””, both directions are scaled by 1/sqrt(n).</p></li>
+<li><p><strong>overwrite_x</strong> (<em>boolean</em>) – If True, the contents of x can be destroyed; the default is False. See the notes below for more details.</p></li>
+<li><p><strong>workers</strong> (<em>int</em>) – Maximum number of workers to use for parallel computation. If negative, the value wraps around from os.cpu_count(). Defualt is None.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>use_columns: Set</dt><dd><p>A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p>
+</dd>
+<dt>exclude_columns: Set</dt><dd><p>A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p>
+</dd>
+<dt>return_result: Enumeration</dt><dd><p>Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p>
+</dd>
+<dt>use_semantic_types: Bool</dt><dd><p>Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe.</p>
+</dd>
+<dt>add_index_columns: Bool</dt><dd><p>Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p>
+</dd>
+<dt>error_on_no_input: Bool(</dt><dd><p>Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p>
+</dd>
+<dt>return_semantic_type: Enumeration[str](</dt><dd><p>Decides what semantic type to attach to generated attributes’</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame added with DCT coefficients in a column named ‘column_name_dct_coeff’</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-fastfouriertransform-module">
+<h2>tods.feature_analysis.FastFourierTransform module<a class="headerlink" href="#tods-feature-analysis-fastfouriertransform-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.FastFourierTransform.</code><code class="sig-name descname">FastFourierTransform</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Compute the 1-D discrete Fourier Transform.
+This function computes the 1-D n-point discrete Fourier Transform (DFT) with the efficient Fast Fourier Transform (FFT) algorithm</p>
+<p>scipy documentation : <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fft.html#scipy.fft.fft">https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fft.html#scipy.fft.fft</a></p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – Length of the transformed axis of the output. If n is smaller than the length of the input, the input is cropped. If it is larger, the input is padded with zeros.</p></li>
+<li><p><strong>axis</strong> (<em>int</em>) – Axis over which to compute the FFT. If not given, the last axis is used.</p></li>
+<li><p><strong>norm</strong> (<em>str</em>) – Normalization mode. Default is None, meaning no normalization on the forward transforms and scaling by 1/n on the ifft. For norm=””ortho””, both directions are scaled by 1/sqrt(n).</p></li>
+<li><p><strong>overwrite_x</strong> (<em>boolean</em>) – If True, the contents of x can be destroyed; the default is False. See the notes below for more details.</p></li>
+<li><p><strong>workers</strong> (<em>int</em>) – Maximum number of workers to use for parallel computation. If negative, the value wraps around from os.cpu_count(). Defualt is None.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>use_columns: Set</dt><dd><p>A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p>
+</dd>
+<dt>exclude_columns: Set</dt><dd><p>A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p>
+</dd>
+<dt>return_result: Enumeration</dt><dd><p>Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p>
+</dd>
+<dt>use_semantic_types: Bool</dt><dd><p>Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe.</p>
+</dd>
+<dt>add_index_columns: Bool</dt><dd><p>Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p>
+</dd>
+<dt>error_on_no_input: Bool(</dt><dd><p>Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p>
+</dd>
+<dt>return_semantic_type: Enumeration[str](</dt><dd><p>Decides what semantic type to attach to generated attributes’</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame added with absolute and phase value in a columns named ‘column_name_fft_abs’ and ‘column_name_fft_phse’.
+These values correspnd to the absolute and angle values for a complex number we get as FFT coefficients</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-hpfilter-module">
+<h2>tods.feature_analysis.HPFilter module<a class="headerlink" href="#tods-feature-analysis-hpfilter-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.HPFilter.</code><code class="sig-name descname">HPFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Filter a time series using the Hodrick-Prescott filter.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lamb</strong> (<em>int</em>) – The Hodrick-Prescott smoothing parameter. A value of 1600 is suggested for quarterly data. Ravn and Uhlig suggest using a value of 6.25 (1600/4**4) for annual data and 129600 (1600*3**4) for monthly data.</p></li>
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>return_result</strong> (<em>Enumeration</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p></li>
+<li><p><strong>use_semantic_types</strong> (<em>Bool</em>) – Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe.</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
+<li><p><strong>error_on_no_input</strong> (<em>Bool</em><em>(</em>) – Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p></li>
+<li><p><strong>return_semantic_type</strong> (<em>Enumeration</em><em>[</em><em>str</em><em>]</em><em>(</em>) – Decides what semantic type to attach to generated attributes’</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Process the testing data.
+:param inputs: Container DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Container DataFrame after HPFilter.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-nonnegativematrixfactorization-module">
+<h2>tods.feature_analysis.NonNegativeMatrixFactorization module<a class="headerlink" href="#tods-feature-analysis-nonnegativematrixfactorization-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.NonNegativeMatrixFactorization.</code><code class="sig-name descname">NonNegativeMatrixFactorization</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Calculates Latent factors of a given matrix of timeseries data</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rank</strong> (<em>int</em>) – The factorization rank to achieve. Default is 30.</p></li>
+<li><p><strong>update</strong> (<em>str</em>) – <dl>
+<dt>Type of update equations used in factorization. When specifying model parameter update can be assigned to:”</dt><dd><p>’euclidean’ for classic Euclidean distance update equations,”
+‘divergence’ for divergence update equations.”</p>
+<p>By default Euclidean update equations are used.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>objective</strong> (<em>str</em>) – <p>Type of objective function used in factorization. When specifying model parameter <a href="#id1"><span class="problematic" id="id2">:param:`objective`</span></a> can be assigned to:</p>
+<blockquote>
+<div><p>‘fro’ for standard Frobenius distance cost function,
+‘div’ for divergence of target matrix from NMF estimate cost function (KL),
+‘conn’ for measuring the number of consecutive iterations in which the connectivity matrix has not changed.</p>
+<p>By default the standard Frobenius distance cost function is used.</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em>) – Maximum number of factorization iterations. Note that the number of iterations depends on the speed of method convergence. Default is 30.</p></li>
+<li><p><strong>learning_rate</strong> (<em>float</em>) – Minimal required improvement of the residuals from the previous iteration. They are computed between the target matrix and its MF estimate using the objective function associated to the MF algorithm. Default is None.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>use_columns: Set</dt><dd><p>A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p>
+</dd>
+<dt>exclude_columns: Set</dt><dd><p>A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p>
+</dd>
+<dt>return_result: Enumeration</dt><dd><p>Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p>
+</dd>
+<dt>use_semantic_types: Bool</dt><dd><p>Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe.</p>
+</dd>
+<dt>add_index_columns: Bool</dt><dd><p>Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p>
+</dd>
+<dt>error_on_no_input: Bool(</dt><dd><p>Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p>
+</dd>
+<dt>return_semantic_type: Enumeration[str](</dt><dd><p>Decides what semantic type to attach to generated attributes’</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Produce primitive’s best choice of the output for each of the inputs.</p>
+<p>The output value should be wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> object before returning.</p>
+<p>In many cases producing an output is a quick operation in comparison with <code class="docutils literal notranslate"><span class="pre">fit</span></code>, but not
+all cases are like that. For example, a primitive can start a potentially long optimization
+process to compute outputs. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> and <code class="docutils literal notranslate"><span class="pre">iterations</span></code> can serve as a way for a caller
+to guide the length of this process.</p>
+<p>Ideally, a primitive should adapt its call to try to produce the best outputs possible
+inside the time allocated. If this is not possible and the primitive reaches the timeout
+before producing outputs, it should raise a <code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> exception to signal that the
+call was unsuccessful in the given time. The state of the primitive after the exception
+should be as the method call has never happened and primitive should continue to operate
+normally. The purpose of <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is to give opportunity to a primitive to cleanly
+manage its state instead of interrupting execution from outside. Maintaining stable internal
+state should have precedence over respecting the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (caller can terminate the
+misbehaving primitive from outside anyway). If a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> would produce
+different outputs, then <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>’s <code class="docutils literal notranslate"><span class="pre">has_finished</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Some primitives have internal iterations (for example, optimization iterations).
+For those, caller can provide how many of primitive’s internal iterations
+should a primitive do before returning outputs. Primitives should make iterations as
+small as reasonable. If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then there is no limit on
+how many iterations the primitive should do and primitive should choose the best amount
+of iterations on its own (potentially controlled through hyper-parameters).
+If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is a number, a primitive has to do those number of iterations,
+if possible. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> should still be respected and potentially less iterations
+can be done because of that. Primitives with internal iterations should make
+<code class="docutils literal notranslate"><span class="pre">CallResult</span></code> contain correct values.</p>
+<p>For primitives which do not have internal iterations, any value of <code class="docutils literal notranslate"><span class="pre">iterations</span></code>
+means that they should run fully, respecting only <code class="docutils literal notranslate"><span class="pre">timeout</span></code>.</p>
+<p>If primitive should have been fitted before calling this method, but it has not been,
+primitive should raise a <code class="docutils literal notranslate"><span class="pre">PrimitiveNotFittedError</span></code> exception.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-sktruncatedsvd-module">
+<h2>tods.feature_analysis.SKTruncatedSVD module<a class="headerlink" href="#tods-feature-analysis-sktruncatedsvd-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.SKTruncatedSVD.</code><code class="sig-name descname">SKTruncatedSVD</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.unsupervised_learning.UnsupervisedLearnerPrimitiveBase</span></code></p>
+<p>Primitive wrapping for sklearn TruncatedSVD
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html">sklearn documentation</a></p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_components</strong> (<em>int</em>) – Desired dimensionality of output data. Must be strictly less than the number of features. The default value is useful for visualisation. For LSA, a value of 100 is recommended.</p></li>
+<li><p><strong>algorithm</strong> (<em>hyperparams.Choice</em>) – SVD solver to use. Either “arpack” for the ARPACK wrapper in SciPy (scipy.sparse.linalg.svds), or “randomized” for the randomized algorithm due to Halko (2009).</p></li>
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>return_result</strong> (<em>Enumeration</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p></li>
+<li><p><strong>use_semantic_types</strong> (<em>Bool</em>) – Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe.</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
+<li><p><strong>error_on_no_input</strong> (<em>Bool</em><em>(</em>) – Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p></li>
+<li><p><strong>return_semantic_type</strong> (<em>Enumeration</em><em>[</em><em>str</em><em>]</em><em>(</em>) – Decides what semantic type to attach to generated attributes’</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>None<span class="p">]</span></dt>
+<dd><p>Fit model with training data.
+:param *: Container DataFrame. Time series data up to fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>timeout</strong> – A maximum time this primitive should be fitting during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tods.feature_analysis.SKTruncatedSVD.Params</dt>
+<dd><p>Return parameters.
+:param None:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>class Params</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Process the testing data.
+:param inputs: Container DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Container DataFrame after Truncated SVD.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">tods.feature_analysis.SKTruncatedSVD.Params</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Set parameters for SKTruncatedSVD.
+:param params: class Params</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>params</strong> – An instance of parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">set_training_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Set training data for SKTruncatedSVD.
+:param inputs: Container DataFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>inputs</strong> – The inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-spectralresidualtransform-module">
+<h2>tods.feature_analysis.SpectralResidualTransform module<a class="headerlink" href="#tods-feature-analysis-spectralresidualtransform-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.SpectralResidualTransform.</code><code class="sig-name descname">SpectralResidualTransformPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find Spectral Residual Transform of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing Spectral Residual Transform of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalabsenergy-module">
+<h2>tods.feature_analysis.StatisticalAbsEnergy module<a class="headerlink" href="#tods-feature-analysis-statisticalabsenergy-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalAbsEnergy.</code><code class="sig-name descname">StatisticalAbsEnergyPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find abs_energy of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing abs_energy of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalabssum-module">
+<h2>tods.feature_analysis.StatisticalAbsSum module<a class="headerlink" href="#tods-feature-analysis-statisticalabssum-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalAbsSum.</code><code class="sig-name descname">StatisticalAbsSumPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find abs_sum of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing abs_sum of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalgmean-module">
+<h2>tods.feature_analysis.StatisticalGmean module<a class="headerlink" href="#tods-feature-analysis-statisticalgmean-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalGmean.</code><code class="sig-name descname">StatisticalGmeanPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find gmean of time series .
+Will only take positive values as inputs .</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing gmean of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalhmean-module">
+<h2>tods.feature_analysis.StatisticalHmean module<a class="headerlink" href="#tods-feature-analysis-statisticalhmean-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalHmean.</code><code class="sig-name descname">StatisticalHmeanPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<dl class="simple">
+<dt>Primitive to find Harmonic mean of time series</dt><dd><p>Harmonic mean only defined if all elements greater than or equal to zero</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing hmean of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalkurtosis-module">
+<h2>tods.feature_analysis.StatisticalKurtosis module<a class="headerlink" href="#tods-feature-analysis-statisticalkurtosis-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalKurtosis.</code><code class="sig-name descname">StatisticalKurtosisPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find kurtosis of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing kurtosis of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalmaximum-module">
+<h2>tods.feature_analysis.StatisticalMaximum module<a class="headerlink" href="#tods-feature-analysis-statisticalmaximum-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalMaximum.</code><code class="sig-name descname">StatisticalMaximumPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find maximum of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing maximum of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalmean-module">
+<h2>tods.feature_analysis.StatisticalMean module<a class="headerlink" href="#tods-feature-analysis-statisticalmean-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalMean.</code><code class="sig-name descname">StatisticalMeanPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find mean of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing mean of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalmeanabs-module">
+<h2>tods.feature_analysis.StatisticalMeanAbs module<a class="headerlink" href="#tods-feature-analysis-statisticalmeanabs-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalMeanAbs.</code><code class="sig-name descname">StatisticalMeanAbsPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find mean_abs of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing mean_abs of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalmeanabstemporalderivative-module">
+<h2>tods.feature_analysis.StatisticalMeanAbsTemporalDerivative module<a class="headerlink" href="#tods-feature-analysis-statisticalmeanabstemporalderivative-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalMeanAbsTemporalDerivative.</code><code class="sig-name descname">StatisticalMeanAbsTemporalDerivativePrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find mean_abs_temporal_derivative of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing mean_abs_temporal_derivative of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalmeantemporalderivative-module">
+<h2>tods.feature_analysis.StatisticalMeanTemporalDerivative module<a class="headerlink" href="#tods-feature-analysis-statisticalmeantemporalderivative-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalMeanTemporalDerivative.</code><code class="sig-name descname">StatisticalMeanTemporalDerivativePrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find mean_temporal_derivative of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing mean_temporal_derivative of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalmedian-module">
+<h2>tods.feature_analysis.StatisticalMedian module<a class="headerlink" href="#tods-feature-analysis-statisticalmedian-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalMedian.</code><code class="sig-name descname">StatisticalMedianPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find median of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing median of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalmedianabsolutedeviation-module">
+<h2>tods.feature_analysis.StatisticalMedianAbsoluteDeviation module<a class="headerlink" href="#tods-feature-analysis-statisticalmedianabsolutedeviation-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalMedianAbsoluteDeviation.</code><code class="sig-name descname">StatisticalMedianAbsoluteDeviationPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find median_absolute_deviation of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing median_absolute_deviation of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalminimum-module">
+<h2>tods.feature_analysis.StatisticalMinimum module<a class="headerlink" href="#tods-feature-analysis-statisticalminimum-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalMinimum.</code><code class="sig-name descname">StatisticalMinimumPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find minimum of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing minimum of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalskew-module">
+<h2>tods.feature_analysis.StatisticalSkew module<a class="headerlink" href="#tods-feature-analysis-statisticalskew-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalSkew.</code><code class="sig-name descname">StatisticalSkewPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find skew of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing skew of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalstd-module">
+<h2>tods.feature_analysis.StatisticalStd module<a class="headerlink" href="#tods-feature-analysis-statisticalstd-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalStd.</code><code class="sig-name descname">StatisticalStdPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find std of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing std of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalvar-module">
+<h2>tods.feature_analysis.StatisticalVar module<a class="headerlink" href="#tods-feature-analysis-statisticalvar-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalVar.</code><code class="sig-name descname">StatisticalVarPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find var of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing var of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalvariation-module">
+<h2>tods.feature_analysis.StatisticalVariation module<a class="headerlink" href="#tods-feature-analysis-statisticalvariation-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalVariation.</code><code class="sig-name descname">StatisticalVariationPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find variation of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing variation of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalvecsum-module">
+<h2>tods.feature_analysis.StatisticalVecSum module<a class="headerlink" href="#tods-feature-analysis-statisticalvecsum-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalVecSum.</code><code class="sig-name descname">StatisticalVecSumPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find vec_sum of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing vec_sum of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalwillisonamplitude-module">
+<h2>tods.feature_analysis.StatisticalWillisonAmplitude module<a class="headerlink" href="#tods-feature-analysis-statisticalwillisonamplitude-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalWillisonAmplitude.</code><code class="sig-name descname">StatisticalWillisonAmplitudePrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find willison amplitude of time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing willison amplitude of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-statisticalzerocrossing-module">
+<h2>tods.feature_analysis.StatisticalZeroCrossing module<a class="headerlink" href="#tods-feature-analysis-statisticalzerocrossing-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.StatisticalZeroCrossing.</code><code class="sig-name descname">StatisticalZeroCrossingPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Primitive to find zero_crossing of time series. A column indicating zero crossing on ith row . 1 indicates crossing 0 is for normal</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame containing zero crossing indicator of  time series</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-trmf-module">
+<h2>tods.feature_analysis.TRMF module<a class="headerlink" href="#tods-feature-analysis-trmf-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.TRMF.</code><code class="sig-name descname">TRMF</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>Temporal Regularized Matrix Factorization.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">F</code></dt>
+<dd><p>Latent embedding of timeseries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray, shape (n_timeseries, K)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">X</code></dt>
+<dd><p>Latent embedding of timepoints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray, shape (K, n_timepoints)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">W</code></dt>
+<dd><p>Matrix of autoregressive coefficients.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray, shape (K, n_lags)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">Reference</code></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">----------</code></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">&quot;https</code></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>//github.com/SemenovAlex/trmf”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">Yu, H. F., Rao, N., &amp; Dhillon, I. S. (2016). Temporal regularized matrix factorization for high-dimensional time series prediction.</code></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">In Advances in neural information processing systems (pp. 847-855).</code></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">Which can be found there</code></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://www.cs.utexas.edu/~rofuyu/papers/tr-mf-nips.pdf">http://www.cs.utexas.edu/~rofuyu/papers/tr-mf-nips.pdf</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lags</strong> (<em>array-like</em><em>, </em><em>shape</em><em> (</em><em>n_lags</em><em>,</em><em>)</em>) – Set of lag indices to use in model.</p></li>
+<li><p><strong>K</strong> (<em>int</em>) – Length of latent embedding dimension</p></li>
+<li><p><strong>lambda_f</strong> (<em>float</em>) – Regularization parameter used for matrix F.</p></li>
+<li><p><strong>lambda_x</strong> (<em>float</em>) – Regularization parameter used for matrix X.</p></li>
+<li><p><strong>lambda_w</strong> (<em>float</em>) – Regularization parameter used for matrix W.</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Regularization parameter used for make the sum of lag coefficient close to 1.
+That helps to avoid big deviations when forecasting.</p></li>
+<li><p><strong>eta</strong> (<em>float</em>) – Regularization parameter used for X when undercovering autoregressive dependencies.</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em>) – Number of iterations of updating matrices F, X and W.</p></li>
+<li><p><strong>F_step</strong> (<em>float</em>) – Step of gradient descent when updating matrix F.</p></li>
+<li><p><strong>X_step</strong> (<em>float</em>) – Step of gradient descent when updating matrix X.</p></li>
+<li><p><strong>W_step</strong> (<em>float</em>) – Step of gradient descent when updating matrix W.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Process the testing data.
+:param inputs: Container DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Container DataFrame after Truncated SVD.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-feature-analysis-wavelettransform-module">
+<h2>tods.feature_analysis.WaveletTransform module<a class="headerlink" href="#tods-feature-analysis-wavelettransform-module" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.feature_analysis.WaveletTransform.</code><code class="sig-name descname">WaveletTransformer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
+<p>A primitive of Multilevel 1D Discrete Wavelet Transform of data.
+See <a class="reference external" href="https://pywavelets.readthedocs.io/en/latest/ref/">PyWavelet documentation</a> for details.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wavelet</strong> (<em>str</em>) – Wavelet to use</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – Signal extension mode, see <a class="reference external" href="https://pywavelets.readthedocs.io/en/latest/ref/signal-extension-modes.html#ref-modes">https://pywavelets.readthedocs.io/en/latest/ref/signal-extension-modes.html#ref-modes</a> for details.</p></li>
+<li><p><strong>axis</strong> (<em>int</em>) – Axis over which to compute the DWT. If not given, transforming along columns.</p></li>
+<li><p><strong>window_size</strong> (<em>int</em>) – The moving window size.</p></li>
+<li><p><strong>level</strong> (<em>int</em>) – Decomposition level (must be &gt; 0). If level is 0 (default) then it will be calculated using the maximum level.</p></li>
+<li><p><strong>Attributes</strong> – </p></li>
+<li><p><strong>----------</strong> – </p></li>
+<li><p><strong>None</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Process the testing data.
+:param inputs: Container DataFrame. Time series data up to Wavelet transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Container DataFrame after Wavelet Transformation.
+Ordered frame of coefficients arrays where n denotes the level of decomposition. The first element (cA_n) of the result is approximation coefficients array and the following elements (cD_n - cD_1) are details coefficients arrays.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>[cA_n, cD_n, cD_n-1, …, cD2, cD1]</p>
+</dd>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tods.detection_algorithm.html" class="btn btn-neutral float-right" title="tods.detection_algorithm package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tods.timeseries_processing.html" class="btn btn-neutral float-left" title="tods.timeseries_processing package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, DataLab@Texas A&amp;M University
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
