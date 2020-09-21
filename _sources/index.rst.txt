@@ -24,7 +24,14 @@ This package works with **Python 3.6** and pip 19+. You need to have the followi
 ::
     sudo apt-get install libssl-dev libcurl4-openssl-dev libyaml-dev build-essential libopenblas-dev libcap-dev ffmpeg
 
-Then execute ``python setup.py install``, the script will then install all of the packges to build up TODS.
+Clone the repository:
+::
+    git clone https://github.com/datamllab/tods.git
+
+Install locally with **pip**:
+::
+    cd tods
+    pip install -e .
 
 
 
