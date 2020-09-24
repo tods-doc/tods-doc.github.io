@@ -243,7 +243,7 @@
       
         <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
           
-        <li>RLCard: A Toolkit for Reinforcement Learning in Card Games</li>
+        <li>TOD: An Automated Time Series Outlier Detection System</li>
       
     </ul>
 
@@ -3462,210 +3462,6 @@ for params available in the class.</p>
 </div>
 <div class="section" id="tods-detection-algorithm-pyodmogaal-module">
 <h2>tods.detection_algorithm.PyodMoGaal module<a class="headerlink" href="#tods-detection-algorithm-pyodmogaal-module" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.detection_algorithm.PyodMoGaal.</code><code class="sig-name descname">Hyperparams</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tods.detection_algorithm.UODBasePrimitive.Hyperparams_ODBase</span></code></p>
-<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Hyperparams</span></code>
-type argument in primitive interfaces. An instance of this subclass
-is passed as a <code class="docutils literal notranslate"><span class="pre">hyperparams</span></code> argument to primitive’s constructor.</p>
-<p>You should subclass the class and configure class attributes to
-hyper-parameters you want. They will be extracted out and put into
-the <code class="docutils literal notranslate"><span class="pre">configuration</span></code> attribute. They have to be an instance of the
-<cite>Hyperparameter</cite> class for this to happen.</p>
-<p>You can define additional methods and attributes on the class.
-Prefix them with <cite>_</cite> to not conflict with future standard ones.</p>
-<p>When creating an instance of the class, all hyper-parameters have
-to be provided. Default values have to be explicitly passed.</p>
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">configuration</code></dt>
-<dd><p>A hyper-parameters configuration.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.detection_algorithm.PyodMoGaal.</code><code class="sig-name descname">Mo_GaalPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tods.detection_algorithm.UODBasePrimitive.UnsupervisedOutlierDetectorBase</span></code></p>
-<p>Multi-Objective Generative Adversarial Active Learning.
-MO_GAAL directly generates informative potential outliers to assist the
-classifier in describing a boundary that can separate outliers from normal
-data effectively. Moreover, to prevent the generator from falling into the
-mode collapsing problem, the network structure of SO-GAAL is expanded from
-a single generator (SO-GAAL) to multiple generators with different
-objectives (MO-GAAL) to generate a reasonable reference distribution for
-the whole dataset.
-Read more in the <a href="#id25"><span class="problematic" id="id26">:cite:`liu2019generative`</span></a>.</p>
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">decision_scores_</code></dt>
-<dd><p>The outlier scores of the training data.
-The higher, the more abnormal. Outliers tend to have higher
-scores. This value is available once the detector is fitted.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>numpy array of shape (n_samples,)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">threshold_</code></dt>
-<dd><p>The threshold is based on <code class="docutils literal notranslate"><span class="pre">contamination</span></code>. It is the
-<code class="docutils literal notranslate"><span class="pre">n_samples</span> <span class="pre">*</span> <span class="pre">contamination</span></code> most abnormal samples in
-<code class="docutils literal notranslate"><span class="pre">decision_scores_</span></code>. The threshold is calculated for generating
-binary outlier labels.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">labels_</code></dt>
-<dd><p>The binary labels of the training data. 0 stands for inliers
-and 1 for outliers/anomalies. It is generated by applying
-<code class="docutils literal notranslate"><span class="pre">threshold_</span></code> on <code class="docutils literal notranslate"><span class="pre">decision_scores_</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>int, either 0 or 1</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>contamination</strong> (<em>float in</em><em> (</em><em>0.</em><em>, </em><em>0.5</em><em>)</em><em>, </em><em>optional</em><em> (</em><em>default=0.1</em><em>)</em>) – The amount of contamination of the data set, i.e.
-the proportion of outliers in the data set. Used when fitting to
-define the threshold on the decision function.</p></li>
-<li><p><strong>k</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>default=10</em><em>)</em>) – The number of sub generators.</p></li>
-<li><p><strong>stop_epochs</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>default=20</em><em>)</em>) – The number of epochs of training.</p></li>
-<li><p><strong>lr_d</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default=0.01</em><em>)</em>) – The learn rate of the discriminator.</p></li>
-<li><p><strong>lr_g</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default=0.0001</em><em>)</em>) – The learn rate of the generator.</p></li>
-<li><p><strong>decay</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default=1e-6</em><em>)</em>) – The decay parameter for SGD.</p></li>
-<li><p><strong>momentum</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default=0.9</em><em>)</em>) – The momentum parameter for SGD.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt>
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>None<span class="p">]</span></dt>
-<dd><p>Fit model with training data.
-:param *: Container DataFrame. Time series data up to fit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-<dt class="field-even">Parameters</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>timeout</strong> – A maximum time this primitive should be fitting during this method call, in seconds.</p></li>
-<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt>
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tods.detection_algorithm.PyodMoGaal.Params</dt>
-<dd><p>Return parameters.
-:param None:</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>class Params</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>An instance of parameters.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt>
-<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
-<dd><p>Process the testing data.
-:param inputs: Container DataFrame. Time series data up to outlier detection.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Container DataFrame
-1 marks Outliers, 0 marks normal.</p>
-</dd>
-<dt class="field-even">Parameters</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
-<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
-<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt>
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">tods.detection_algorithm.PyodMoGaal.Params</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
-<dd><p>Set parameters for outlier detection.
-:param params: class Params</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-<dt class="field-even">Parameters</dt>
-<dd class="field-even"><p><strong>params</strong> – An instance of parameters.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt>
-<code class="sig-name descname">set_training_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
-<dd><p>Set training data for outlier detection.
-:param inputs: Container DataFrame</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-<dt class="field-even">Parameters</dt>
-<dd class="field-even"><p><strong>inputs</strong> – The inputs.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.detection_algorithm.PyodMoGaal.</code><code class="sig-name descname">Params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">values</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tods.detection_algorithm.UODBasePrimitive.Params_ODBase</span></code></p>
-<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Params</span></code> type
-argument in primitive interfaces. An instance of this subclass should
-be returned from primitive’s <code class="docutils literal notranslate"><span class="pre">get_params</span></code> method, and accepted in
-<code class="docutils literal notranslate"><span class="pre">set_params</span></code>.</p>
-<p>You should subclass the class and set type annotations on class attributes
-for params available in the class.</p>
-<p>When creating an instance of the class, all parameters have to be provided.</p>
-</dd></dl>
-
 </div>
 <div class="section" id="tods-detection-algorithm-pyodocsvm-module">
 <h2>tods.detection_algorithm.PyodOCSVM module<a class="headerlink" href="#tods-detection-algorithm-pyodocsvm-module" title="Permalink to this headline">¶</a></h2>
@@ -3701,7 +3497,7 @@ Unsupervised Outlier Detection.
 Estimate the support of a high-dimensional distribution.
 The implementation is based on libsvm.
 See <a class="reference external" href="http://scikit-learn.org/stable/modules/svm.html#svm-outlier-detection">http://scikit-learn.org/stable/modules/svm.html#svm-outlier-detection</a>
-and <a href="#id27"><span class="problematic" id="id28">:cite:`scholkopf2001estimating`</span></a>.</p>
+and <a href="#id25"><span class="problematic" id="id26">:cite:`scholkopf2001estimating`</span></a>.</p>
 <dl class="py attribute">
 <dt>
 <code class="sig-name descname">decision_scores_</code></dt>
@@ -3931,7 +3727,7 @@ varying subspaces of a high dimensional feature space. For each data
 object, SOD explores the axis-parallel subspace spanned by the data
 object’s neighbors and determines how much the object deviates from the
 neighbors in this subspace.
-See <a href="#id29"><span class="problematic" id="id30">:cite:`kriegel2009outlier`</span></a> for details.</p>
+See <a href="#id27"><span class="problematic" id="id28">:cite:`kriegel2009outlier`</span></a> for details.</p>
 <dl class="py attribute">
 <dt>
 <code class="sig-name descname">decision_scores_</code></dt>
@@ -4090,209 +3886,6 @@ define the threshold on the decision function.</p></li>
 </div>
 <div class="section" id="tods-detection-algorithm-pyodsogaal-module">
 <h2>tods.detection_algorithm.PyodSoGaal module<a class="headerlink" href="#tods-detection-algorithm-pyodsogaal-module" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.detection_algorithm.PyodSoGaal.</code><code class="sig-name descname">Hyperparams</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tods.detection_algorithm.UODBasePrimitive.Hyperparams_ODBase</span></code></p>
-<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Hyperparams</span></code>
-type argument in primitive interfaces. An instance of this subclass
-is passed as a <code class="docutils literal notranslate"><span class="pre">hyperparams</span></code> argument to primitive’s constructor.</p>
-<p>You should subclass the class and configure class attributes to
-hyper-parameters you want. They will be extracted out and put into
-the <code class="docutils literal notranslate"><span class="pre">configuration</span></code> attribute. They have to be an instance of the
-<cite>Hyperparameter</cite> class for this to happen.</p>
-<p>You can define additional methods and attributes on the class.
-Prefix them with <cite>_</cite> to not conflict with future standard ones.</p>
-<p>When creating an instance of the class, all hyper-parameters have
-to be provided. Default values have to be explicitly passed.</p>
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">configuration</code></dt>
-<dd><p>A hyper-parameters configuration.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.detection_algorithm.PyodSoGaal.</code><code class="sig-name descname">Params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">values</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tods.detection_algorithm.UODBasePrimitive.Params_ODBase</span></code></p>
-<p>A base class to be subclassed and used as a type for <code class="docutils literal notranslate"><span class="pre">Params</span></code> type
-argument in primitive interfaces. An instance of this subclass should
-be returned from primitive’s <code class="docutils literal notranslate"><span class="pre">get_params</span></code> method, and accepted in
-<code class="docutils literal notranslate"><span class="pre">set_params</span></code>.</p>
-<p>You should subclass the class and set type annotations on class attributes
-for params available in the class.</p>
-<p>When creating an instance of the class, all parameters have to be provided.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.detection_algorithm.PyodSoGaal.</code><code class="sig-name descname">So_GaalPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tods.detection_algorithm.UODBasePrimitive.UnsupervisedOutlierDetectorBase</span></code></p>
-<p>Single-Objective Generative Adversarial Active Learning.
-SO-GAAL directly generates informative potential outliers to assist the
-classifier in describing a boundary that can separate outliers from normal
-data effectively. Moreover, to prevent the generator from falling into the
-mode collapsing problem, the network structure of SO-GAAL is expanded from
-a single generator (SO-GAAL) to multiple generators with different
-objectives (MO-GAAL) to generate a reasonable reference distribution for
-the whole dataset.
-Read more in the <a href="#id31"><span class="problematic" id="id32">:cite:`liu2019generative`</span></a>.</p>
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">decision_scores_</code></dt>
-<dd><p>The outlier scores of the training data.
-The higher, the more abnormal. Outliers tend to have higher
-scores. This value is available once the detector is fitted.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>numpy array of shape (n_samples,)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">threshold_</code></dt>
-<dd><p>The threshold is based on <code class="docutils literal notranslate"><span class="pre">contamination</span></code>. It is the
-<code class="docutils literal notranslate"><span class="pre">n_samples</span> <span class="pre">*</span> <span class="pre">contamination</span></code> most abnormal samples in
-<code class="docutils literal notranslate"><span class="pre">decision_scores_</span></code>. The threshold is calculated for generating
-binary outlier labels.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">labels_</code></dt>
-<dd><p>The binary labels of the training data. 0 stands for inliers
-and 1 for outliers/anomalies. It is generated by applying
-<code class="docutils literal notranslate"><span class="pre">threshold_</span></code> on <code class="docutils literal notranslate"><span class="pre">decision_scores_</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>int, either 0 or 1</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>contamination</strong> (<em>float in</em><em> (</em><em>0.</em><em>, </em><em>0.5</em><em>)</em><em>, </em><em>optional</em><em> (</em><em>default=0.1</em><em>)</em>) – The amount of contamination of the data set, i.e.
-the proportion of outliers in the data set. Used when fitting to
-define the threshold on the decision function.</p></li>
-<li><p><strong>stop_epochs</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>default=20</em><em>)</em>) – The number of epochs of training.</p></li>
-<li><p><strong>lr_d</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default=0.01</em><em>)</em>) – The learn rate of the discriminator.</p></li>
-<li><p><strong>lr_g</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default=0.0001</em><em>)</em>) – The learn rate of the generator.</p></li>
-<li><p><strong>decay</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default=1e-6</em><em>)</em>) – The decay parameter for SGD.</p></li>
-<li><p><strong>momentum</strong> (<em>float</em><em>, </em><em>optional</em><em> (</em><em>default=0.9</em><em>)</em>) – The momentum parameter for SGD.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt>
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>None<span class="p">]</span></dt>
-<dd><p>Fit model with training data.
-:param *: Container DataFrame. Time series data up to fit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-<dt class="field-even">Parameters</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>timeout</strong> – A maximum time this primitive should be fitting during this method call, in seconds.</p></li>
-<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt>
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tods.detection_algorithm.PyodSoGaal.Params</dt>
-<dd><p>Return parameters.
-:param None:</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>class Params</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>An instance of parameters.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt>
-<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
-<dd><p>Process the testing data.
-:param inputs: Container DataFrame. Time series data up to outlier detection.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Container DataFrame
-1 marks Outliers, 0 marks normal.</p>
-</dd>
-<dt class="field-even">Parameters</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
-<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
-<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt>
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">tods.detection_algorithm.PyodSoGaal.Params</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
-<dd><p>Set parameters for outlier detection.
-:param params: class Params</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-<dt class="field-even">Parameters</dt>
-<dd class="field-even"><p><strong>params</strong> – An instance of parameters.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt>
-<code class="sig-name descname">set_training_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em><span class="sig-paren">)</span> &#x2192; None</dt>
-<dd><p>Set training data for outlier detection.
-:param inputs: Container DataFrame</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-<dt class="field-even">Parameters</dt>
-<dd class="field-even"><p><strong>inputs</strong> – The inputs.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 <div class="section" id="tods-detection-algorithm-pyodvae-module">
 <h2>tods.detection_algorithm.PyodVAE module<a class="headerlink" href="#tods-detection-algorithm-pyodvae-module" title="Permalink to this headline">¶</a></h2>
@@ -4339,7 +3932,7 @@ for params available in the class.</p>
 <p>Auto Encoder (AE) is a type of neural networks for learning useful data
 representations unsupervisedly. Similar to PCA, AE could be used to
 detect outlying objects in the data by calculating the reconstruction
-errors. See <a href="#id33"><span class="problematic" id="id34">:cite:`aggarwal2015outlier`</span></a> Chapter 3 for details.</p>
+errors. See <a href="#id29"><span class="problematic" id="id30">:cite:`aggarwal2015outlier`</span></a> Chapter 3 for details.</p>
 <dl class="py attribute">
 <dt>
 <code class="sig-name descname">encoding_dim_</code></dt>
@@ -4592,8 +4185,8 @@ fitted.</p>
 <dl class="py attribute">
 <dt>
 <code class="sig-prename descclassname">clf_.</code><code class="sig-name descname">threshold_</code></dt>
-<dd><p>For outlier, <a href="#id35"><span class="problematic" id="id36">decision_scores_</span></a> more than <a href="#id37"><span class="problematic" id="id38">threshold_</span></a>.
-For inlier, <a href="#id39"><span class="problematic" id="id40">decision_scores_</span></a> less than <a href="#id41"><span class="problematic" id="id42">threshold_</span></a>.</p>
+<dd><p>For outlier, <a href="#id31"><span class="problematic" id="id32">decision_scores_</span></a> more than <a href="#id33"><span class="problematic" id="id34">threshold_</span></a>.
+For inlier, <a href="#id35"><span class="problematic" id="id36">decision_scores_</span></a> less than <a href="#id37"><span class="problematic" id="id38">threshold_</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>float within (0, 1)</p>
@@ -4618,8 +4211,8 @@ and 1 for outliers/anomalies. It is generated by applying.
 <dt>
 <code class="sig-name descname">left_inds_</code></dt>
 <dd><p>One of the mapping from decision_score to data.
-For point outlier detection, <a href="#id43"><span class="problematic" id="id44">left_inds_</span></a> exactly equals the index of each data point.
-For Collective outlier detection, <a href="#id45"><span class="problematic" id="id46">left_inds_</span></a> equals the start index of each subsequence.</p>
+For point outlier detection, <a href="#id39"><span class="problematic" id="id40">left_inds_</span></a> exactly equals the index of each data point.
+For Collective outlier detection, <a href="#id41"><span class="problematic" id="id42">left_inds_</span></a> equals the start index of each subsequence.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>ndarray,</p>
@@ -4631,8 +4224,8 @@ For Collective outlier detection, <a href="#id45"><span class="problematic" id="
 <dt>
 <code class="sig-name descname">left_inds_</code></dt>
 <dd><p>One of the mapping from decision_score to data.
-For point outlier detection, <a href="#id47"><span class="problematic" id="id48">left_inds_</span></a> exactly equals the index of each data point plus 1.
-For Collective outlier detection, <a href="#id49"><span class="problematic" id="id50">left_inds_</span></a> equals the ending index of each subsequence.</p>
+For point outlier detection, <a href="#id43"><span class="problematic" id="id44">left_inds_</span></a> exactly equals the index of each data point plus 1.
+For Collective outlier detection, <a href="#id45"><span class="problematic" id="id46">left_inds_</span></a> equals the ending index of each subsequence.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>ndarray,</p>

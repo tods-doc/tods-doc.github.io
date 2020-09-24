@@ -243,7 +243,7 @@
       
         <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
           
-        <li>RLCard: A Toolkit for Reinforcement Learning in Card Games</li>
+        <li>TOD: An Automated Time Series Outlier Detection System</li>
       
     </ul>
 
@@ -555,110 +555,6 @@ imputation: linearly imputate the absent timestamps to keep the timestamp consis
 </div>
 <div class="section" id="tods-data-processing-datasettodataframe-module">
 <h2>tods.data_processing.DatasetToDataframe module<a class="headerlink" href="#tods-data-processing-datasettodataframe-module" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.DatasetToDataframe.</code><code class="sig-name descname">DatasetToDataFramePrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
-<p>A primitive which extracts a DataFrame out of a Dataset.</p>
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">metadata</code></dt>
-<dd><p>Primitive’s metadata. Available as a class attribute.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">logger</code></dt>
-<dd><p>Primitive’s logger. Available as a class attribute.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">hyperparams</code></dt>
-<dd><p>Hyperparams passed to the constructor.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">random_seed</code></dt>
-<dd><p>Random seed passed to the constructor.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">docker_containers</code></dt>
-<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
-container’s address under which the container is accessible by the primitive, and a
-dict mapping exposed ports to ports on that address.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">volumes</code></dt>
-<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
-where downloaded and extracted files are available to the primitive.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">temporary_directory</code></dt>
-<dd><p>An absolute path to a temporary directory a primitive can use to store any files
-for the duration of the current pipeline run phase. Directory is automatically
-cleaned up after the current pipeline run phase finishes.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt>
-<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.dataset.Dataset</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
-<dd><p>Produce primitive’s best choice of the output for each of the inputs.</p>
-<p>The output value should be wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> object before returning.</p>
-<p>In many cases producing an output is a quick operation in comparison with <code class="docutils literal notranslate"><span class="pre">fit</span></code>, but not
-all cases are like that. For example, a primitive can start a potentially long optimization
-process to compute outputs. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> and <code class="docutils literal notranslate"><span class="pre">iterations</span></code> can serve as a way for a caller
-to guide the length of this process.</p>
-<p>Ideally, a primitive should adapt its call to try to produce the best outputs possible
-inside the time allocated. If this is not possible and the primitive reaches the timeout
-before producing outputs, it should raise a <code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> exception to signal that the
-call was unsuccessful in the given time. The state of the primitive after the exception
-should be as the method call has never happened and primitive should continue to operate
-normally. The purpose of <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is to give opportunity to a primitive to cleanly
-manage its state instead of interrupting execution from outside. Maintaining stable internal
-state should have precedence over respecting the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (caller can terminate the
-misbehaving primitive from outside anyway). If a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> would produce
-different outputs, then <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>’s <code class="docutils literal notranslate"><span class="pre">has_finished</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<p>Some primitives have internal iterations (for example, optimization iterations).
-For those, caller can provide how many of primitive’s internal iterations
-should a primitive do before returning outputs. Primitives should make iterations as
-small as reasonable. If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then there is no limit on
-how many iterations the primitive should do and primitive should choose the best amount
-of iterations on its own (potentially controlled through hyper-parameters).
-If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is a number, a primitive has to do those number of iterations,
-if possible. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> should still be respected and potentially less iterations
-can be done because of that. Primitives with internal iterations should make
-<code class="docutils literal notranslate"><span class="pre">CallResult</span></code> contain correct values.</p>
-<p>For primitives which do not have internal iterations, any value of <code class="docutils literal notranslate"><span class="pre">iterations</span></code>
-means that they should run fully, respecting only <code class="docutils literal notranslate"><span class="pre">timeout</span></code>.</p>
-<p>If primitive should have been fitted before calling this method, but it has not been,
-primitive should raise a <code class="docutils literal notranslate"><span class="pre">PrimitiveNotFittedError</span></code> exception.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
-<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
-<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 <div class="section" id="tods-data-processing-duplicationvalidation-module">
 <h2>tods.data_processing.DuplicationValidation module<a class="headerlink" href="#tods-data-processing-duplicationvalidation-module" title="Permalink to this headline">¶</a></h2>
@@ -858,86 +754,6 @@ primitive should raise a <code class="docutils literal notranslate"><span class=
 </div>
 <div class="section" id="tods-data-processing-timestampvalidation-module">
 <h2>tods.data_processing.TimeStampValidation module<a class="headerlink" href="#tods-data-processing-timestampvalidation-module" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.TimeStampValidation.</code><code class="sig-name descname">TimeStampValidationPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
-<p>A primitive to check time series is sorted by time stamp , if not then return sorted time series</p>
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">metadata</code></dt>
-<dd><p>Primitive’s metadata. Available as a class attribute.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">logger</code></dt>
-<dd><p>Primitive’s logger. Available as a class attribute.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">hyperparams</code></dt>
-<dd><p>Hyperparams passed to the constructor.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">random_seed</code></dt>
-<dd><p>Random seed passed to the constructor.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">docker_containers</code></dt>
-<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
-container’s address under which the container is accessible by the primitive, and a
-dict mapping exposed ports to ports on that address.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">volumes</code></dt>
-<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
-where downloaded and extracted files are available to the primitive.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">temporary_directory</code></dt>
-<dd><p>An absolute path to a temporary directory a primitive can use to store any files
-for the duration of the current pipeline run phase. Directory is automatically
-cleaned up after the current pipeline run phase finishes.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt>
-<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>inputs</strong> – Container DataFrame</p></li>
-<li><p><strong>timeout</strong> – Default</p></li>
-<li><p><strong>iterations</strong> – Default</p></li>
-<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
-<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
-<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Container DataFrame sorted by Time Stamp</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 <div class="section" id="module-contents">
 <h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
