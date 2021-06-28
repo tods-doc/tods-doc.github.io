@@ -1,10 +1,7 @@
-tods.feature\_analysis package
+tods.feature\_analysis module
 ==============================
 
-Submodules
-----------
-
-tods.feature\_analysis.AutoCorrelation module
+tods.feature\_analysis.AutoCorrelation
 ---------------------------------------------
 
 .. automodule:: tods.feature_analysis.AutoCorrelation
@@ -12,7 +9,7 @@ tods.feature\_analysis.AutoCorrelation module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.BKFilter module
+tods.feature\_analysis.BKFilter
 --------------------------------------
 
 .. automodule:: tods.feature_analysis.BKFilter
@@ -20,7 +17,7 @@ tods.feature\_analysis.BKFilter module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.DiscreteCosineTransform module
+tods.feature\_analysis.DiscreteCosineTransform
 -----------------------------------------------------
 
 .. automodule:: tods.feature_analysis.DiscreteCosineTransform
@@ -28,7 +25,7 @@ tods.feature\_analysis.DiscreteCosineTransform module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.FastFourierTransform module
+tods.feature\_analysis.FastFourierTransform
 --------------------------------------------------
 
 .. automodule:: tods.feature_analysis.FastFourierTransform
@@ -36,7 +33,7 @@ tods.feature\_analysis.FastFourierTransform module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.HPFilter module
+tods.feature\_analysis.HPFilter
 --------------------------------------
 
 .. automodule:: tods.feature_analysis.HPFilter
@@ -44,7 +41,7 @@ tods.feature\_analysis.HPFilter module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.NonNegativeMatrixFactorization module
+tods.feature\_analysis.NonNegativeMatrixFactorization
 ------------------------------------------------------------
 
 .. automodule:: tods.feature_analysis.NonNegativeMatrixFactorization
@@ -52,7 +49,7 @@ tods.feature\_analysis.NonNegativeMatrixFactorization module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.SKTruncatedSVD module
+tods.feature\_analysis.SKTruncatedSVD
 --------------------------------------------
 
 .. automodule:: tods.feature_analysis.SKTruncatedSVD
@@ -60,7 +57,7 @@ tods.feature\_analysis.SKTruncatedSVD module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.SpectralResidualTransform module
+tods.feature\_analysis.SpectralResidualTransform
 -------------------------------------------------------
 
 .. automodule:: tods.feature_analysis.SpectralResidualTransform
@@ -68,7 +65,7 @@ tods.feature\_analysis.SpectralResidualTransform module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalAbsEnergy module
+tods.feature\_analysis.StatisticalAbsEnergy
 --------------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalAbsEnergy
@@ -76,7 +73,7 @@ tods.feature\_analysis.StatisticalAbsEnergy module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalAbsSum module
+tods.feature\_analysis.StatisticalAbsSum
 -----------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalAbsSum
@@ -84,7 +81,7 @@ tods.feature\_analysis.StatisticalAbsSum module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalGmean module
+tods.feature\_analysis.StatisticalGmean
 ----------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalGmean
@@ -92,7 +89,7 @@ tods.feature\_analysis.StatisticalGmean module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalHmean module
+tods.feature\_analysis.StatisticalHmean
 ----------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalHmean
@@ -100,7 +97,7 @@ tods.feature\_analysis.StatisticalHmean module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalKurtosis module
+tods.feature\_analysis.StatisticalKurtosis
 -------------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalKurtosis
@@ -108,7 +105,7 @@ tods.feature\_analysis.StatisticalKurtosis module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalMaximum module
+tods.feature\_analysis.StatisticalMaximum
 ------------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalMaximum
@@ -116,7 +113,7 @@ tods.feature\_analysis.StatisticalMaximum module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalMean module
+tods.feature\_analysis.StatisticalMean
 ---------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalMean
@@ -124,7 +121,7 @@ tods.feature\_analysis.StatisticalMean module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalMeanAbs module
+tods.feature\_analysis.StatisticalMeanAbs
 ------------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalMeanAbs
@@ -132,7 +129,7 @@ tods.feature\_analysis.StatisticalMeanAbs module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalMeanAbsTemporalDerivative module
+tods.feature\_analysis.StatisticalMeanAbsTemporalDerivative
 ------------------------------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalMeanAbsTemporalDerivative
@@ -140,7 +137,7 @@ tods.feature\_analysis.StatisticalMeanAbsTemporalDerivative module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalMeanTemporalDerivative module
+tods.feature\_analysis.StatisticalMeanTemporalDerivative
 ---------------------------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalMeanTemporalDerivative
@@ -148,7 +145,7 @@ tods.feature\_analysis.StatisticalMeanTemporalDerivative module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalMedian module
+tods.feature\_analysis.StatisticalMedian
 -----------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalMedian
@@ -156,7 +153,7 @@ tods.feature\_analysis.StatisticalMedian module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalMedianAbsoluteDeviation module
+tods.feature\_analysis.StatisticalMedianAbsoluteDeviation
 ----------------------------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalMedianAbsoluteDeviation
@@ -164,7 +161,7 @@ tods.feature\_analysis.StatisticalMedianAbsoluteDeviation module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalMinimum module
+tods.feature\_analysis.StatisticalMinimum
 ------------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalMinimum
@@ -172,7 +169,7 @@ tods.feature\_analysis.StatisticalMinimum module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalSkew module
+tods.feature\_analysis.StatisticalSkew
 ---------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalSkew
@@ -180,7 +177,7 @@ tods.feature\_analysis.StatisticalSkew module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalStd module
+tods.feature\_analysis.StatisticalStd
 --------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalStd
@@ -188,7 +185,7 @@ tods.feature\_analysis.StatisticalStd module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalVar module
+tods.feature\_analysis.StatisticalVar
 --------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalVar
@@ -196,7 +193,7 @@ tods.feature\_analysis.StatisticalVar module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalVariation module
+tods.feature\_analysis.StatisticalVariation
 --------------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalVariation
@@ -204,7 +201,7 @@ tods.feature\_analysis.StatisticalVariation module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalVecSum module
+tods.feature\_analysis.StatisticalVecSum
 -----------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalVecSum
@@ -212,7 +209,7 @@ tods.feature\_analysis.StatisticalVecSum module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalWillisonAmplitude module
+tods.feature\_analysis.StatisticalWillisonAmplitude
 ----------------------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalWillisonAmplitude
@@ -220,7 +217,7 @@ tods.feature\_analysis.StatisticalWillisonAmplitude module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.StatisticalZeroCrossing module
+tods.feature\_analysis.StatisticalZeroCrossing
 -----------------------------------------------------
 
 .. automodule:: tods.feature_analysis.StatisticalZeroCrossing
@@ -228,7 +225,7 @@ tods.feature\_analysis.StatisticalZeroCrossing module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.TRMF module
+tods.feature\_analysis.TRMF
 ----------------------------------
 
 .. automodule:: tods.feature_analysis.TRMF
@@ -236,7 +233,7 @@ tods.feature\_analysis.TRMF module
    :noindex:
    :show-inheritance:
 
-tods.feature\_analysis.WaveletTransform module
+tods.feature\_analysis.WaveletTransform
 ----------------------------------------------
 
 .. automodule:: tods.feature_analysis.WaveletTransform
@@ -244,10 +241,3 @@ tods.feature\_analysis.WaveletTransform module
    :noindex:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: tods.feature_analysis
-   :members:
-   :noindex:
-   :show-inheritance:

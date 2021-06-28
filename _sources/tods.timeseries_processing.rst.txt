@@ -1,10 +1,7 @@
-tods.timeseries\_processing package
+tods.timeseries\_processing module
 ===================================
 
-Submodules
-----------
-
-tods.timeseries\_processing.HoltSmoothing module
+tods.timeseries\_processing.HoltSmoothing
 ------------------------------------------------
 
 .. automodule:: tods.timeseries_processing.HoltSmoothing
@@ -12,7 +9,7 @@ tods.timeseries\_processing.HoltSmoothing module
    :noindex:
    :show-inheritance:
 
-tods.timeseries\_processing.HoltWintersExponentialSmoothing module
+tods.timeseries\_processing.HoltWintersExponentialSmoothing
 ------------------------------------------------------------------
 
 .. automodule:: tods.timeseries_processing.HoltWintersExponentialSmoothing
@@ -20,7 +17,7 @@ tods.timeseries\_processing.HoltWintersExponentialSmoothing module
    :noindex:
    :show-inheritance:
 
-tods.timeseries\_processing.MovingAverageTransform module
+tods.timeseries\_processing.MovingAverageTransform
 ---------------------------------------------------------
 
 .. automodule:: tods.timeseries_processing.MovingAverageTransform
@@ -28,7 +25,7 @@ tods.timeseries\_processing.MovingAverageTransform module
    :noindex:
    :show-inheritance:
 
-tods.timeseries\_processing.SKAxiswiseScaler module
+tods.timeseries\_processing.SKAxiswiseScaler
 ---------------------------------------------------
 
 .. automodule:: tods.timeseries_processing.SKAxiswiseScaler
@@ -36,7 +33,7 @@ tods.timeseries\_processing.SKAxiswiseScaler module
    :noindex:
    :show-inheritance:
 
-tods.timeseries\_processing.SKPowerTransformer module
+tods.timeseries\_processing.SKPowerTransformer
 -----------------------------------------------------
 
 .. automodule:: tods.timeseries_processing.SKPowerTransformer
@@ -44,7 +41,7 @@ tods.timeseries\_processing.SKPowerTransformer module
    :noindex:
    :show-inheritance:
 
-tods.timeseries\_processing.SKQuantileTransformer module
+tods.timeseries\_processing.SKQuantileTransformer
 --------------------------------------------------------
 
 .. automodule:: tods.timeseries_processing.SKQuantileTransformer
@@ -52,7 +49,7 @@ tods.timeseries\_processing.SKQuantileTransformer module
    :noindex:
    :show-inheritance:
 
-tods.timeseries\_processing.SKStandardScaler module
+tods.timeseries\_processing.SKStandardScaler
 ---------------------------------------------------
 
 .. automodule:: tods.timeseries_processing.SKStandardScaler
@@ -60,7 +57,7 @@ tods.timeseries\_processing.SKStandardScaler module
    :noindex:
    :show-inheritance:
 
-tods.timeseries\_processing.SimpleExponentialSmoothing module
+tods.timeseries\_processing.SimpleExponentialSmoothing
 -------------------------------------------------------------
 
 .. automodule:: tods.timeseries_processing.SimpleExponentialSmoothing
@@ -68,7 +65,7 @@ tods.timeseries\_processing.SimpleExponentialSmoothing module
    :noindex:
    :show-inheritance:
 
-tods.timeseries\_processing.TimeSeriesSeasonalityTrendDecomposition module
+tods.timeseries\_processing.TimeSeriesSeasonalityTrendDecomposition
 --------------------------------------------------------------------------
 
 .. automodule:: tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition
@@ -76,10 +73,3 @@ tods.timeseries\_processing.TimeSeriesSeasonalityTrendDecomposition module
    :noindex:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: tods.timeseries_processing
-   :members:
-   :noindex:
-   :show-inheritance:

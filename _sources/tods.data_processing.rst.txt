@@ -1,69 +1,54 @@
-tods.data\_processing package
+tods.data\_processing module
 =============================
 
-Submodules
-----------
-
-tods.data\_processing.CategoricalToBinary module
+tods.data\_processing.CategoricalToBinary
 ------------------------------------------------
 
 .. automodule:: tods.data_processing.CategoricalToBinary
-   :members:
+   :members: 
    :noindex:
-   :show-inheritance:
+   :undoc-members:
+   :meta private:metadata, logger
 
-tods.data\_processing.ColumnFilter module
+tods.data\_processing.ColumnFilter
 -----------------------------------------
 
 .. automodule:: tods.data_processing.ColumnFilter
    :members:
    :noindex:
-   :show-inheritance:
 
-tods.data\_processing.ContinuityValidation module
+tods.data\_processing.ContinuityValidation
 -------------------------------------------------
 
 .. automodule:: tods.data_processing.ContinuityValidation
    :members:
    :noindex:
-   :show-inheritance:
 
-tods.data\_processing.DatasetToDataframe module
+tods.data\_processing.DatasetToDataframe
 -----------------------------------------------
 
 .. automodule:: tods.data_processing.DatasetToDataframe
    :members:
    :noindex:
-   :show-inheritance:
 
-tods.data\_processing.DuplicationValidation module
+tods.data\_processing.DuplicationValidation
 --------------------------------------------------
 
 .. automodule:: tods.data_processing.DuplicationValidation
    :members:
    :noindex:
-   :show-inheritance:
 
-tods.data\_processing.TimeIntervalTransform module
+tods.data\_processing.TimeIntervalTransform
 --------------------------------------------------
 
 .. automodule:: tods.data_processing.TimeIntervalTransform
    :members:
    :noindex:
-   :show-inheritance:
 
-tods.data\_processing.TimeStampValidation module
+tods.data\_processing.TimeStampValidation
 ------------------------------------------------
 
 .. automodule:: tods.data_processing.TimeStampValidation
    :members:
    :noindex:
-   :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: tods.data_processing
-   :members:
-   :noindex:
-   :show-inheritance:

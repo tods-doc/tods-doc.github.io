@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>tods.data_processing package &mdash; TODS 0.0.1 documentation</title>
+  <title>tods.data_processing module &mdash; TODS 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,14 +37,9 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <!-- <link rel="copyright" title="DATA Lab at Texas A&M University"> -->
-    <link rel="next" title="tods.timeseries_processing package" href="tods.timeseries_processing.html" />
+    <link rel="next" title="tods.timeseries_processing module" href="tods.timeseries_processing.html" />
     <link rel="prev" title="Getting Started" href="getting_started.html" /> 
 </head>
 
@@ -63,7 +66,7 @@
           
 
           
-<div role="search" id="test-search">
+<div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
@@ -84,118 +87,25 @@
             
               <p class="caption"><span class="caption-text">Documentation:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#tods-high-level-design">TODS High-level Design</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#data-processing">Data Processing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#timeseries-processing">Timeseries Processing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#feature-analysis">Feature Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#detection-algorithms">Detection Algorithms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#reincforcement-module">Reincforcement Module</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#outlier-detection-with-autoencoder-on-nab-dataset">Outlier Detection with Autoencoder on NAB Dataset</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">tods.data_processing package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-categoricaltobinary-module">tods.data_processing.CategoricalToBinary module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-columnfilter-module">tods.data_processing.ColumnFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-continuityvalidation-module">tods.data_processing.ContinuityValidation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-datasettodataframe-module">tods.data_processing.DatasetToDataframe module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-duplicationvalidation-module">tods.data_processing.DuplicationValidation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-timeintervaltransform-module">tods.data_processing.TimeIntervalTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-timestampvalidation-module">tods.data_processing.TimeStampValidation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tods.data_processing module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-categoricaltobinary">tods.data_processing.CategoricalToBinary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-columnfilter">tods.data_processing.ColumnFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-continuityvalidation">tods.data_processing.ContinuityValidation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-datasettodataframe">tods.data_processing.DatasetToDataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-duplicationvalidation">tods.data_processing.DuplicationValidation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-timeintervaltransform">tods.data_processing.TimeIntervalTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tods-data-processing-timestampvalidation">tods.data_processing.TimeStampValidation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tods.timeseries_processing.html">tods.timeseries_processing package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-holtsmoothing-module">tods.timeseries_processing.HoltSmoothing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-holtwintersexponentialsmoothing-module">tods.timeseries_processing.HoltWintersExponentialSmoothing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-movingaveragetransform-module">tods.timeseries_processing.MovingAverageTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skaxiswisescaler-module">tods.timeseries_processing.SKAxiswiseScaler module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skpowertransformer-module">tods.timeseries_processing.SKPowerTransformer module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skquantiletransformer-module">tods.timeseries_processing.SKQuantileTransformer module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skstandardscaler-module">tods.timeseries_processing.SKStandardScaler module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-simpleexponentialsmoothing-module">tods.timeseries_processing.SimpleExponentialSmoothing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-timeseriesseasonalitytrenddecomposition-module">tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#module-contents">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tods.feature_analysis.html">tods.feature_analysis package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-autocorrelation-module">tods.feature_analysis.AutoCorrelation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-bkfilter-module">tods.feature_analysis.BKFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-discretecosinetransform-module">tods.feature_analysis.DiscreteCosineTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-fastfouriertransform-module">tods.feature_analysis.FastFourierTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-hpfilter-module">tods.feature_analysis.HPFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-nonnegativematrixfactorization-module">tods.feature_analysis.NonNegativeMatrixFactorization module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-sktruncatedsvd-module">tods.feature_analysis.SKTruncatedSVD module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-spectralresidualtransform-module">tods.feature_analysis.SpectralResidualTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalabsenergy-module">tods.feature_analysis.StatisticalAbsEnergy module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalabssum-module">tods.feature_analysis.StatisticalAbsSum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalgmean-module">tods.feature_analysis.StatisticalGmean module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalhmean-module">tods.feature_analysis.StatisticalHmean module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalkurtosis-module">tods.feature_analysis.StatisticalKurtosis module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmaximum-module">tods.feature_analysis.StatisticalMaximum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmean-module">tods.feature_analysis.StatisticalMean module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeanabs-module">tods.feature_analysis.StatisticalMeanAbs module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeanabstemporalderivative-module">tods.feature_analysis.StatisticalMeanAbsTemporalDerivative module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeantemporalderivative-module">tods.feature_analysis.StatisticalMeanTemporalDerivative module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmedian-module">tods.feature_analysis.StatisticalMedian module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmedianabsolutedeviation-module">tods.feature_analysis.StatisticalMedianAbsoluteDeviation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalminimum-module">tods.feature_analysis.StatisticalMinimum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalskew-module">tods.feature_analysis.StatisticalSkew module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalstd-module">tods.feature_analysis.StatisticalStd module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvar-module">tods.feature_analysis.StatisticalVar module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvariation-module">tods.feature_analysis.StatisticalVariation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvecsum-module">tods.feature_analysis.StatisticalVecSum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalwillisonamplitude-module">tods.feature_analysis.StatisticalWillisonAmplitude module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalzerocrossing-module">tods.feature_analysis.StatisticalZeroCrossing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-trmf-module">tods.feature_analysis.TRMF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-wavelettransform-module">tods.feature_analysis.WaveletTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#module-contents">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tods.detection_algorithm.html">tods.detection_algorithm package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-autoregodetect-module">tods.detection_algorithm.AutoRegODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-deeplog-module">tods.detection_algorithm.DeepLog module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-kdiscordodetect-module">tods.detection_algorithm.KDiscordODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-lstmodetect-module">tods.detection_algorithm.LSTMODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-matrixprofile-module">tods.detection_algorithm.MatrixProfile module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pcaodetect-module">tods.detection_algorithm.PCAODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodabod-module">tods.detection_algorithm.PyodABOD module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodae-module">tods.detection_algorithm.PyodAE module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodcblof-module">tods.detection_algorithm.PyodCBLOF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodcof-module">tods.detection_algorithm.PyodCOF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodhbos-module">tods.detection_algorithm.PyodHBOS module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodisolationforest-module">tods.detection_algorithm.PyodIsolationForest module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodknn-module">tods.detection_algorithm.PyodKNN module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodloda-module">tods.detection_algorithm.PyodLODA module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodlof-module">tods.detection_algorithm.PyodLOF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodmogaal-module">tods.detection_algorithm.PyodMoGaal module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodocsvm-module">tods.detection_algorithm.PyodOCSVM module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodsod-module">tods.detection_algorithm.PyodSOD module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodsogaal-module">tods.detection_algorithm.PyodSoGaal module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodvae-module">tods.detection_algorithm.PyodVAE module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-telemanom-module">tods.detection_algorithm.Telemanom module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-uodbaseprimitive-module">tods.detection_algorithm.UODBasePrimitive module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#module-contents">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tods.reinforcement.html">tods.reinforcement package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.reinforcement.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.reinforcement.html#tods-reinforcement-rulebasedfilter-module">tods.reinforcement.RuleBasedFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.reinforcement.html#module-contents">Module contents</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="tods.timeseries_processing.html">tods.timeseries_processing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.feature_analysis.html">tods.feature_analysis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.detection_algorithm.html">tods.detection_algorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.reinforcement.html">tods.reinforcement module</a></li>
 </ul>
 
             
@@ -236,152 +146,42 @@
 
 
 
-<div style="display: flex; justify-content: space-between">
-  <div role="navigation" aria-label="breadcrumbs navigation">
 
-    <ul class="wy-breadcrumbs" style="margin-top: 0.3rem;">
-      
-        <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          
-        <li>TOD: An Automated Time Series Outlier Detection System</li>
-      
-    </ul>
 
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
     
-  </div>
-  <div style="display: block; width: 7.5rem; max-width: 7.5rem; padding-right: .6rem; float: right;">
-    <a href="https://github.com/datamllab/tods" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
-      <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
-        <i class="fa fa-github" style="font-size: 2rem"></i>  
-      </div>
-      <div style="display: inline-block; margin-left: -2rem; margin-top: -0.6rem; padding-left: 2rem; vertical-align: middle">
-        GitHub
-        <ul style="font-size: 0.7rem; list-style-type: none;"><li style="float: left" id="github-stars">... Stars</li></ul>
-      </div>
-      <script>
-        $(document).ready(function(){
-        $.ajax({ url: "https://api.github.com/repos/datamllab/tods",
-                context: document.body,
-                success: function(response){
-                  console.log(response.stargazers_count);
-                  $("#github-stars").html(response.stargazers_count + ' Stars');
-                }});
-        });
-      </script>
-    </a>
-  </div>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>tods.data_processing module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
 </div>
-<hr/>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tods-data-processing-package">
-<h1>tods.data_processing package<a class="headerlink" href="#tods-data-processing-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="tods-data-processing-module">
+<h1>tods.data_processing module<a class="headerlink" href="#tods-data-processing-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tods-data-processing-categoricaltobinary">
+<h2>tods.data_processing.CategoricalToBinary<a class="headerlink" href="#tods-data-processing-categoricaltobinary" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="tods-data-processing-categoricaltobinary-module">
-<h2>tods.data_processing.CategoricalToBinary module<a class="headerlink" href="#tods-data-processing-categoricaltobinary-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tods-data-processing-columnfilter">
+<h2>tods.data_processing.ColumnFilter<a class="headerlink" href="#tods-data-processing-columnfilter" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.CategoricalToBinary.</code><code class="sig-name descname">CategoricalToBinary</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
-<p>A primitive which will convert all the distinct values present in a column to a binary represntation with each distinct value having a different column.</p>
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">metadata</code></dt>
-<dd><p>Primitive’s metadata. Available as a class attribute.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">logger</code></dt>
-<dd><p>Primitive’s logger. Available as a class attribute.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">hyperparams</code></dt>
-<dd><p>Hyperparams passed to the constructor.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">random_seed</code></dt>
-<dd><p>Random seed passed to the constructor.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">docker_containers</code></dt>
-<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
-container’s address under which the container is accessible by the primitive, and a
-dict mapping exposed ports to ports on that address.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">volumes</code></dt>
-<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
-where downloaded and extracted files are available to the primitive.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname">temporary_directory</code></dt>
-<dd><p>An absolute path to a temporary directory a primitive can use to store any files
-for the duration of the current pipeline run phase. Directory is automatically
-cleaned up after the current pipeline run phase finishes.</p>
-</dd></dl>
-
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
-<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
-<li><p><strong>return_result</strong> (<em>Enumeration</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p></li>
-<li><p><strong>use_semantic_types</strong> (<em>Bool</em>) – Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe.</p></li>
-<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
-<li><p><strong>error_on_no_input</strong> (<em>Bool</em><em>(</em>) – Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p></li>
-<li><p><strong>return_semantic_type</strong> (<em>Enumeration</em><em>[</em><em>str</em><em>]</em><em>(</em>) – Decides what semantic type to attach to generated attributes’</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt>
-<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>inputs</strong> – Container DataFrame</p></li>
-<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
-<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
-<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Container DataFrame added with binary version of a column a sort of one hot encoding of values under different columns
-named as “column name_category value” for all the columns passed in list while building the pipeline</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="tods-data-processing-columnfilter-module">
-<h2>tods.data_processing.ColumnFilter module<a class="headerlink" href="#tods-data-processing-columnfilter-module" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.ColumnFilter.</code><code class="sig-name descname">ColumnFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
-<p>A primitive that filters out columns of wrong shape in DataFrame (specifically columns generated by some features analysis)</p>
+<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.ColumnFilter.</code><code class="sig-name descname">ColumnFilterPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>A primitive that filters out columns of wrong shape in DataFrame (specifically columns generated by some features analysis)</p>
 <dl class="py attribute">
 <dt>
 <code class="sig-name descname">metadata</code></dt>
@@ -457,13 +257,12 @@ cleaned up after the current pipeline run phase finishes.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="tods-data-processing-continuityvalidation-module">
-<h2>tods.data_processing.ContinuityValidation module<a class="headerlink" href="#tods-data-processing-continuityvalidation-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tods-data-processing-continuityvalidation">
+<h2>tods.data_processing.ContinuityValidation<a class="headerlink" href="#tods-data-processing-continuityvalidation" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.ContinuityValidation.</code><code class="sig-name descname">ContinuityValidation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
-<p>Check whether the seires data is consitent in time interval and provide processing if not consistent.</p>
+<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.ContinuityValidation.</code><code class="sig-name descname">ContinuityValidationPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Check whether the seires data is consitent in time interval and provide processing if not consistent.</p>
 <dl class="py attribute">
 <dt>
 <code class="sig-name descname">metadata</code></dt>
@@ -514,13 +313,13 @@ cleaned up after the current pipeline run phase finishes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>continuity_option</strong> (<em>enumeration</em>) – <dl class="simple">
+<li><p><strong>continuity_option</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">enumeration</span></code>) – <dl class="simple">
 <dt>Choose ablation or imputation.</dt><dd><p>ablation: delete some rows and increase timestamp interval to keep the timestamp consistent
 imputation: linearly imputate the absent timestamps to keep the timestamp consistent</p>
 </dd>
 </dl>
 </p></li>
-<li><p><strong>interval</strong> (<em>float</em>) – Only used in imputation, give the timestamp interval. ‘interval’ should be an integral multiple of ‘timestamp’ or ‘timestamp’ should be an integral multiple of ‘interval’</p></li>
+<li><p><strong>interval</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Only used in imputation, give the timestamp interval. ‘interval’ should be an integral multiple of ‘timestamp’ or ‘timestamp’ should be an integral multiple of ‘interval’</p></li>
 </ul>
 </dd>
 </dl>
@@ -553,16 +352,118 @@ imputation: linearly imputate the absent timestamps to keep the timestamp consis
 </dd></dl>
 
 </div>
-<div class="section" id="tods-data-processing-datasettodataframe-module">
-<h2>tods.data_processing.DatasetToDataframe module<a class="headerlink" href="#tods-data-processing-datasettodataframe-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="tods-data-processing-duplicationvalidation-module">
-<h2>tods.data_processing.DuplicationValidation module<a class="headerlink" href="#tods-data-processing-duplicationvalidation-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tods-data-processing-datasettodataframe">
+<h2>tods.data_processing.DatasetToDataframe<a class="headerlink" href="#tods-data-processing-datasettodataframe" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.DuplicationValidation.</code><code class="sig-name descname">DuplicationValidation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
-<p>Check whether the seires data involves duplicate data in one timestamp, and provide processing if the duplication exists.</p>
+<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.DatasetToDataframe.</code><code class="sig-name descname">DatasetToDataFramePrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>A primitive which extracts a DataFrame out of a Dataset.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.dataset.Dataset</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><p>Produce primitive’s best choice of the output for each of the inputs.</p>
+<p>The output value should be wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code> object before returning.</p>
+<p>In many cases producing an output is a quick operation in comparison with <code class="docutils literal notranslate"><span class="pre">fit</span></code>, but not
+all cases are like that. For example, a primitive can start a potentially long optimization
+process to compute outputs. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> and <code class="docutils literal notranslate"><span class="pre">iterations</span></code> can serve as a way for a caller
+to guide the length of this process.</p>
+<p>Ideally, a primitive should adapt its call to try to produce the best outputs possible
+inside the time allocated. If this is not possible and the primitive reaches the timeout
+before producing outputs, it should raise a <code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> exception to signal that the
+call was unsuccessful in the given time. The state of the primitive after the exception
+should be as the method call has never happened and primitive should continue to operate
+normally. The purpose of <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is to give opportunity to a primitive to cleanly
+manage its state instead of interrupting execution from outside. Maintaining stable internal
+state should have precedence over respecting the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (caller can terminate the
+misbehaving primitive from outside anyway). If a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> would produce
+different outputs, then <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>’s <code class="docutils literal notranslate"><span class="pre">has_finished</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Some primitives have internal iterations (for example, optimization iterations).
+For those, caller can provide how many of primitive’s internal iterations
+should a primitive do before returning outputs. Primitives should make iterations as
+small as reasonable. If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then there is no limit on
+how many iterations the primitive should do and primitive should choose the best amount
+of iterations on its own (potentially controlled through hyper-parameters).
+If <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is a number, a primitive has to do those number of iterations,
+if possible. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> should still be respected and potentially less iterations
+can be done because of that. Primitives with internal iterations should make
+<code class="docutils literal notranslate"><span class="pre">CallResult</span></code> contain correct values.</p>
+<p>For primitives which do not have internal iterations, any value of <code class="docutils literal notranslate"><span class="pre">iterations</span></code>
+means that they should run fully, respecting only <code class="docutils literal notranslate"><span class="pre">timeout</span></code>.</p>
+<p>If primitive should have been fitted before calling this method, but it has not been,
+primitive should raise a <code class="docutils literal notranslate"><span class="pre">PrimitiveNotFittedError</span></code> exception.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tods-data-processing-duplicationvalidation">
+<h2>tods.data_processing.DuplicationValidation<a class="headerlink" href="#tods-data-processing-duplicationvalidation" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.DuplicationValidation.</code><code class="sig-name descname">DuplicationValidationPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Check whether the seires data involves duplicate data in one timestamp, and provide processing if the duplication exists.</p>
 <dl class="py attribute">
 <dt>
 <code class="sig-name descname">metadata</code></dt>
@@ -612,7 +513,7 @@ cleaned up after the current pipeline run phase finishes.</p>
 
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>keep_option</strong> (<em>enumeration</em>) – When dropping rows, choose to keep the first one or calculate the average</p>
+<dd class="field-odd"><p><strong>keep_option</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">enumeration</span></code>) – When dropping rows, choose to keep the first one or calculate the average</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -644,13 +545,12 @@ cleaned up after the current pipeline run phase finishes.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="tods-data-processing-timeintervaltransform-module">
-<h2>tods.data_processing.TimeIntervalTransform module<a class="headerlink" href="#tods-data-processing-timeintervaltransform-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tods-data-processing-timeintervaltransform">
+<h2>tods.data_processing.TimeIntervalTransform<a class="headerlink" href="#tods-data-processing-timeintervaltransform" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt>
-<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.TimeIntervalTransform.</code><code class="sig-name descname">TimeIntervalTransform</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">d3m.primitive_interfaces.transformer.TransformerPrimitiveBase</span></code></p>
-<p>A primitive which configures the time interval of the dataframe.
+<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.TimeIntervalTransform.</code><code class="sig-name descname">TimeIntervalTransformPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>A primitive which configures the time interval of the dataframe.
 Resample the timestamps based on the time_interval passed as hyperparameter</p>
 <dl class="py attribute">
 <dt>
@@ -752,11 +652,87 @@ primitive should raise a <code class="docutils literal notranslate"><span class=
 </dd></dl>
 
 </div>
-<div class="section" id="tods-data-processing-timestampvalidation-module">
-<h2>tods.data_processing.TimeStampValidation module<a class="headerlink" href="#tods-data-processing-timestampvalidation-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tods-data-processing-timestampvalidation">
+<h2>tods.data_processing.TimeStampValidation<a class="headerlink" href="#tods-data-processing-timestampvalidation" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">tods.data_processing.TimeStampValidation.</code><code class="sig-name descname">TimeStampValidationPrimitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span></dt>
+<dd><p>A primitive to check time series is sorted by time stamp , if not then return sorted time series</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">metadata</code></dt>
+<dd><p>Primitive’s metadata. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">logger</code></dt>
+<dd><p>Primitive’s logger. Available as a class attribute.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">hyperparams</code></dt>
+<dd><p>Hyperparams passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">random_seed</code></dt>
+<dd><p>Random seed passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">docker_containers</code></dt>
+<dd><p>A dict mapping Docker image keys from primitive’s metadata to (named) tuples containing
+container’s address under which the container is accessible by the primitive, and a
+dict mapping exposed ports to ports on that address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">volumes</code></dt>
+<dd><p>A dict mapping volume keys from primitive’s metadata to file and directory paths
+where downloaded and extracted files are available to the primitive.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">temporary_directory</code></dt>
+<dd><p>An absolute path to a temporary directory a primitive can use to store any files
+for the duration of the current pipeline run phase. Directory is automatically
+cleaned up after the current pipeline run phase finishes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">produce</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">inputs</span><span class="p">:</span> <span class="n">d3m.container.pandas.DataFrame</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; d3m.primitive_interfaces.base.CallResult<span class="p">[</span>d3m.container.pandas.DataFrame<span class="p">]</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – Container DataFrame</p></li>
+<li><p><strong>timeout</strong> – Default</p></li>
+<li><p><strong>iterations</strong> – Default</p></li>
+<li><p><strong>inputs</strong> – The inputs of shape [num_inputs, …].</p></li>
+<li><p><strong>timeout</strong> – A maximum time this primitive should take to produce outputs during this method call, in seconds.</p></li>
+<li><p><strong>iterations</strong> – How many of internal iterations should the primitive do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Container DataFrame sorted by Time Stamp</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>The outputs of shape [num_inputs, …] wrapped inside <code class="docutils literal notranslate"><span class="pre">CallResult</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 
@@ -765,32 +741,29 @@ primitive should raise a <code class="docutils literal notranslate"><span class=
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="tods.timeseries_processing.html" class="btn btn-neutral float-right" title="tods.timeseries_processing package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="tods.timeseries_processing.html" class="btn btn-neutral float-right" title="tods.timeseries_processing module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, DataLab@Texas A&amp;M University
+        &#169; Copyright 2020, DataLab@Texas A&amp;M University.
 
     </p>
   </div>
     
     
-      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

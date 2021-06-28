@@ -1,10 +1,7 @@
-tods.reinforcement package
+tods.reinforcement module
 ==========================
 
-Submodules
-----------
-
-tods.reinforcement.RuleBasedFilter module
+tods.reinforcement.RuleBasedFilter
 -----------------------------------------
 
 .. automodule:: tods.reinforcement.RuleBasedFilter
@@ -12,10 +9,3 @@ tods.reinforcement.RuleBasedFilter module
    :noindex:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: tods.reinforcement
-   :members:
-   :noindex:
-   :show-inheritance:

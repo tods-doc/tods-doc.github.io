@@ -1,23 +1,31 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Welcome to TOD’s documentation! &mdash; TODS 0.0.1 documentation</title>
+  <title>Welcome to TODS’s documentation! &mdash; TODS 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,13 +37,8 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <!-- <link rel="copyright" title="DATA Lab at Texas A&M University"> -->
     <link rel="next" title="Overview" href="overview.html" /> 
 </head>
 
@@ -62,7 +65,7 @@
           
 
           
-<div role="search" id="test-search">
+<div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
@@ -83,118 +86,16 @@
             
               <p class="caption"><span class="caption-text">Documentation:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#tods-high-level-design">TODS High-level Design</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#data-processing">Data Processing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#timeseries-processing">Timeseries Processing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#feature-analysis">Feature Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#detection-algorithms">Detection Algorithms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#reincforcement-module">Reincforcement Module</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#outlier-detection-with-autoencoder-on-nab-dataset">Outlier Detection with Autoencoder on NAB Dataset</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tods.data_processing.html">tods.data_processing package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-categoricaltobinary-module">tods.data_processing.CategoricalToBinary module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-columnfilter-module">tods.data_processing.ColumnFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-continuityvalidation-module">tods.data_processing.ContinuityValidation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-datasettodataframe-module">tods.data_processing.DatasetToDataframe module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-duplicationvalidation-module">tods.data_processing.DuplicationValidation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-timeintervaltransform-module">tods.data_processing.TimeIntervalTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-timestampvalidation-module">tods.data_processing.TimeStampValidation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#module-contents">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tods.timeseries_processing.html">tods.timeseries_processing package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-holtsmoothing-module">tods.timeseries_processing.HoltSmoothing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-holtwintersexponentialsmoothing-module">tods.timeseries_processing.HoltWintersExponentialSmoothing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-movingaveragetransform-module">tods.timeseries_processing.MovingAverageTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skaxiswisescaler-module">tods.timeseries_processing.SKAxiswiseScaler module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skpowertransformer-module">tods.timeseries_processing.SKPowerTransformer module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skquantiletransformer-module">tods.timeseries_processing.SKQuantileTransformer module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skstandardscaler-module">tods.timeseries_processing.SKStandardScaler module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-simpleexponentialsmoothing-module">tods.timeseries_processing.SimpleExponentialSmoothing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-timeseriesseasonalitytrenddecomposition-module">tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#module-contents">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tods.feature_analysis.html">tods.feature_analysis package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-autocorrelation-module">tods.feature_analysis.AutoCorrelation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-bkfilter-module">tods.feature_analysis.BKFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-discretecosinetransform-module">tods.feature_analysis.DiscreteCosineTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-fastfouriertransform-module">tods.feature_analysis.FastFourierTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-hpfilter-module">tods.feature_analysis.HPFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-nonnegativematrixfactorization-module">tods.feature_analysis.NonNegativeMatrixFactorization module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-sktruncatedsvd-module">tods.feature_analysis.SKTruncatedSVD module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-spectralresidualtransform-module">tods.feature_analysis.SpectralResidualTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalabsenergy-module">tods.feature_analysis.StatisticalAbsEnergy module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalabssum-module">tods.feature_analysis.StatisticalAbsSum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalgmean-module">tods.feature_analysis.StatisticalGmean module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalhmean-module">tods.feature_analysis.StatisticalHmean module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalkurtosis-module">tods.feature_analysis.StatisticalKurtosis module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmaximum-module">tods.feature_analysis.StatisticalMaximum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmean-module">tods.feature_analysis.StatisticalMean module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeanabs-module">tods.feature_analysis.StatisticalMeanAbs module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeanabstemporalderivative-module">tods.feature_analysis.StatisticalMeanAbsTemporalDerivative module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeantemporalderivative-module">tods.feature_analysis.StatisticalMeanTemporalDerivative module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmedian-module">tods.feature_analysis.StatisticalMedian module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmedianabsolutedeviation-module">tods.feature_analysis.StatisticalMedianAbsoluteDeviation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalminimum-module">tods.feature_analysis.StatisticalMinimum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalskew-module">tods.feature_analysis.StatisticalSkew module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalstd-module">tods.feature_analysis.StatisticalStd module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvar-module">tods.feature_analysis.StatisticalVar module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvariation-module">tods.feature_analysis.StatisticalVariation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvecsum-module">tods.feature_analysis.StatisticalVecSum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalwillisonamplitude-module">tods.feature_analysis.StatisticalWillisonAmplitude module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalzerocrossing-module">tods.feature_analysis.StatisticalZeroCrossing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-trmf-module">tods.feature_analysis.TRMF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-wavelettransform-module">tods.feature_analysis.WaveletTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#module-contents">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tods.detection_algorithm.html">tods.detection_algorithm package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-autoregodetect-module">tods.detection_algorithm.AutoRegODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-deeplog-module">tods.detection_algorithm.DeepLog module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-kdiscordodetect-module">tods.detection_algorithm.KDiscordODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-lstmodetect-module">tods.detection_algorithm.LSTMODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-matrixprofile-module">tods.detection_algorithm.MatrixProfile module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pcaodetect-module">tods.detection_algorithm.PCAODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodabod-module">tods.detection_algorithm.PyodABOD module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodae-module">tods.detection_algorithm.PyodAE module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodcblof-module">tods.detection_algorithm.PyodCBLOF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodcof-module">tods.detection_algorithm.PyodCOF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodhbos-module">tods.detection_algorithm.PyodHBOS module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodisolationforest-module">tods.detection_algorithm.PyodIsolationForest module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodknn-module">tods.detection_algorithm.PyodKNN module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodloda-module">tods.detection_algorithm.PyodLODA module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodlof-module">tods.detection_algorithm.PyodLOF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodmogaal-module">tods.detection_algorithm.PyodMoGaal module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodocsvm-module">tods.detection_algorithm.PyodOCSVM module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodsod-module">tods.detection_algorithm.PyodSOD module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodsogaal-module">tods.detection_algorithm.PyodSoGaal module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodvae-module">tods.detection_algorithm.PyodVAE module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-telemanom-module">tods.detection_algorithm.Telemanom module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-uodbaseprimitive-module">tods.detection_algorithm.UODBasePrimitive module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#module-contents">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tods.reinforcement.html">tods.reinforcement package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.reinforcement.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.reinforcement.html#tods-reinforcement-rulebasedfilter-module">tods.reinforcement.RuleBasedFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.reinforcement.html#module-contents">Module contents</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="tods.data_processing.html">tods.data_processing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.timeseries_processing.html">tods.timeseries_processing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.feature_analysis.html">tods.feature_analysis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.detection_algorithm.html">tods.detection_algorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.reinforcement.html">tods.reinforcement module</a></li>
 </ul>
 
             
@@ -235,49 +136,35 @@
 
 
 
-<div style="display: flex; justify-content: space-between">
-  <div role="navigation" aria-label="breadcrumbs navigation">
 
-    <ul class="wy-breadcrumbs" style="margin-top: 0.3rem;">
-      
-        <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          
-        <li>TODS: An Automated Time Series Outlier Detection System</li>
-      
-    </ul>
 
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
     
-  </div>
-  <div style="display: block; width: 7.5rem; max-width: 7.5rem; padding-right: .6rem; float: right;">
-    <a href="https://github.com/datamllab/tods" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
-      <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
-        <i class="fa fa-github" style="font-size: 2rem"></i>  
-      </div>
-      <div style="display: inline-block; margin-left: -2rem; margin-top: -0.6rem; padding-left: 2rem; vertical-align: middle">
-        GitHub
-        <ul style="font-size: 0.7rem; list-style-type: none;"><li style="float: left" id="github-stars">... Stars</li></ul>
-      </div>
-      <script>
-        $(document).ready(function(){
-        $.ajax({ url: "https://api.github.com/repos/datamllab/tods",
-                context: document.body,
-                success: function(response){
-                  console.log(response.stargazers_count);
-                  $("#github-stars").html(response.stargazers_count + ' Stars');
-                }});
-        });
-      </script>
-    </a>
-  </div>
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to TODS’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
 </div>
-<hr/>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-tod-s-documentation">
-<h1>Welcome to TODS's documentation!<a class="headerlink" href="#welcome-to-tod-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="welcome-to-tods-s-documentation">
+<h1>Welcome to TODS’s documentation!<a class="headerlink" href="#welcome-to-tods-s-documentation" title="Permalink to this headline">¶</a></h1>
 <a class="reference internal image-reference" href="_images/tods_logo.png"><img alt="_images/tods_logo.png" src="_images/tods_logo.png" style="width: 400px;" /></a>
-<p>TODS is a full-stack automated machine learning system for outlier detection on multivariate time-series data. TODS provides exahaustive modules for building machine learning-based outlier detection systems including: data processing, time series processing, feature analysis (extraction), detection algorithms, and reinforcement module. The functionalities provided via these modules including: data preprocessing for general purposes, time series data smoothing/transformation, extracting features from time/frequency domains, various detection algorithms, and involving human expertises to calibrate the system. Three common outlier detection scenarios on time-series data can be performed: point-wise detection (time points as outliers), pattern-wise detection (subsequences as outliers), and system-wise detection (sets of time series as outliers), and a wide-range of corresponding algorithms are provided in TODS. This package is developed by <a class="reference external" href="https://people.engr.tamu.edu/xiahu/index.html">DATA Lab &#64; Texas A&amp;M University</a>.</p>
+<p>TODS is a full-stack automated machine learning system for outlier detection on multivariate time-series data. TODS provides exahaustive modules for building machine learning-based outlier detection systems including: data processing, time series processing, feature analysis (extraction), detection algorithms, and reinforcement module. The functionalities provided via these modules including: data preprocessing for general purposes, time series data smoothing/transformation, extracting features from time/frequency domains, various detection algorithms, and involving human expertises to calibrate the system. Three common outlier detection scenarios on time-series data can be performed: point-wise detection (time points as outliers), pattern-wise detection (subsequences as outliers), and system-wise detection (sets of time series as outliers), and wide-range of corresponding algorithms are provided in TODS. This package is developed by <a class="reference external" href="https://people.engr.tamu.edu/xiahu/index.html">DATA Lab &#64; Texas A&amp;M University</a>.</p>
 <p>TODS is featured for:</p>
 <ul class="simple">
 <li><p><strong>Full Stack Machine Learning System</strong> which supports exhaustive components from preprocessings, feature extraction, detection algorithms and also human-in-the loop interface.</p></li>
@@ -286,19 +173,12 @@
 </ul>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>This package works with <strong>Python 3.6</strong> and pip 19+. You need to have the following packages installed on the system (for Debian/Ubuntu):</p>
+<p>This package works with <strong>Python 3.6</strong> and pip 19+. You need to have the following packages installed on the system (for Debian/Ubuntu):
+(if you are in China and Github is slow, you can use the mirror in <a class="reference external" href="https://gitee.com/daochenzha/tods">Gitee</a>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libssl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcurl4</span><span class="o">-</span><span class="n">openssl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libyaml</span><span class="o">-</span><span class="n">dev</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">libopenblas</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcap</span><span class="o">-</span><span class="n">dev</span> <span class="n">ffmpeg</span>
 </pre></div>
 </div>
-<p>Clone the repository:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">datamllab</span><span class="o">/</span><span class="n">tods</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
-<p>Install locally with <strong>pip</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tods</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
-</pre></div>
-</div>
+<p>Then execute <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>, the script will then install all of the packges to build up TODS.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -325,7 +205,7 @@
 <span class="n">pipeline_result</span> <span class="o">=</span> <span class="n">evaluate_pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">metric</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We also provide AutoML support to help you automatically find a good pipeline for your data.</p>
+<p>We also provide AutoML support to help you automatically find a good pipeline for a your data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">axolotl.backend.simple</span> <span class="kn">import</span> <span class="n">SimpleRunner</span>
@@ -385,98 +265,88 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tods.data_processing.html">tods.data_processing package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-categoricaltobinary-module">tods.data_processing.CategoricalToBinary module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-columnfilter-module">tods.data_processing.ColumnFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-continuityvalidation-module">tods.data_processing.ContinuityValidation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-datasettodataframe-module">tods.data_processing.DatasetToDataframe module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-duplicationvalidation-module">tods.data_processing.DuplicationValidation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-timeintervaltransform-module">tods.data_processing.TimeIntervalTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-timestampvalidation-module">tods.data_processing.TimeStampValidation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#module-contents">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.data_processing.html">tods.data_processing module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-categoricaltobinary">tods.data_processing.CategoricalToBinary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-columnfilter">tods.data_processing.ColumnFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-continuityvalidation">tods.data_processing.ContinuityValidation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-datasettodataframe">tods.data_processing.DatasetToDataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-duplicationvalidation">tods.data_processing.DuplicationValidation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-timeintervaltransform">tods.data_processing.TimeIntervalTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#tods-data-processing-timestampvalidation">tods.data_processing.TimeStampValidation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tods.timeseries_processing.html">tods.timeseries_processing package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-holtsmoothing-module">tods.timeseries_processing.HoltSmoothing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-holtwintersexponentialsmoothing-module">tods.timeseries_processing.HoltWintersExponentialSmoothing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-movingaveragetransform-module">tods.timeseries_processing.MovingAverageTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skaxiswisescaler-module">tods.timeseries_processing.SKAxiswiseScaler module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skpowertransformer-module">tods.timeseries_processing.SKPowerTransformer module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skquantiletransformer-module">tods.timeseries_processing.SKQuantileTransformer module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skstandardscaler-module">tods.timeseries_processing.SKStandardScaler module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-simpleexponentialsmoothing-module">tods.timeseries_processing.SimpleExponentialSmoothing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-timeseriesseasonalitytrenddecomposition-module">tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#module-contents">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.timeseries_processing.html">tods.timeseries_processing module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-holtsmoothing">tods.timeseries_processing.HoltSmoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-holtwintersexponentialsmoothing">tods.timeseries_processing.HoltWintersExponentialSmoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-movingaveragetransform">tods.timeseries_processing.MovingAverageTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skaxiswisescaler">tods.timeseries_processing.SKAxiswiseScaler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skpowertransformer">tods.timeseries_processing.SKPowerTransformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skquantiletransformer">tods.timeseries_processing.SKQuantileTransformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skstandardscaler">tods.timeseries_processing.SKStandardScaler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-simpleexponentialsmoothing">tods.timeseries_processing.SimpleExponentialSmoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-timeseriesseasonalitytrenddecomposition">tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tods.feature_analysis.html">tods.feature_analysis package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-autocorrelation-module">tods.feature_analysis.AutoCorrelation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-bkfilter-module">tods.feature_analysis.BKFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-discretecosinetransform-module">tods.feature_analysis.DiscreteCosineTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-fastfouriertransform-module">tods.feature_analysis.FastFourierTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-hpfilter-module">tods.feature_analysis.HPFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-nonnegativematrixfactorization-module">tods.feature_analysis.NonNegativeMatrixFactorization module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-sktruncatedsvd-module">tods.feature_analysis.SKTruncatedSVD module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-spectralresidualtransform-module">tods.feature_analysis.SpectralResidualTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalabsenergy-module">tods.feature_analysis.StatisticalAbsEnergy module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalabssum-module">tods.feature_analysis.StatisticalAbsSum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalgmean-module">tods.feature_analysis.StatisticalGmean module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalhmean-module">tods.feature_analysis.StatisticalHmean module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalkurtosis-module">tods.feature_analysis.StatisticalKurtosis module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmaximum-module">tods.feature_analysis.StatisticalMaximum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmean-module">tods.feature_analysis.StatisticalMean module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeanabs-module">tods.feature_analysis.StatisticalMeanAbs module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeanabstemporalderivative-module">tods.feature_analysis.StatisticalMeanAbsTemporalDerivative module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeantemporalderivative-module">tods.feature_analysis.StatisticalMeanTemporalDerivative module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmedian-module">tods.feature_analysis.StatisticalMedian module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmedianabsolutedeviation-module">tods.feature_analysis.StatisticalMedianAbsoluteDeviation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalminimum-module">tods.feature_analysis.StatisticalMinimum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalskew-module">tods.feature_analysis.StatisticalSkew module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalstd-module">tods.feature_analysis.StatisticalStd module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvar-module">tods.feature_analysis.StatisticalVar module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvariation-module">tods.feature_analysis.StatisticalVariation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvecsum-module">tods.feature_analysis.StatisticalVecSum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalwillisonamplitude-module">tods.feature_analysis.StatisticalWillisonAmplitude module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalzerocrossing-module">tods.feature_analysis.StatisticalZeroCrossing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-trmf-module">tods.feature_analysis.TRMF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-wavelettransform-module">tods.feature_analysis.WaveletTransform module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#module-contents">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.feature_analysis.html">tods.feature_analysis module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-autocorrelation">tods.feature_analysis.AutoCorrelation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-bkfilter">tods.feature_analysis.BKFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-discretecosinetransform">tods.feature_analysis.DiscreteCosineTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-fastfouriertransform">tods.feature_analysis.FastFourierTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-hpfilter">tods.feature_analysis.HPFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-nonnegativematrixfactorization">tods.feature_analysis.NonNegativeMatrixFactorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-sktruncatedsvd">tods.feature_analysis.SKTruncatedSVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-spectralresidualtransform">tods.feature_analysis.SpectralResidualTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalabsenergy">tods.feature_analysis.StatisticalAbsEnergy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalabssum">tods.feature_analysis.StatisticalAbsSum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalgmean">tods.feature_analysis.StatisticalGmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalhmean">tods.feature_analysis.StatisticalHmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalkurtosis">tods.feature_analysis.StatisticalKurtosis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmaximum">tods.feature_analysis.StatisticalMaximum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmean">tods.feature_analysis.StatisticalMean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeanabs">tods.feature_analysis.StatisticalMeanAbs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeanabstemporalderivative">tods.feature_analysis.StatisticalMeanAbsTemporalDerivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeantemporalderivative">tods.feature_analysis.StatisticalMeanTemporalDerivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmedian">tods.feature_analysis.StatisticalMedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmedianabsolutedeviation">tods.feature_analysis.StatisticalMedianAbsoluteDeviation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalminimum">tods.feature_analysis.StatisticalMinimum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalskew">tods.feature_analysis.StatisticalSkew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalstd">tods.feature_analysis.StatisticalStd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvar">tods.feature_analysis.StatisticalVar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvariation">tods.feature_analysis.StatisticalVariation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvecsum">tods.feature_analysis.StatisticalVecSum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalwillisonamplitude">tods.feature_analysis.StatisticalWillisonAmplitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalzerocrossing">tods.feature_analysis.StatisticalZeroCrossing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-trmf">tods.feature_analysis.TRMF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-wavelettransform">tods.feature_analysis.WaveletTransform</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tods.detection_algorithm.html">tods.detection_algorithm package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-autoregodetect-module">tods.detection_algorithm.AutoRegODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-deeplog-module">tods.detection_algorithm.DeepLog module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-kdiscordodetect-module">tods.detection_algorithm.KDiscordODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-lstmodetect-module">tods.detection_algorithm.LSTMODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-matrixprofile-module">tods.detection_algorithm.MatrixProfile module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pcaodetect-module">tods.detection_algorithm.PCAODetect module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodabod-module">tods.detection_algorithm.PyodABOD module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodae-module">tods.detection_algorithm.PyodAE module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodcblof-module">tods.detection_algorithm.PyodCBLOF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodcof-module">tods.detection_algorithm.PyodCOF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodhbos-module">tods.detection_algorithm.PyodHBOS module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodisolationforest-module">tods.detection_algorithm.PyodIsolationForest module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodknn-module">tods.detection_algorithm.PyodKNN module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodloda-module">tods.detection_algorithm.PyodLODA module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodlof-module">tods.detection_algorithm.PyodLOF module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodmogaal-module">tods.detection_algorithm.PyodMoGaal module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodocsvm-module">tods.detection_algorithm.PyodOCSVM module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodsod-module">tods.detection_algorithm.PyodSOD module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodsogaal-module">tods.detection_algorithm.PyodSoGaal module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodvae-module">tods.detection_algorithm.PyodVAE module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-telemanom-module">tods.detection_algorithm.Telemanom module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-uodbaseprimitive-module">tods.detection_algorithm.UODBasePrimitive module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#module-contents">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.detection_algorithm.html">tods.detection_algorithm Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-autoregodetect">tods.detection_algorithm.AutoRegODetect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-deeplog">tods.detection_algorithm.DeepLog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-kdiscordodetect">tods.detection_algorithm.KDiscordODetect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-lstmodetect">tods.detection_algorithm.LSTMODetect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-matrixprofile">tods.detection_algorithm.MatrixProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pcaodetect">tods.detection_algorithm.PCAODetect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodabod">tods.detection_algorithm.PyodABOD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodae">tods.detection_algorithm.PyodAE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodcblof">tods.detection_algorithm.PyodCBLOF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodcof">tods.detection_algorithm.PyodCOF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodhbos">tods.detection_algorithm.PyodHBOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodisolationforest">tods.detection_algorithm.PyodIsolationForest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodknn">tods.detection_algorithm.PyodKNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodloda">tods.detection_algorithm.PyodLODA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodlof">tods.detection_algorithm.PyodLOF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodmogaal">tods.detection_algorithm.PyodMoGaal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodocsvm">tods.detection_algorithm.PyodOCSVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodsod">tods.detection_algorithm.PyodSOD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodsogaal">tods.detection_algorithm.PyodSoGaal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodvae">tods.detection_algorithm.PyodVAE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-telemanom">tods.detection_algorithm.Telemanom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-uodbaseprimitive">tods.detection_algorithm.UODBasePrimitive</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tods.reinforcement.html">tods.reinforcement package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tods.reinforcement.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.reinforcement.html#tods-reinforcement-rulebasedfilter-module">tods.reinforcement.RuleBasedFilter module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tods.reinforcement.html#module-contents">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tods.reinforcement.html">tods.reinforcement module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tods.reinforcement.html#tods-reinforcement-rulebasedfilter">tods.reinforcement.RuleBasedFilter</a></li>
 </ul>
 </li>
 </ul>
@@ -497,30 +367,28 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
+        <a href="overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, DataLab@Texas A&amp;M University
+        &#169; Copyright 2020, DataLab@Texas A&amp;M University.
 
     </p>
   </div>
     
     
-      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
