@@ -1,11 +1,11 @@
-tods.reinforcement module
+tods.reinforcement
 ==========================
+
+.. _tods.reinforcement.RuleBasedFilter:
 
 tods.reinforcement.RuleBasedFilter
 -----------------------------------------
 
-.. automodule:: tods.reinforcement.RuleBasedFilter
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.reinforcement.RuleBasedFilter.RuleBasedFilter
+
 

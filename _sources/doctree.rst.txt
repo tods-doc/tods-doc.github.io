@@ -9,7 +9,7 @@
 
    overview
    getting_started
-
+   PythonPathCheatSheet
 
 .. toctree::
    :glob:

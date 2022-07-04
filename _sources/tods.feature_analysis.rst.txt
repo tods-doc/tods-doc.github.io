@@ -1,243 +1,214 @@
-tods.feature\_analysis module
+tods.feature\_analysis
 ==============================
 
-tods.feature\_analysis.AutoCorrelation
----------------------------------------------
+.. _tods.feature_analysis.AutoCorrelation:
 
-.. automodule:: tods.feature_analysis.AutoCorrelation
-   :members:
-   :noindex:
-   :show-inheritance:
+tods.feature\_analysis.AutoCorrelation
+---------------------------------------
+
+.. autoclass:: tods.feature_analysis.AutoCorrelation.AutoCorrelationPrimitive
+
+.. _tods.feature_analysis.BKFilter:
 
 tods.feature\_analysis.BKFilter
 --------------------------------------
 
-.. automodule:: tods.feature_analysis.BKFilter
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.BKFilter.BKFilterPrimitive
+
+.. _tods.feature_analysis.DiscreteCosineTransform:
 
 tods.feature\_analysis.DiscreteCosineTransform
 -----------------------------------------------------
 
-.. automodule:: tods.feature_analysis.DiscreteCosineTransform
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.DiscreteCosineTransform.DiscreteCosineTransformPrimitive
+
+.. _tods.feature_analysis.FastFourierTransform:
 
 tods.feature\_analysis.FastFourierTransform
 --------------------------------------------------
 
-.. automodule:: tods.feature_analysis.FastFourierTransform
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.FastFourierTransform.FastFourierTransformPrimitive
+
+.. _tods.feature_analysis.HPFilter:
 
 tods.feature\_analysis.HPFilter
 --------------------------------------
 
-.. automodule:: tods.feature_analysis.HPFilter
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.HPFilter.HPFilterPrimitive
+
+.. _tods.feature_analysis.NonNegativeMatrixFactorization:
 
 tods.feature\_analysis.NonNegativeMatrixFactorization
 ------------------------------------------------------------
 
-.. automodule:: tods.feature_analysis.NonNegativeMatrixFactorization
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.NonNegativeMatrixFactorization.NonNegativeMatrixFactorizationPrimitive
+
+.. _tods.feature_analysis.SKTruncatedSVD:
 
 tods.feature\_analysis.SKTruncatedSVD
 --------------------------------------------
 
-.. automodule:: tods.feature_analysis.SKTruncatedSVD
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.SKTruncatedSVD.SKTruncatedSVDPrimitive
+
+.. _tods.feature_analysis.SpectralResidualTransform:
 
 tods.feature\_analysis.SpectralResidualTransform
 -------------------------------------------------------
 
-.. automodule:: tods.feature_analysis.SpectralResidualTransform
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.SpectralResidualTransform.SpectralResidualTransformPrimitive
+
+.. _tods.feature_analysis.StatisticalAbsEnergy:
 
 tods.feature\_analysis.StatisticalAbsEnergy
 --------------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalAbsEnergy
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalAbsEnergy.StatisticalAbsEnergyPrimitive
+
+.. _tods.feature_analysis.StatisticalAbsSum:
 
 tods.feature\_analysis.StatisticalAbsSum
 -----------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalAbsSum
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalAbsSum.StatisticalAbsSumPrimitive
+
+.. _tods.feature_analysis.StatisticalGmean:
 
 tods.feature\_analysis.StatisticalGmean
 ----------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalGmean
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalGmean.StatisticalGmeanPrimitive
+
+.. _tods.feature_analysis.StatisticalHmean:
 
 tods.feature\_analysis.StatisticalHmean
 ----------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalHmean
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalHmean.StatisticalHmeanPrimitive
+
+.. _tods.feature_analysis.StatisticalKurtosis:
 
 tods.feature\_analysis.StatisticalKurtosis
 -------------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalKurtosis
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalKurtosis.StatisticalKurtosisPrimitive
+
+.. _tods.feature_analysis.StatisticalMaximum:
 
 tods.feature\_analysis.StatisticalMaximum
 ------------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalMaximum
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalMaximum.StatisticalMaximumPrimitive
+
+.. _tods.feature_analysis.StatisticalMean:
 
 tods.feature\_analysis.StatisticalMean
 ---------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalMean
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalMean.StatisticalMeanPrimitive
+
+.. _tods.feature_analysis.StatisticalMeanAbs:
 
 tods.feature\_analysis.StatisticalMeanAbs
 ------------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalMeanAbs
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalMeanAbs.StatisticalMeanAbsPrimitive
+
+.. _tods.feature_analysis.StatisticalMeanAbsTemporalDerivative:
 
 tods.feature\_analysis.StatisticalMeanAbsTemporalDerivative
 ------------------------------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalMeanAbsTemporalDerivative
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalMeanAbsTemporalDerivative.StatisticalMeanAbsTemporalDerivativePrimitive
+
+.. _tods.feature_analysis.StatisticalMeanTemporalDerivative:
 
 tods.feature\_analysis.StatisticalMeanTemporalDerivative
 ---------------------------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalMeanTemporalDerivative
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalMeanTemporalDerivative.StatisticalMeanTemporalDerivativePrimitive
+
+.. _tods.feature_analysis.StatisticalMedian:
 
 tods.feature\_analysis.StatisticalMedian
 -----------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalMedian
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalMedian.StatisticalMedianPrimitive
+
+.. _tods.feature_analysis.StatisticalMedianAbsoluteDeviation:
 
 tods.feature\_analysis.StatisticalMedianAbsoluteDeviation
 ----------------------------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalMedianAbsoluteDeviation
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalMedianAbsoluteDeviation.StatisticalMedianAbsoluteDeviationPrimitive
+
+.. _tods.feature_analysis.StatisticalMinimum:
 
 tods.feature\_analysis.StatisticalMinimum
 ------------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalMinimum
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalMinimum.StatisticalMinimumPrimitive
+
+.. _tods.feature_analysis.StatisticalSkew:
 
 tods.feature\_analysis.StatisticalSkew
 ---------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalSkew
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalSkew.StatisticalSkewPrimitive
+
+.. _tods.feature_analysis.StatisticalStd:
 
 tods.feature\_analysis.StatisticalStd
 --------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalStd
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalStd.StatisticalStdPrimitive
+
+.. _tods.feature_analysis.StatisticalVar:
 
 tods.feature\_analysis.StatisticalVar
 --------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalVar
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalVar.StatisticalVarPrimitive
+
+.. _tods.feature_analysis.StatisticalVariation:
 
 tods.feature\_analysis.StatisticalVariation
 --------------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalVariation
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalVariation.StatisticalVariationPrimitive
+
+.. _tods.feature_analysis.StatisticalVecSum:
 
 tods.feature\_analysis.StatisticalVecSum
 -----------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalVecSum
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalVecSum.StatisticalVecSumPrimitive
+
+.. _tods.feature_analysis.StatisticalWillisonAmplitude:
 
 tods.feature\_analysis.StatisticalWillisonAmplitude
 ----------------------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalWillisonAmplitude
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalWillisonAmplitude.StatisticalWillisonAmplitudePrimitive
+
+.. _tods.feature_analysis.StatisticalZeroCrossing:
 
 tods.feature\_analysis.StatisticalZeroCrossing
 -----------------------------------------------------
 
-.. automodule:: tods.feature_analysis.StatisticalZeroCrossing
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.StatisticalZeroCrossing.StatisticalZeroCrossingPrimitive
+
+.. _tods.feature_analysis.TRMF:
 
 tods.feature\_analysis.TRMF
 ----------------------------------
 
-.. automodule:: tods.feature_analysis.TRMF
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.TRMF.TRMFPrimitive
+
+.. _tods.feature_analysis.WaveletTransform:
 
 tods.feature\_analysis.WaveletTransform
 ----------------------------------------------
 
-.. automodule:: tods.feature_analysis.WaveletTransform
-   :members:
-   :noindex:
-   :show-inheritance:
+.. autoclass:: tods.feature_analysis.WaveletTransform.WaveletTransformPrimitive
+
 

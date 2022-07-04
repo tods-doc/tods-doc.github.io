@@ -6,7 +6,7 @@ the examples in this document and even more examples are available in
 `examples <https://github.com/datamllab/tods/tree/master/examples>`__.
 
 Outlier Detection with Autoencoder on NAB Dataset 
-------------------------------------------------
+-------------------------------------------------
 To perform the point-wise outlier detection on NAB dataset. We provide an example to construct
 such pipeline description:
 

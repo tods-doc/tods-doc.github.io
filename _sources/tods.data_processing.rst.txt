@@ -1,54 +1,83 @@
-tods.data\_processing module
+
+
+tods.data\_processing
 =============================
+
+.. _tods.data_processing.CategoricalToBinary:
 
 tods.data\_processing.CategoricalToBinary
 ------------------------------------------------
 
-.. automodule:: tods.data_processing.CategoricalToBinary
-   :members: 
-   :noindex:
-   :undoc-members:
-   :meta private:metadata, logger
+.. autoclass:: tods.data_processing.CategoricalToBinary.CategoricalToBinaryPrimitive
+
+.. _tods.data_processing.ColumnFilter:
 
 tods.data\_processing.ColumnFilter
 -----------------------------------------
 
-.. automodule:: tods.data_processing.ColumnFilter
-   :members:
-   :noindex:
+.. autoclass:: tods.data_processing.ColumnFilter.ColumnFilterPrimitive
+
+.. _tods.data_processing.ColumnParser:
+
+tods.data\_processing.ColumnParser
+-----------------------------------------
+
+.. autoclass:: tods.data_processing.ColumnParser.ColumnParserPrimitive
+
+.. _tods.data_processing.ConstructPredictions:
+
+tods.data\_processing.ConstructPredictions
+-------------------------------------------
+
+.. autoclass:: tods.data_processing.ConstructPredictions.ConstructPredictionsPrimitive
+
+.. _tods.data_processing.ContinuityValidation:
 
 tods.data\_processing.ContinuityValidation
 -------------------------------------------------
 
-.. automodule:: tods.data_processing.ContinuityValidation
-   :members:
-   :noindex:
+.. autoclass:: tods.data_processing.ContinuityValidation.ContinuityValidationPrimitive
+
+.. _tods.data_processing.DatasetToDataframe:
 
 tods.data\_processing.DatasetToDataframe
 -----------------------------------------------
 
-.. automodule:: tods.data_processing.DatasetToDataframe
-   :members:
-   :noindex:
+.. autoclass:: tods.data_processing.DatasetToDataframe.DatasetToDataFramePrimitive
+
+.. _tods.data_processing.DuplicationValidation:
 
 tods.data\_processing.DuplicationValidation
 --------------------------------------------------
 
-.. automodule:: tods.data_processing.DuplicationValidation
-   :members:
-   :noindex:
+.. autoclass:: tods.data_processing.DuplicationValidation.DuplicationValidationPrimitive
+
+.. _tods.data_processing.ExtractColumnsBySemanticTypes:
+
+tods.data\_processing.ExtractColumnsBySemanticTypes
+----------------------------------------------------
+
+.. autoclass:: tods.data_processing.ExtractColumnsBySemanticTypes.ExtractColumnsBySemanticTypesPrimitive
+
+.. _tods.data_processing.SKImputer:
+
+tods.data\_processing.SKImputer
+--------------------------------------------------
+
+.. autoclass:: tods.data_processing.SKImputer.SKImputerPrimitive
+
+.. _tods.data_processing.TimeIntervalTransform:
 
 tods.data\_processing.TimeIntervalTransform
 --------------------------------------------------
 
-.. automodule:: tods.data_processing.TimeIntervalTransform
-   :members:
-   :noindex:
+.. autoclass:: tods.data_processing.TimeIntervalTransform.TimeIntervalTransformPrimitive
+
+.. _tods.data_processing.TimeStampValidation:
 
 tods.data\_processing.TimeStampValidation
 ------------------------------------------------
 
-.. automodule:: tods.data_processing.TimeStampValidation
-   :members:
-   :noindex:
+.. autoclass:: tods.data_processing.TimeStampValidation.TimeStampValidationPrimitive
+
 

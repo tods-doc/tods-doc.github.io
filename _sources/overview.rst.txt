@@ -18,7 +18,6 @@ Following the typical machine learning pipeline, there are 6 modules lie in TODS
    :width: 800
 
 
-
 Data Processing
 ---------------
 Data processing aims on processing data following the tabular fashion. The functionalities including: dataset loading, data filtering, data validation, data binarization, and timestamp transformation.

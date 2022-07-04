@@ -1,201 +1,179 @@
-tods.detection\_algorithm Module
+tods.detection\_algorithm
 =================================
 
-tods.detection\_algorithm.AutoRegODetect
------------------------------------------------
+.. _tods.detection_algorithm.AutoRegODetect:
 
-.. automodule:: tods.detection_algorithm.AutoRegODetect
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+tods.detection\_algorithm.AutoRegODetect
+-----------------------------------------
+
+.. autoclass:: tods.detection_algorithm.AutoRegODetect.AutoRegODetectorPrimitive
+
+.. _tods.detection_algorithm.DAGMM:
+
+tods.detection\_algorithm.DAGMM
+----------------------------------------
+
+.. autoclass:: tods.detection_algorithm.DAGMM.DAGMMPrimitive
+
+.. _tods.detection_algorithm.DeepLog:
 
 tods.detection\_algorithm.DeepLog
 ----------------------------------------
 
-.. automodule:: tods.detection_algorithm.DeepLog
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.DeepLog.DeepLogPrimitive
+
+.. _tods.detection_algorithm.Ensemble:
+
+tods.detection\_algorithm.Ensemble
+----------------------------------------
+
+.. autoclass:: tods.detection_algorithm.Ensemble.EnsemblePrimitive
+
+.. _tods.detection_algorithm.KDiscordODetect:
 
 tods.detection\_algorithm.KDiscordODetect
 ------------------------------------------------
 
-.. automodule:: tods.detection_algorithm.KDiscordODetect
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.KDiscordODetect.KDiscordODetectorPrimitive
+
+.. _tods.detection_algorithm.LSTMODetect:
 
 tods.detection\_algorithm.LSTMODetect
 --------------------------------------------
 
-.. automodule:: tods.detection_algorithm.LSTMODetect
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.LSTMODetect.LSTMODetectorPrimitive
+
+.. _tods.detection_algorithm.MatrixProfile:
 
 tods.detection\_algorithm.MatrixProfile
 ----------------------------------------------
 
-.. automodule:: tods.detection_algorithm.MatrixProfile
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.MatrixProfile.MatrixProfilePrimitive
+
+.. _tods.detection_algorithm.PCAODetect:
 
 tods.detection\_algorithm.PCAODetect
 -------------------------------------------
 
-.. automodule:: tods.detection_algorithm.PCAODetect
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PCAODetect.PCAODetectorPrimitive
+
+.. _tods.detection_algorithm.PyodABOD:
 
 tods.detection\_algorithm.PyodABOD
 -----------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodABOD
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodABOD.ABODPrimitive
+
+.. _tods.detection_algorithm.PyodAE:
 
 tods.detection\_algorithm.PyodAE
 ---------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodAE
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodAE.AutoEncoderPrimitive
+
+.. _tods.detection_algorithm.PyodCBLOF:
 
 tods.detection\_algorithm.PyodCBLOF
 ------------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodCBLOF
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodCBLOF.CBLOFPrimitive
+
+.. _tods.detection_algorithm.PyodCOF:
 
 tods.detection\_algorithm.PyodCOF
 ----------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodCOF
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodCOF.COFPrimitive
+
+.. _tods.detection_algorithm.PyodHBOS:
 
 tods.detection\_algorithm.PyodHBOS
 -----------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodHBOS
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodHBOS.HBOSPrimitive
+
+.. _tods.detection_algorithm.PyodIsolationForest:
 
 tods.detection\_algorithm.PyodIsolationForest
 ----------------------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodIsolationForest
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodIsolationForest.IsolationForestPrimitive
+
+.. _tods.detection_algorithm.PyodKNN:
 
 tods.detection\_algorithm.PyodKNN
 ----------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodKNN
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodKNN.KNNPrimitive
+
+.. _tods.detection_algorithm.PyodLODA:
 
 tods.detection\_algorithm.PyodLODA
 -----------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodLODA
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodLODA.LODAPrimitive
+
+.. _tods.detection_algorithm.PyodLOF:
 
 tods.detection\_algorithm.PyodLOF
 ----------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodLOF
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodLOF.LOFPrimitive
+
+.. _tods.detection_algorithm.PyodMoGaal:
 
 tods.detection\_algorithm.PyodMoGaal
 -------------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodMoGaal
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodMoGaal.Mo_GaalPrimitive
+
+.. _tods.detection_algorithm.PyodOCSVM:
 
 tods.detection\_algorithm.PyodOCSVM
 ------------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodOCSVM
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodOCSVM.OCSVMPrimitive
+
+.. _tods.detection_algorithm.PyodSOD:
 
 tods.detection\_algorithm.PyodSOD
 ----------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodSOD
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodSOD.SODPrimitive
+
+.. _tods.detection_algorithm.PyodSoGaal:
 
 tods.detection\_algorithm.PyodSoGaal
 -------------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodSoGaal
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodSoGaal.So_GaalPrimitive
+
+.. _tods.detection_algorithm.PyodVAE:
 
 tods.detection\_algorithm.PyodVAE
 ----------------------------------------
 
-.. automodule:: tods.detection_algorithm.PyodVAE
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.PyodVAE.VariationalAutoEncoderPrimitive
+
+.. _tods.detection_algorithm.SystemWiseDetection:
+
+tods.detection\_algorithm.SystemWiseDetection
+------------------------------------------
+
+.. autoclass:: tods.detection_algorithm.SystemWiseDetection.SystemWiseDetectionPrimitive
+
+.. _tods.detection_algorithm.Telemanom:
 
 tods.detection\_algorithm.Telemanom
 ------------------------------------------
 
-.. automodule:: tods.detection_algorithm.Telemanom
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.Telemanom.TelemanomPrimitive
+
+.. _tods.detection_algorithm.UODBasePrimitive:
 
 tods.detection\_algorithm.UODBasePrimitive
 -------------------------------------------------
 
-.. automodule:: tods.detection_algorithm.UODBasePrimitive
-   :members:
-   :noindex:
-   :exclude-members: Hyperparams, Params
-   :show-inheritance:
+.. autoclass:: tods.detection_algorithm.UODBasePrimitive.UnsupervisedOutlierDetectorBase
+
 

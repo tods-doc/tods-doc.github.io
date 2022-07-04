@@ -8,7 +8,7 @@ Welcome to TODS's documentation!
 .. image:: img/tods_logo.png
    :width: 400
 
-TODS is a full-stack automated machine learning system for outlier detection on multivariate time-series data. TODS provides exahaustive modules for building machine learning-based outlier detection systems including: data processing, time series processing, feature analysis (extraction), detection algorithms, and reinforcement module. The functionalities provided via these modules including: data preprocessing for general purposes, time series data smoothing/transformation, extracting features from time/frequency domains, various detection algorithms, and involving human expertises to calibrate the system. Three common outlier detection scenarios on time-series data can be performed: point-wise detection (time points as outliers), pattern-wise detection (subsequences as outliers), and system-wise detection (sets of time series as outliers), and wide-range of corresponding algorithms are provided in TODS. This package is developed by `DATA Lab @ Texas A&M University <https://people.engr.tamu.edu/xiahu/index.html>`__.
+TODS is a full-stack automated machine learning system for outlier detection on multivariate time-series data. TODS provides exahaustive modules for building machine learning-based outlier detection systems including: data processing, time series processing, feature analysis (extraction), detection algorithms, and reinforcement module. The functionalities provided via these modules including: data preprocessing for general purposes, time series data smoothing/transformation, extracting features from time/frequency domains, various detection algorithms, and involving human expertises to calibrate the system. Three common outlier detection scenarios on time-series data can be performed: point-wise detection (time points as outliers), pattern-wise detection (subsequences as outliers), and system-wise detection (sets of time series as outliers), and wide-range of corresponding algorithms are provided in TODS. This package is developed by `DATA Lab @ Rice University <https://people.engr.tamu.edu/xiahu/index.html>`__.
 
 TODS is featured for:
 
@@ -19,7 +19,7 @@ TODS is featured for:
 * **Automated Machine Learning** aims on providing knowledge-free process that construct optimal pipeline based on the given data by automatically searching the best combination from all of the existing modules.
 
 Installation
------------
+------------
 This package works with **Python 3.6** and pip 19+. You need to have the following packages installed on the system (for Debian/Ubuntu):
 (if you are in China and Github is slow, you can use the mirror in `Gitee <https://gitee.com/daochenzha/tods>`__):
 ::
@@ -111,6 +111,7 @@ We also provide AutoML support to help you automatically find a good pipeline fo
 
    overview
    getting_started
+   PythonPathCheatSheet
 
 
 .. toctree::
