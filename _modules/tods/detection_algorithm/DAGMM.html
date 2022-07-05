@@ -307,6 +307,31 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Deep Autoencoding Gaussian Mixture Model</span>
 
+<span class="sd">Parameters</span>
+<span class="sd">----------</span>
+<span class="sd">    comp_hiddens :List(default=[16,8,1])</span>
+<span class="sd">        Sizes of hidden layers of compression network.&#39;</span>
+<span class="sd">    est_hiddens :List(default=[8,4])</span>
+<span class="sd">        Sizes of hidden layers of estimation network.</span>
+<span class="sd">    est_dropout_ratio :float(default=0.25)</span>
+<span class="sd">        Dropout rate of estimation network</span>
+<span class="sd">    minibatch_size :int(default=3)</span>
+<span class="sd">        Mini Batch size</span>
+<span class="sd">    epoch_size :int(default=100)</span>
+<span class="sd">        Epoch</span>
+<span class="sd">    rand_seed int(default=0)</span>
+<span class="sd">        (optional )random seed used when fit() is called</span>
+<span class="sd">    learning_rate :float(default=0.0001)</span>
+<span class="sd">        learning rate</span>
+<span class="sd">    lambda1 :float(default=0.1)</span>
+<span class="sd">        a parameter of loss function (for energy term)</span>
+<span class="sd">    lambda2 :float(default=0.1)</span>
+<span class="sd">        a parameter of loss function</span>
+<span class="sd">    normalize :bool(default=True)</span>
+<span class="sd">        Specify whether input data need to be normalized.</span>
+<span class="sd">    contamination :float(lower=0.,upper=0.5,default=0.1)</span>
+<span class="sd">        the amount of contamination of the data set, i.e.the proportion of outliers in the data set. Used when fitting to define the threshold on the decision function</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;DATA Lab at Texas A&amp;M University&quot;</span><span class="p">,</span>

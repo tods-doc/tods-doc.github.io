@@ -360,6 +360,37 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A primitive that uses DeepLog for outlier detection</span>
 
+<span class="sd">Parameters</span>
+<span class="sd">----------</span>
+<span class="sd">    hidden_size :int(default=64)</span>
+<span class="sd">        hidden state dimension</span>
+<span class="sd">    loss :Union[str, None](default=&#39;mean_squared_error&#39;)</span>
+<span class="sd">        loss function</span>
+<span class="sd">    optimizer :Union[str, None](default=&#39;Adam&#39;)</span>
+<span class="sd">        Optimizer</span>
+<span class="sd">    epochs :int(default=10)</span>
+<span class="sd">        Epoch</span>
+<span class="sd">    batch_size :int(default=32)</span>
+<span class="sd">       Batch size</span>
+<span class="sd">    dropout_rate :float(default=0.2)</span>
+<span class="sd">        Dropout rate</span>
+<span class="sd">    l2_regularizer :float(default=0.1)</span>
+<span class="sd">        l2 regularizer</span>
+<span class="sd">    validation_size :float(default=0.1)</span>
+<span class="sd">        validation size</span>
+<span class="sd">    window_size :int(default=1)</span>
+<span class="sd">        window size&quot;</span>
+<span class="sd">    features :int(default=1)</span>
+<span class="sd">       Number of features in Input</span>
+<span class="sd">    stacked_layers :int(default=1)</span>
+<span class="sd">        Number of LSTM layers between input layer and Final Dense Layer</span>
+<span class="sd">    preprocessing :Bool(default=True)</span>
+<span class="sd">        Whether to Preprosses the data</span>
+<span class="sd">    verbose :int(default=1)</span>
+<span class="sd">        verbose</span>
+<span class="sd">    contamination :float(lower=0.,upper=0.5,default=0.1)</span>
+<span class="sd">        the amount of contamination of the data set, i.e.the proportion of outliers in the data set. Used when fitting to define the threshold on the decision function</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">metadata</span> <span class="o">=</span> <span class="n">metadata_base</span><span class="o">.</span><span class="n">PrimitiveMetadata</span><span class="p">({</span>

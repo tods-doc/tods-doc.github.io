@@ -321,6 +321,28 @@
 <span class="sd">   Ensemble method </span>
 <span class="sd">    `Calculate the Maximum/Minimum/Average and  Majority Voting for the detection algorithm based on the threshold set for the score`_</span>
 <span class="sd">    </span>
+<span class="sd">Parameters</span>
+<span class="sd">----------</span>
+<span class="sd">    endog :int(lower = 2,upper = None,default = 3)</span>
+<span class="sd">        Array like time series.</span>
+<span class="sd">    threshold :float(lower = 0,upper = 1,default = 0.5)</span>
+<span class="sd">    </span>
+<span class="sd">    norm :str(default=&#39;l2&#39;,values=[&#39;l1&#39;, &#39;l2&#39;, &#39;max&#39;])</span>
+<span class="sd">        The norm to use to normalize each non zero sample.</span>
+<span class="sd">    use_columns :Set</span>
+<span class="sd">        A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</span>
+<span class="sd">    exclude_columns :Set</span>
+<span class="sd">        A set of column indices to not operate on. Applicable only if \&quot;use_columns\&quot; is not provided.</span>
+<span class="sd">    return_result :Enumeration</span>
+<span class="sd">        Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</span>
+<span class="sd">    use_semantic_types :Bool</span>
+<span class="sd">        Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe</span>
+<span class="sd">    add_index_columns :Bool</span>
+<span class="sd">        Also include primary index columns if input data has them. Applicable only if \&quot;return_result\&quot; is set to \&quot;new\&quot;.</span>
+<span class="sd">    error_on_no_input :Bool</span>
+<span class="sd">        Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</span>
+<span class="sd">    return_semantic_type :Enumeration[str]</span>
+<span class="sd">        Decides what semantic type to attach to generated attributes</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="n">metadata</span> <span class="o">=</span> <span class="n">metadata_base</span><span class="o">.</span><span class="n">PrimitiveMetadata</span><span class="p">({</span>
