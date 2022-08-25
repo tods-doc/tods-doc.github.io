@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Welcome to TODS’s documentation! &#8212; TODS 0.0.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Overview" href="overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/tods_menu_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">TODS 0.0.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Documentation:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PythonPathCheatSheet.html">
+   Python Path Cheat Sheet
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API Documents:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.data_processing.html">
+   tods.data_processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.timeseries_processing.html">
+   tods.timeseries_processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.feature_analysis.html">
+   tods.feature_analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.detection_algorithm.html">
+   tods.detection_algorithm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.reinforcement.html">
+   tods.reinforcement
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/datamllab/tods"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/index.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Welcome to TODS’s documentation!
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation">
+     Installation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+    <ul class="nav section-nav flex-column">
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indices-and-tables">
+   Indices and tables
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Welcome to TODS’s documentation!</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Welcome to TODS’s documentation!
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation">
+     Installation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+    <ul class="nav section-nav flex-column">
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indices-and-tables">
+   Indices and tables
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="welcome-to-tods-s-documentation">
+<h1>Welcome to TODS’s documentation!<a class="headerlink" href="#welcome-to-tods-s-documentation" title="Permalink to this headline">#</a></h1>
+<a class="reference internal image-reference" href="_images/tods_logo.png"><img alt="_images/tods_logo.png" src="_images/tods_logo.png" style="width: 400px;" /></a>
+<p>TODS is a full-stack automated machine learning system for outlier detection on multivariate time-series data. TODS provides exahaustive modules for building machine learning-based outlier detection systems including: data processing, time series processing, feature analysis (extraction), detection algorithms, and reinforcement module. The functionalities provided via these modules including: data preprocessing for general purposes, time series data smoothing/transformation, extracting features from time/frequency domains, various detection algorithms, and involving human expertises to calibrate the system. Three common outlier detection scenarios on time-series data can be performed: point-wise detection (time points as outliers), pattern-wise detection (subsequences as outliers), and system-wise detection (sets of time series as outliers), and wide-range of corresponding algorithms are provided in TODS. This package is developed by <a class="reference external" href="https://people.engr.tamu.edu/xiahu/index.html">DATA Lab &#64; Rice University</a>.</p>
+<p>TODS is featured for:</p>
+<ul class="simple">
+<li><p><strong>Full Stack Machine Learning System</strong> which supports exhaustive components from preprocessings, feature extraction, detection algorithms and also human-in-the loop interface.</p></li>
+<li><p><strong>Wide-range of Algorithms</strong>, including all of the point-wise detection algorithms supported by <a class="reference external" href="https://github.com/yzhao062/pyod">PyOD</a>, state-of-the-art pattern-wise (collective) detection algorithms such as <a class="reference external" href="https://www.cs.utah.edu/~lifeifei/papers/deeplog.pdf">DeepLog</a>, <a class="reference external" href="https://arxiv.org/pdf/1802.04431.pdf">Telemanon</a>, and also various ensemble algorithms for performing system-wise detection.</p></li>
+<li><p><strong>Automated Machine Learning</strong> aims on providing knowledge-free process that construct optimal pipeline based on the given data by automatically searching the best combination from all of the existing modules.</p></li>
+</ul>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<p>This package works with <strong>Python 3.6</strong> and pip 19+. You need to have the following packages installed on the system (for Debian/Ubuntu):
+(if you are in China and Github is slow, you can use the mirror in <a class="reference external" href="https://gitee.com/daochenzha/tods">Gitee</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libssl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcurl4</span><span class="o">-</span><span class="n">openssl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libyaml</span><span class="o">-</span><span class="n">dev</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">libopenblas</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcap</span><span class="o">-</span><span class="n">dev</span> <span class="n">ffmpeg</span>
+</pre></div>
+</div>
+<p>Then execute <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>, the script will then install all of the packges to build up TODS.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
+<p>Examples are available in <a class="reference external" href="https://github.com/datamllab/tods/tree/master/examples">examples</a>. For basic usage, you can evaluate a pipeline on a given datasets. Here, we provide an example to load our default pipeline and evaluate it on a subset of yahoo dataset.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">tods</span> <span class="kn">import</span> <span class="n">schemas</span> <span class="k">as</span> <span class="n">schemas_utils</span>
+<span class="kn">from</span> <span class="nn">tods.utils</span> <span class="kn">import</span> <span class="n">generate_dataset_problem</span><span class="p">,</span> <span class="n">evaluate_pipeline</span>
+
+<span class="n">table_path</span> <span class="o">=</span> <span class="s1">&#39;datasets/yahoo_sub_5.csv&#39;</span>
+<span class="n">target_index</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># what column is the target</span>
+<span class="n">metric</span> <span class="o">=</span> <span class="s1">&#39;F1_MACRO&#39;</span> <span class="c1"># F1 on both label 0 and 1</span>
+
+<span class="c1"># Read data and generate dataset and problem</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">table_path</span><span class="p">)</span>
+<span class="n">dataset</span><span class="p">,</span> <span class="n">problem_description</span> <span class="o">=</span> <span class="n">generate_dataset_problem</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">target_index</span><span class="p">)</span>
+
+<span class="c1"># Load the default pipeline</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">schemas_utils</span><span class="o">.</span><span class="n">load_default_pipeline</span><span class="p">()</span>
+
+<span class="c1"># Run the pipeline</span>
+<span class="n">pipeline_result</span> <span class="o">=</span> <span class="n">evaluate_pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">metric</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We also provide AutoML support to help you automatically find a good pipeline for a your data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">axolotl.backend.simple</span> <span class="kn">import</span> <span class="n">SimpleRunner</span>
+
+<span class="kn">from</span> <span class="nn">tods.utils</span> <span class="kn">import</span> <span class="n">generate_dataset_problem</span>
+<span class="kn">from</span> <span class="nn">tods.search</span> <span class="kn">import</span> <span class="n">BruteForceSearch</span>
+
+<span class="c1"># Some information</span>
+<span class="c1">#table_path = &#39;datasets/NAB/realTweets/labeled_Twitter_volume_GOOG.csv&#39; # The path of the dataset</span>
+<span class="c1">#target_index = 2 # what column is the target</span>
+
+<span class="n">table_path</span> <span class="o">=</span> <span class="s1">&#39;datasets/yahoo_sub_5.csv&#39;</span>
+<span class="n">target_index</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># what column is the target</span>
+<span class="n">time_limit</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># How many seconds you wanna search</span>
+<span class="n">metric</span> <span class="o">=</span> <span class="s1">&#39;F1_MACRO&#39;</span> <span class="c1"># F1 on both label 0 and 1</span>
+
+<span class="c1"># Read data and generate dataset and problem</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">table_path</span><span class="p">)</span>
+<span class="n">dataset</span><span class="o">=</span> <span class="n">generate_dataset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">target_index</span><span class="o">=</span><span class="n">target_index</span><span class="p">)</span>
+<span class="n">problem_description</span> <span class="o">=</span> <span class="n">generate_problem</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">metric</span><span class="p">)</span>
+
+<span class="c1"># Start backend</span>
+<span class="n">backend</span> <span class="o">=</span> <span class="n">SimpleRunner</span><span class="p">(</span><span class="n">random_seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Start search algorithm</span>
+<span class="n">search</span> <span class="o">=</span> <span class="n">BruteForceSearch</span><span class="p">(</span><span class="n">problem_description</span><span class="o">=</span><span class="n">problem_description</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">)</span>
+
+<span class="c1"># Find the best pipeline</span>
+<span class="n">best_runtime</span><span class="p">,</span> <span class="n">best_pipeline_result</span> <span class="o">=</span> <span class="n">search</span><span class="o">.</span><span class="n">search_fit</span><span class="p">(</span><span class="n">input_data</span><span class="o">=</span><span class="p">[</span><span class="n">dataset</span><span class="p">],</span> <span class="n">time_limit</span><span class="o">=</span><span class="n">time_limit</span><span class="p">)</span>
+<span class="n">best_pipeline</span> <span class="o">=</span> <span class="n">best_runtime</span><span class="o">.</span><span class="n">pipeline</span>
+<span class="n">best_output</span> <span class="o">=</span> <span class="n">best_pipeline_result</span><span class="o">.</span><span class="n">output</span>
+
+<span class="c1"># Evaluate the best pipeline</span>
+<span class="n">best_scores</span> <span class="o">=</span> <span class="n">search</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">best_pipeline</span><span class="p">)</span><span class="o">.</span><span class="n">scores</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#tods-high-level-design">TODS High-level Design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#data-processing">Data Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#timeseries-processing">Timeseries Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#feature-analysis">Feature Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#detection-algorithms">Detection Algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#reincforcement-module">Reincforcement Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#outlier-detection-with-autoencoder-on-nab-dataset">Outlier Detection with Autoencoder on NAB Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PythonPathCheatSheet.html">Python Path Cheat Sheet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PythonPathCheatSheet.html#data-processing">Data Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PythonPathCheatSheet.html#timeseries-processing">Timeseries Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PythonPathCheatSheet.html#feature-analysis">Feature Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PythonPathCheatSheet.html#detection-algorithms">Detection Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PythonPathCheatSheet.html#reincforcement-module">Reincforcement Module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Documents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tods.data_processing.html">tods.data_processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#categoricaltobinary">CategoricalToBinary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#columnfilter">ColumnFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#columnparser">ColumnParser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#constructpredictions">ConstructPredictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#continuityvalidation">ContinuityValidation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#datasettodataframe">DatasetToDataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#duplicationvalidation">DuplicationValidation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#extractcolumnsbysemantictypes">ExtractColumnsBySemanticTypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#skimputer">SKImputer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#timeintervaltransform">TimeIntervalTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.data_processing.html#timestampvalidation">TimeStampValidation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tods.timeseries_processing.html">tods.timeseries_processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#holtsmoothing">HoltSmoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#holtwintersexponentialsmoothing">HoltWintersExponentialSmoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#movingaveragetransformer">MovingAverageTransformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#skaxiswisescaler">SKAxiswiseScaler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#skpowertransformer">SKPowerTransformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#skquantiletransformer">SKQuantileTransformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#skstandardscaler">SKStandardScaler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#simpleexponentialsmoothing">SimpleExponentialSmoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#subsequencesegmentation">SubsequenceSegmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.timeseries_processing.html#timeseriesseasonalitytrenddecomposition">TimeSeriesSeasonalityTrendDecomposition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tods.feature_analysis.html">tods.feature_analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#autocorrelation">AutoCorrelation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#bkfilter">BKFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#discretecosinetransform">DiscreteCosineTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#fastfouriertransform">FastFourierTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#hpfilter">HPFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#nonnegativematrixfactorization">NonNegativeMatrixFactorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#sktruncatedsvd">SKTruncatedSVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#spectralresidualtransform">SpectralResidualTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalabsenergy">StatisticalAbsEnergy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalabssum">StatisticalAbsSum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalgmean">StatisticalGmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalhmean">StatisticalHmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalkurtosis">StatisticalKurtosis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalmaximum">StatisticalMaximum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalmean">StatisticalMean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalmeanabs">StatisticalMeanAbs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalmeanabstemporalderivative">StatisticalMeanAbsTemporalDerivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalmeantemporalderivative">StatisticalMeanTemporalDerivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalmedian">StatisticalMedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalmedianabsolutedeviation">StatisticalMedianAbsoluteDeviation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalminimum">StatisticalMinimum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalskew">StatisticalSkew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalstd">StatisticalStd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalvar">StatisticalVar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalvariation">StatisticalVariation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalvecsum">StatisticalVecSum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalwillisonamplitude">StatisticalWillisonAmplitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#statisticalzerocrossing">StatisticalZeroCrossing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#trmf">TRMF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.feature_analysis.html#wavelettransform">WaveletTransform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tods.detection_algorithm.html">tods.detection_algorithm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#autoregodetect">AutoRegODetect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#dagmm">DAGMM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#deeplog">DeepLog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#ensemble">Ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#kdiscordodetect">KDiscordODetect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#lstmodetect">LSTMODetect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#matrixprofile">MatrixProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pcaodetect">PCAODetect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodabod">PyodABOD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodae">PyodAE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodcblof">PyodCBLOF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodcof">PyodCOF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodhbos">PyodHBOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodisolationforest">PyodIsolationForest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodknn">PyodKNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodloda">PyodLODA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodlof">PyodLOF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodmogaal">PyodMoGaal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodocsvm">PyodOCSVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodsod">PyodSOD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodsogaal">PyodSoGaal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#pyodvae">PyodVAE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#systemwisedetection">SystemWiseDetection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#telemanom">Telemanom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#uodbaseprimitive">UODBasePrimitive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tods.detection_algorithm.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tods.reinforcement.html">tods.reinforcement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tods.reinforcement.html#rulebasedfilter">RuleBasedFilter</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Overview</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By DataLab@Rice University<br/>
+  
+      &copy; Copyright 2022, DataLab@Rice University.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

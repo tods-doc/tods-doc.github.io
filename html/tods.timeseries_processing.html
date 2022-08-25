@@ -1,0 +1,770 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>tods.timeseries_processing &#8212; TODS 0.0.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tods.feature_analysis" href="tods.feature_analysis.html" />
+    <link rel="prev" title="tods.data_processing" href="tods.data_processing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/tods_menu_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">TODS 0.0.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Documentation:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PythonPathCheatSheet.html">
+   Python Path Cheat Sheet
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API Documents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.data_processing.html">
+   tods.data_processing
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   tods.timeseries_processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.feature_analysis.html">
+   tods.feature_analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.detection_algorithm.html">
+   tods.detection_algorithm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.reinforcement.html">
+   tods.reinforcement
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/datamllab/tods"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/tods.timeseries_processing.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#holtsmoothing">
+   HoltSmoothing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#holtwintersexponentialsmoothing">
+   HoltWintersExponentialSmoothing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#movingaveragetransformer">
+   MovingAverageTransformer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skaxiswisescaler">
+   SKAxiswiseScaler
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skpowertransformer">
+   SKPowerTransformer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skquantiletransformer">
+   SKQuantileTransformer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skstandardscaler">
+   SKStandardScaler
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simpleexponentialsmoothing">
+   SimpleExponentialSmoothing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsequencesegmentation">
+   SubsequenceSegmentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#timeseriesseasonalitytrenddecomposition">
+   TimeSeriesSeasonalityTrendDecomposition
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>tods.timeseries_processing</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#holtsmoothing">
+   HoltSmoothing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#holtwintersexponentialsmoothing">
+   HoltWintersExponentialSmoothing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#movingaveragetransformer">
+   MovingAverageTransformer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skaxiswisescaler">
+   SKAxiswiseScaler
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skpowertransformer">
+   SKPowerTransformer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skquantiletransformer">
+   SKQuantileTransformer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skstandardscaler">
+   SKStandardScaler
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simpleexponentialsmoothing">
+   SimpleExponentialSmoothing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsequencesegmentation">
+   SubsequenceSegmentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#timeseriesseasonalitytrenddecomposition">
+   TimeSeriesSeasonalityTrendDecomposition
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="tods-timeseries-processing">
+<h1>tods.timeseries_processing<a class="headerlink" href="#tods-timeseries-processing" title="Permalink to this headline">#</a></h1>
+<section id="holtsmoothing">
+<span id="tods-timeseries-processing-holtsmoothing"></span><h2>HoltSmoothing<a class="headerlink" href="#holtsmoothing" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.timeseries_processing.HoltSmoothing.HoltSmoothingPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.timeseries_processing.HoltSmoothing.</span></span><span class="sig-name descname"><span class="pre">HoltSmoothingPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tods.timeseries_processing.HoltSmoothing.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/timeseries_processing/HoltSmoothing.py#L107"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.timeseries_processing.HoltSmoothing.HoltSmoothingPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Holt Smoothing</dt><dd><p><a class="reference external" href="https://www.statsmodels.org/stable/generated/statsmodels.tsa.holtwinters.Holt.html#statsmodels.tsa.holtwinters.Holt">statsmodels documentation</a></p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>endog</strong> (<em>Bounded</em><em>[</em><em>int</em><em>]</em>) – Array like time series.’</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="holtwintersexponentialsmoothing">
+<span id="tods-timeseries-processing-holtwintersexponentialsmoothing"></span><h2>HoltWintersExponentialSmoothing<a class="headerlink" href="#holtwintersexponentialsmoothing" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.timeseries_processing.HoltWintersExponentialSmoothing.HoltWintersExponentialSmoothingPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.timeseries_processing.HoltWintersExponentialSmoothing.</span></span><span class="sig-name descname"><span class="pre">HoltWintersExponentialSmoothingPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tods.timeseries_processing.HoltWintersExponentialSmoothing.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/timeseries_processing/HoltWintersExponentialSmoothing.py#L106"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.timeseries_processing.HoltWintersExponentialSmoothing.HoltWintersExponentialSmoothingPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>HoltWinter Exponential Smoothing</dt><dd><p><a class="reference external" href="https://www.statsmodels.org/stable/generated/statsmodels.tsa.holtwinters.ExponentialSmoothing.html#statsmodels.tsa.holtwinters.ExponentialSmoothing">Statsmodels documentation</a></p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>endog</strong> (<em>Bounded</em><em>[</em><em>int</em><em>]</em>) – Array like time seires.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="movingaveragetransformer">
+<span id="tods-timeseries-processing-movingaveragetransformer"></span><h2>MovingAverageTransformer<a class="headerlink" href="#movingaveragetransformer" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.timeseries_processing.MovingAverageTransformer.MovingAverageTransformerPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.timeseries_processing.MovingAverageTransformer.</span></span><span class="sig-name descname"><span class="pre">MovingAverageTransformerPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tods.timeseries_processing.MovingAverageTransformer.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/timeseries_processing/MovingAverageTransformer.py#L104"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.timeseries_processing.MovingAverageTransformer.MovingAverageTransformerPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>A primitive to generate moving average</dt><dd><p>Genrates moving average based on the window_size passed as hyperparameter.
+Columns for which moving average is calculated is passed as hyperparameter . Default is all values column</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>window_size</strong> (<em>int</em><em> (</em><em>3 by default</em><em>)</em>) – Size of moving window.’</p></li>
+<li><p><strong>norm</strong> (<em>str</em><em> (</em><em>'l1'</em><em>, </em><em>'l2'</em><em> or </em><em>'max'</em><em>)</em>) – The norm to use to normalize each non zero sample.’,</p></li>
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>return_result</strong> (<em>Enumeration</em><em> (</em><em>'append'</em><em>, </em><em>'replace'</em><em> or </em><em>'new'</em><em>[</em><em>by default</em><em>]</em><em>)</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p></li>
+<li><p><strong>use_semantic_types</strong> (<em>Bool</em>) – Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
+<li><p><strong>error_on_no_input</strong> (<em>Bool</em>) – Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p></li>
+<li><p><strong>return_semantic_type</strong> (<em>str</em>) – Decides what semantic type to attach to generated attributes</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="skaxiswisescaler">
+<span id="tods-timeseries-processing-skaxiswisescaler"></span><h2>SKAxiswiseScaler<a class="headerlink" href="#skaxiswisescaler" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.timeseries_processing.SKAxiswiseScaler.SKAxiswiseScalerPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.timeseries_processing.SKAxiswiseScaler.</span></span><span class="sig-name descname"><span class="pre">SKAxiswiseScalerPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tods.timeseries_processing.SKAxiswiseScaler.Hyperparams</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/timeseries_processing/SKAxiswiseScaler.py#L124"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.timeseries_processing.SKAxiswiseScaler.SKAxiswiseScalerPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Standardize a dataset along any axis, and center to the mean and component wise scale to unit variance.</dt><dd><p>See <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.scale.html?highlight=scale#sklearn.preprocessing.scale">sklearn documentation</a> for more details.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axis</strong> (<em>int</em><em> (</em><em>0 by default</em><em>)</em><em>.</em>) – axis used to compute the means and standard deviations along. If 0, independently standardize each feature, otherwise (if 1) standardize each sample.</p></li>
+<li><p><strong>with_mean</strong> (<em>boolean</em><em>, </em><em>True by default.</em>) – If True, center the data before scaling.</p></li>
+<li><p><strong>with_std</strong> (<em>boolean</em><em>, </em><em>True by default.</em>) – If True, scale the data to unit variance (or equivalently, unit standard deviation).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="skpowertransformer">
+<span id="tods-timeseries-processing-skpowertransformer"></span><h2>SKPowerTransformer<a class="headerlink" href="#skpowertransformer" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.timeseries_processing.SKPowerTransformer.SKPowerTransformerPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.timeseries_processing.SKPowerTransformer.</span></span><span class="sig-name descname"><span class="pre">SKPowerTransformerPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tods.timeseries_processing.SKPowerTransformer.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/timeseries_processing/SKPowerTransformer.py#L116"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.timeseries_processing.SKPowerTransformer.SKPowerTransformerPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>PowerTransformer primitive using sklearn to make data more Gaussian-like.</dt><dd><p>See <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PowerTransformer.html#">sklearn documentation</a> for more details.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>str</em><em> (</em><em>'yeo-johnson'</em><em> or </em><em>'box-cox'</em><em>)</em>) – PowerTransforming algorithm to use.</p></li>
+<li><p><strong>standardize</strong> (<em>bool</em>) – Set to True to apply zero-mean, unit-variance normalization to the transformed output.</p></li>
+</ul>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Attributes<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<dl class="simple">
+<dt><a href="#id6"><span class="problematic" id="id7">lambda_</span></a>: numpy array of float, shape (n_features,)</dt><dd><p class="sd-card-text">The parameters of the power transformation for the selected features.</p>
+</dd>
+</dl>
+</div>
+</details></dd></dl>
+
+</section>
+<section id="skquantiletransformer">
+<span id="tods-timeseries-processing-skquantiletransformer"></span><h2>SKQuantileTransformer<a class="headerlink" href="#skquantiletransformer" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.timeseries_processing.SKQuantileTransformer.SKQuantileTransformerPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.timeseries_processing.SKQuantileTransformer.</span></span><span class="sig-name descname"><span class="pre">SKQuantileTransformerPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tods.timeseries_processing.SKQuantileTransformer.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/timeseries_processing/SKQuantileTransformer.py#L121"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.timeseries_processing.SKQuantileTransformer.SKQuantileTransformerPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Primitive wrapping for sklearn QuantileTransformer</dt><dd><p>See <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.QuantileTransformer.html">sklearn documentation</a> for more details.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_quantiles</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>default=1000</em><em> or </em><em>n_samples</em><em>)</em>) – Number of quantiles to be computed. It corresponds to the number of landmarks used to discretize the cumulative distribution function. If n_quantiles is larger than the number of samples, n_quantiles is set to the number of samples as a larger number of quantiles does not give a better approximation of the cumulative distribution function estimator.</p></li>
+<li><p><strong>output_distribution</strong> (<em>str</em><em>, </em><em>optional</em><em> (</em><em>default=’uniform’</em><em>)</em>) – Marginal distribution for the transformed data. The choices are ‘uniform’ (default) or ‘normal’.</p></li>
+<li><p><strong>ignore_implicit_zeros</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default=False</em><em>)</em>) – Only applies to sparse matrices. If True, the sparse entries of the matrix are discarded to compute the quantile statistics. If False, these entries are treated as zeros.</p></li>
+<li><p><strong>subsample</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>default=1e5</em><em>)</em>) – Maximum number of samples used to estimate the quantiles for computational efficiency. Note that the subsampling procedure may differ for value-identical sparse and dense matrices.</p></li>
+<li><p><strong>random_state</strong> (<em>int</em><em>, </em><em>RandomState instance</em><em> or </em><em>None</em><em>, </em><em>optional</em><em> (</em><em>default=None</em><em>)</em>) – Determines random number generation for subsampling and smoothing noise. Please see subsample for more details. Pass an int for reproducible results across multiple function calls. See Glossary</p></li>
+</ul>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Attributes<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<dl class="simple">
+<dt><a href="#id8"><span class="problematic" id="id9">n_quantiles_</span></a>: int</dt><dd><p class="sd-card-text">The actual number of quantiles used to discretize the cumulative distribution function.</p>
+</dd>
+<dt><a href="#id10"><span class="problematic" id="id11">quantiles_</span></a>: ndarray, shape (n_quantiles, n_features)</dt><dd><p class="sd-card-text">The values corresponding the quantiles of reference.</p>
+</dd>
+<dt><a href="#id12"><span class="problematic" id="id13">references_</span></a>: ndarray, shape(n_quantiles, )</dt><dd><p class="sd-card-text">Quantiles of references.</p>
+</dd>
+</dl>
+</div>
+</details></dd></dl>
+
+</section>
+<section id="skstandardscaler">
+<span id="tods-timeseries-processing-skstandardscaler"></span><h2>SKStandardScaler<a class="headerlink" href="#skstandardscaler" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.timeseries_processing.SKStandardScaler.SKStandardScalerPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.timeseries_processing.SKStandardScaler.</span></span><span class="sig-name descname"><span class="pre">SKStandardScalerPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tods.timeseries_processing.SKStandardScaler.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/timeseries_processing/SKStandardScaler.py#L117"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.timeseries_processing.SKStandardScaler.SKStandardScalerPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Standardize features by removing the mean and scaling to unit variance.</dt><dd><p>See <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html?highlight=standardscaler#sklearn.preprocessing.StandardScaler">sklearn documentation</a> for more details.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>with_mean</strong> (<em>bool</em>) – If True, center the data before scaling. This does not work (and will raise an exception) when attempted on sparse matrices, because centering them entails building a dense matrix which in common use cases is likely to be too large to fit in memory.</p></li>
+<li><p><strong>with_std</strong> (<em>bool</em>) – If True, scale the data to unit variance (or equivalently, unit standard deviation).</p></li>
+</ul>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Attributes<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<dl class="simple">
+<dt><a href="#id14"><span class="problematic" id="id15">scale_</span></a>: ndarray or None, shape (n_features,)</dt><dd><p class="sd-card-text">Per feature relative scaling of the data. This is calculated using np.sqrt(<a href="#id16"><span class="problematic" id="id17">var_</span></a>). Equal to None when with_std=False.</p>
+</dd>
+<dt><a href="#id18"><span class="problematic" id="id19">mean_</span></a>: ndarray or None, shape (n_features,)</dt><dd><p class="sd-card-text">The mean value for each feature in the training set. Equal to None when with_mean=False.</p>
+</dd>
+<dt><a href="#id20"><span class="problematic" id="id21">var_</span></a>: ndarray or None, shape (n_features,)</dt><dd><p class="sd-card-text">The variance for each feature in the training set. Used to compute <a href="#id22"><span class="problematic" id="id23">scale_</span></a>. Equal to None when with_std=False.</p>
+</dd>
+<dt><a href="#id24"><span class="problematic" id="id25">n_samples_seen_</span></a>: int or array, shape (n_features,)</dt><dd><p class="sd-card-text">The number of samples processed by the estimator for each feature. If there are not missing samples, the n_samples_seen will be an integer, otherwise it will be an array. Will be reset on new calls to fit, but increments across partial_fit calls.</p>
+</dd>
+</dl>
+</div>
+</details></dd></dl>
+
+</section>
+<section id="simpleexponentialsmoothing">
+<span id="tods-timeseries-processing-simpleexponentialsmoothing"></span><h2>SimpleExponentialSmoothing<a class="headerlink" href="#simpleexponentialsmoothing" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.timeseries_processing.SimpleExponentialSmoothing.SimpleExponentialSmoothingPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.timeseries_processing.SimpleExponentialSmoothing.</span></span><span class="sig-name descname"><span class="pre">SimpleExponentialSmoothingPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tods.timeseries_processing.SimpleExponentialSmoothing.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/timeseries_processing/SimpleExponentialSmoothing.py#L111"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.timeseries_processing.SimpleExponentialSmoothing.SimpleExponentialSmoothingPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Primitive wrapping for simple exponential smoothing</dt><dd><p><a class="reference external" href="https://www.statsmodels.org/stable/generated/statsmodels.tsa.holtwinters.SimpleExpSmoothing.html#statsmodels.tsa.holtwinters.SimpleExpSmoothing">statsmodels documentation</a></p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>endog</strong> (<em>int</em><em> (</em><em>lower = 2</em><em>, </em><em>upper = None</em><em>, </em><em>default = 3</em><em>)</em>) – Array like time series</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="subsequencesegmentation">
+<span id="tods-timeseries-processing-subsequencesegmentation"></span><h2>SubsequenceSegmentation<a class="headerlink" href="#subsequencesegmentation" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.timeseries_processing.SubsequenceSegmentation.SubsequenceSegmentationPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.timeseries_processing.SubsequenceSegmentation.</span></span><span class="sig-name descname"><span class="pre">SubsequenceSegmentationPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">d3m.primitive_interfaces.base.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/timeseries_processing/SubsequenceSegmentation.py#L122"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.timeseries_processing.SubsequenceSegmentation.SubsequenceSegmentationPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>Subsequence Time Seires Segmentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>window_size</strong> (<em>int</em>) – The moving window size.</p></li>
+<li><p><strong>step</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>default=1</em><em>)</em>) – The displacement for moving window.</p></li>
+<li><p><strong>return_numpy</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default=True</em><em>)</em>) – If True, return the data format in 3d numpy array.</p></li>
+<li><p><strong>flatten</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default=True</em><em>)</em>) – If True, flatten the returned array in 2d.</p></li>
+<li><p><strong>flatten_order</strong> (<em>str</em><em>, </em><em>optional</em><em> (</em><em>default='F'</em><em>)</em>) – Decide the order of the flatten for multivarite sequences.
+‘C’ means to flatten in row-major (C-style) order.
+‘F’ means to flatten in column-major (Fortran- style) order.
+‘A’ means to flatten in column-major order if a is Fortran contiguous in memory,
+row-major order otherwise. ‘K’ means to flatten a in the order the elements occur in memory.
+The default is ‘F’.</p></li>
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>return_result</strong> (<em>Enumeration</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p></li>
+<li><p><strong>use_semantic_types</strong> (<em>Bool</em>) – Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe.</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
+<li><p><strong>error_on_no_input</strong> (<em>Bool</em>) – Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p></li>
+<li><p><strong>return_semantic_type</strong> (<em>Enumeration</em><em>[</em><em>str</em><em>]</em><em>(</em>) – Decides what semantic type to attach to generated attributes’</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="timeseriesseasonalitytrenddecomposition">
+<span id="tods-timeseries-processing-timeseriesseasonalitytrenddecomposition"></span><h2>TimeSeriesSeasonalityTrendDecomposition<a class="headerlink" href="#timeseriesseasonalitytrenddecomposition" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition.TimeSeriesSeasonalityTrendDecompositionPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition.</span></span><span class="sig-name descname"><span class="pre">TimeSeriesSeasonalityTrendDecompositionPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">d3m.primitive_interfaces.base.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/timeseries_processing/TimeSeriesSeasonalityTrendDecomposition.py#L89"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition.TimeSeriesSeasonalityTrendDecompositionPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>A primitive to decompose time series in trend , seasonality and residual</dt><dd><p>Decomposition is done based on period(frequency) passed as hyperparameter
+The columns for which decomposition is done is passed as hyperparameter .Default is all value columns</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>period</strong> (<em>int</em><em>(</em><em>default=1</em><em>)</em><em>,</em>) – Window Size for decomposition</p></li>
+<li><p><strong>model</strong> (<em>(</em><em>default='additive'</em><em>)</em>) – Window Size for decomposition</p></li>
+<li><p><strong>use_columns</strong> (<em>Set</em><em>(</em><em>elements=hyperparams.Hyperparameter</em><em>[</em><em>int</em><em>]</em><em>(</em><em>-1</em><em>)</em><em>)</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em><em>(</em><em>elements=hyperparams.Hyperparameter</em><em>[</em><em>int</em><em>]</em><em>(</em><em>-1</em><em>)</em><em>)</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>return_result</strong> (<em>Enumeration</em><em>(</em><em>'append'</em><em>, </em><em>'replace'</em><em>, </em><em>'new'</em><em>)</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p></li>
+<li><p><strong>use_semantic_types</strong> (<em>Bool</em>) – Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em><em>(</em><em>default=False</em><em>)</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
+<li><p><strong>error_on_no_input</strong> (<em>Bool</em><em>(</em><em>default=True</em><em>)</em>) – Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p></li>
+<li><p><strong>return_semantic_type</strong> (<em>Enumeration</em><em>[</em><em>str</em><em>]</em>) – Decides what semantic type to attach to generated attributes’,</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="tods.data_processing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">tods.data_processing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="tods.feature_analysis.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">tods.feature_analysis</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By DataLab@Rice University<br/>
+  
+      &copy; Copyright 2022, DataLab@Rice University.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

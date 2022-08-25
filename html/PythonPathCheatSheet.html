@@ -1,0 +1,769 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Python Path Cheat Sheet &#8212; TODS 0.0.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tods.data_processing" href="tods.data_processing.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/tods_menu_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">TODS 0.0.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Documentation:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Python Path Cheat Sheet
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API Documents:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.data_processing.html">
+   tods.data_processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.timeseries_processing.html">
+   tods.timeseries_processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.feature_analysis.html">
+   tods.feature_analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.detection_algorithm.html">
+   tods.detection_algorithm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.reinforcement.html">
+   tods.reinforcement
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/datamllab/tods"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/PythonPathCheatSheet.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing">
+   Data Processing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#timeseries-processing">
+   Timeseries Processing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feature-analysis">
+   Feature Analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detection-algorithms">
+   Detection Algorithms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reincforcement-module">
+   Reincforcement Module
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Python Path Cheat Sheet</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing">
+   Data Processing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#timeseries-processing">
+   Timeseries Processing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feature-analysis">
+   Feature Analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detection-algorithms">
+   Detection Algorithms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reincforcement-module">
+   Reincforcement Module
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="python-path-cheat-sheet">
+<h1>Python Path Cheat Sheet<a class="headerlink" href="#python-path-cheat-sheet" title="Permalink to this headline">#</a></h1>
+<section id="data-processing">
+<h2>Data Processing<a class="headerlink" href="#data-processing" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><table class="colwidths-given table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Python Path</p></th>
+<th class="head"><p>Primitives</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><cite>tods.data_processing.categorical_to_binary</cite></p></td>
+<td><p><a class="reference internal" href="tods.data_processing.html#tods-data-processing-categoricaltobinary"><span class="std std-ref">tods.data_processing.CategoricalToBinary:CategoricalToBinaryPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.data_processing.column_filter</cite></p></td>
+<td><p><a class="reference internal" href="tods.data_processing.html#tods-data-processing-columnfilter"><span class="std std-ref">tods.data_processing.ColumnFilter:ColumnFilterPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.data_processing.column_parser</cite></p></td>
+<td><p><a class="reference internal" href="tods.data_processing.html#tods-data-processing-columnparser"><span class="std std-ref">tods.data_processing.ColumnParser:ColumnParserPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.data_processing.construct_predictions</cite></p></td>
+<td><p><a class="reference internal" href="tods.data_processing.html#tods-data-processing-constructpredictions"><span class="std std-ref">tods.data_processing.ConstructPredictions:ConstructPredictionsPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.data_processing.continuity_validation</cite></p></td>
+<td><p><a class="reference internal" href="tods.data_processing.html#tods-data-processing-continuityvalidation"><span class="std std-ref">tods.data_processing.ContinuityValidation:ContinuityValidationPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.data_processing.dataset_to_dataframe</cite></p></td>
+<td><p><a class="reference internal" href="tods.data_processing.html#tods-data-processing-datasettodataframe"><span class="std std-ref">tods.data_processing.DatasetToDataframe:DatasetToDataFramePrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.data_processing.duplication_validation</cite></p></td>
+<td><p><a class="reference internal" href="tods.data_processing.html#tods-data-processing-duplicationvalidation"><span class="std std-ref">tods.data_processing.DuplicationValidation:DuplicationValidationPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.data_processing.extract_columns_by_semantic_types</cite></p></td>
+<td><p><a class="reference internal" href="tods.data_processing.html#tods-data-processing-extractcolumnsbysemantictypes"><span class="std std-ref">tods.data_processing.ExtractColumnsBySemanticTypes:ExtractColumnsBySemanticTypesPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.data_processing.impute_missing</cite></p></td>
+<td><p><a class="reference internal" href="tods.data_processing.html#tods-data-processing-skimputer"><span class="std std-ref">tods.data_processing.SKImputer:SKImputerPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.data_processing.time_interval_transform</cite></p></td>
+<td><p><a class="reference internal" href="tods.data_processing.html#tods-data-processing-timeintervaltransform"><span class="std std-ref">tods.data_processing.TimeIntervalTransform:TimeIntervalTransformPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.data_processing.timestamp_validation</cite></p></td>
+<td><p><a class="reference internal" href="tods.data_processing.html#tods-data-processing-timestampvalidation"><span class="std std-ref">tods.data_processing.TimeStampValidation:TimeStampValidationPrimitive</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="timeseries-processing">
+<h2>Timeseries Processing<a class="headerlink" href="#timeseries-processing" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><table class="colwidths-given table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Python Path</p></th>
+<th class="head"><p>Primitives</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><cite>tods.timeseries_processing.transformation.holt_smoothing</cite></p></td>
+<td><p><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-holtsmoothing"><span class="std std-ref">tods.timeseries_processing.HoltSmoothing:HoltSmoothingPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.timeseries_processing.transformation.holt_winters_exponential_smoothing</cite></p></td>
+<td><p><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-holtwintersexponentialsmoothing"><span class="std std-ref">tods.timeseries_processing.HoltWintersExponentialSmoothing:HoltWintersExponentialSmoothingPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.timeseries_processing.transformation.moving_average_transform</cite></p></td>
+<td><p><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-movingaveragetransformer"><span class="std std-ref">tods.timeseries_processing.MovingAverageTransformer:MovingAverageTransformerPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.timeseries_processing.transformation.axiswise_scaler</cite></p></td>
+<td><p><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skaxiswisescaler"><span class="std std-ref">tods.timeseries_processing.SKAxiswiseScaler:SKAxiswiseScalerPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.timeseries_processing.transformation.power_transformer</cite></p></td>
+<td><p><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skpowertransformer"><span class="std std-ref">tods.timeseries_processing.SKPowerTransformer:SKPowerTransformerPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.timeseries_processing.transformation.quantile_transformer</cite></p></td>
+<td><p><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skquantiletransformer"><span class="std std-ref">tods.timeseries_processing.SKQuantileTransformer:SKQuantileTransformerPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.timeseries_processing.transformation.standard_scaler</cite></p></td>
+<td><p><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-skstandardscaler"><span class="std std-ref">tods.timeseries_processing.SKStandardScaler:SKStandardScalerPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.timeseries_processing.transformation.simple_exponential_smoothing</cite></p></td>
+<td><p><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-simpleexponentialsmoothing"><span class="std std-ref">tods.timeseries_processing.SimpleExponentialSmoothing:SimpleExponentialSmoothingPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.timeseries_processing.subsequence_segmentation</cite></p></td>
+<td><p><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-subsequencesegmentation"><span class="std std-ref">tods.timeseries_processing.SubsequenceSegmentation:SubsequenceSegmentationPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.timeseries_processing.decomposition.time_series_seasonality_trend_decomposition</cite></p></td>
+<td><p><a class="reference internal" href="tods.timeseries_processing.html#tods-timeseries-processing-timeseriesseasonalitytrenddecomposition"><span class="std std-ref">tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition:TimeSeriesSeasonalityTrendDecompositionPrimitive</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="feature-analysis">
+<h2>Feature Analysis<a class="headerlink" href="#feature-analysis" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><table class="colwidths-given table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Python Path</p></th>
+<th class="head"><p>Primitives</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.auto_correlation</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-autocorrelation"><span class="std std-ref">tods.feature_analysis.AutoCorrelation:AutoCorrelationPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.bk_filter</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-bkfilter"><span class="std std-ref">tods.feature_analysis.BKFilter:BKFilterPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.discrete_cosine_transform</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-discretecosinetransform"><span class="std std-ref">tods.feature_analysis.DiscreteCosineTransform:DiscreteCosineTransformPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.fast_fourier_transform</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-fastfouriertransform"><span class="std std-ref">tods.feature_analysis.FastFourierTransform:FastFourierTransformPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.hp_filter</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-hpfilter"><span class="std std-ref">tods.feature_analysis.HPFilter:HPFilterPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.non_negative_matrix_factorization</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-nonnegativematrixfactorization"><span class="std std-ref">tods.feature_analysis.NonNegativeMatrixFactorization:NonNegativeMatrixFactorizationPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.truncated_svd</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-sktruncatedsvd"><span class="std std-ref">tods.feature_analysis.SKTruncatedSVD:SKTruncatedSVDPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.spectral_residual_transform</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-spectralresidualtransform"><span class="std std-ref">tods.feature_analysis.SpectralResidualTransform:SpectralResidualTransformPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.statistical_abs_energy</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalabsenergy"><span class="std std-ref">tods.feature_analysis.StatisticalAbsEnergy:StatisticalAbsEnergyPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.statistical_abs_sum</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalabssum"><span class="std std-ref">tods.feature_analysis.StatisticalAbsSum:StatisticalAbsSumPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.statistical_g_mean</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalgmean"><span class="std std-ref">tods.feature_analysis.StatisticalGmean:StatisticalGmeanPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.statistical_h_mean</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalhmean"><span class="std std-ref">tods.feature_analysis.StatisticalHmean:StatisticalHmeanPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.statistical_kurtosis</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalkurtosis"><span class="std std-ref">tods.feature_analysis.StatisticalKurtosis:StatisticalKurtosisPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.statistical_maximum</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmaximum"><span class="std std-ref">tods.feature_analysis.StatisticalMaximum:StatisticalMaximumPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.statistical_mean</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmean"><span class="std std-ref">tods.feature_analysis.StatisticalMean:StatisticalMeanPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.statistical_mean_abs</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeanabs"><span class="std std-ref">tods.feature_analysis.StatisticalMeanAbs:StatisticalMeanAbsPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.statistical_mean_abs_temporal_derivative</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeanabstemporalderivative"><span class="std std-ref">tods.feature_analysis.StatisticalMeanAbsTemporalDerivative:StatisticalMeanAbsTemporalDerivativePrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.statistical_mean_temporal_derivative</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmeantemporalderivative"><span class="std std-ref">tods.feature_analysis.StatisticalMeanTemporalDerivative:StatisticalMeanTemporalDerivativePrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.statistical_median</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmedian"><span class="std std-ref">tods.feature_analysis.StatisticalMedian:StatisticalMedianPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.statistical_median_abs_deviation</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalmedianabsolutedeviation"><span class="std std-ref">tods.feature_analysis.StatisticalMedianAbsoluteDeviation:StatisticalMedianAbsoluteDeviationPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.statistical_minimum</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalminimum"><span class="std std-ref">tods.feature_analysis.StatisticalMinimum:StatisticalMinimumPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.statistical_skew</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalskew"><span class="std std-ref">tods.feature_analysis.StatisticalSkew:StatisticalSkewPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.statistical_std</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalstd"><span class="std std-ref">tods.feature_analysis.StatisticalStd:StatisticalStdPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.statistical_var</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvar"><span class="std std-ref">tods.feature_analysis.StatisticalVar:StatisticalVarPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.statistical_variation</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvariation"><span class="std std-ref">tods.feature_analysis.StatisticalVariation:StatisticalVariationPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.statistical_vec_sum</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalvecsum"><span class="std std-ref">tods.feature_analysis.StatisticalVecSum:StatisticalVecSumPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.statistical_willison_amplitude</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalwillisonamplitude"><span class="std std-ref">tods.feature_analysis.StatisticalWillisonAmplitude:StatisticalWillisonAmplitudePrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.statistical_zero_crossing</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-statisticalzerocrossing"><span class="std std-ref">tods.feature_analysis.StatisticalZeroCrossing:StatisticalZeroCrossingPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.feature_analysis.trmf</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-trmf"><span class="std std-ref">tods.feature_analysis.TRMF:TRMFPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.feature_analysis.wavelet_transform</cite></p></td>
+<td><p><a class="reference internal" href="tods.feature_analysis.html#tods-feature-analysis-wavelettransform"><span class="std std-ref">tods.feature_analysis.WaveletTransform:WaveletTransformPrimitive</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="detection-algorithms">
+<h2>Detection Algorithms<a class="headerlink" href="#detection-algorithms" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><table class="colwidths-given table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Python Path</p></th>
+<th class="head"><p>Primitives</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.AutoRegODetector</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-autoregodetect"><span class="std std-ref">tods.detection_algorithm.AutoRegODetect:AutoRegODetectorPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.dagmm</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-dagmm"><span class="std std-ref">tods.detection_algorithm.DAGMM:DAGMMPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.deeplog</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-deeplog"><span class="std std-ref">tods.detection_algorithm.DeepLog:DeepLogPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.Ensemble</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-ensemble"><span class="std std-ref">tods.detection_algorithm.Ensemble:EnsemblePrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.KDiscordODetector</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-kdiscordodetect"><span class="std std-ref">tods.detection_algorithm.KDiscordODetect:KDiscordODetectorPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.LSTMODetector</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-lstmodetect"><span class="std std-ref">tods.detection_algorithm.LSTMODetect:LSTMODetectorPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.matrix_profile</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-matrixprofile"><span class="std std-ref">tods.detection_algorithm.MatrixProfile:MatrixProfilePrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.PCAODetector</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pcaodetect"><span class="std std-ref">tods.detection_algorithm.PCAODetect:PCAODetectorPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.pyod_abod</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodabod"><span class="std std-ref">tods.detection_algorithm.PyodABOD:ABODPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.pyod_ae</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodae"><span class="std std-ref">tods.detection_algorithm.PyodAE:AutoEncoderPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.pyod_cblof</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodcblof"><span class="std std-ref">tods.detection_algorithm.PyodCBLOF:CBLOFPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.pyod_cof</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodcof"><span class="std std-ref">tods.detection_algorithm.PyodCOF:COFPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.pyod_hbos</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodhbos"><span class="std std-ref">tods.detection_algorithm.PyodHBOS:HBOSPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.pyod_iforest</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodisolationforest"><span class="std std-ref">tods.detection_algorithm.PyodIsolationForest:IsolationForestPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.pyod_knn</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodknn"><span class="std std-ref">tods.detection_algorithm.PyodKNN:KNNPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.pyod_loda</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodloda"><span class="std std-ref">tods.detection_algorithm.PyodLODA:LODAPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.pyod_lof</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodlof"><span class="std std-ref">tods.detection_algorithm.PyodLOF:LOFPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.pyod_mogaal</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodmogaal"><span class="std std-ref">tods.detection_algorithm.PyodMoGaal:Mo_GaalPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.pyod_ocsvm</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodocsvm"><span class="std std-ref">tods.detection_algorithm.PyodOCSVM:OCSVMPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.pyod_sod</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodsod"><span class="std std-ref">tods.detection_algorithm.PyodSOD:SODPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.pyod_sogaal</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodsogaal"><span class="std std-ref">tods.detection_algorithm.PyodSoGaal:So_GaalPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.pyod_vae</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-pyodvae"><span class="std std-ref">tods.detection_algorithm.PyodVAE:VariationalAutoEncoderPrimitive</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><cite>tods.detection_algorithm.system_wise_detection</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-systemwisedetection"><span class="std std-ref">tods.detection_algorithm.SystemWiseDetection:SystemWiseDetectionPrimitive</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>tods.detection_algorithm.telemanom</cite></p></td>
+<td><p><a class="reference internal" href="tods.detection_algorithm.html#tods-detection-algorithm-telemanom"><span class="std std-ref">tods.detection_algorithm.Telemanom:TelemanomPrimitive</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="reincforcement-module">
+<h2>Reincforcement Module<a class="headerlink" href="#reincforcement-module" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><table class="colwidths-given table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Python Path</p></th>
+<th class="head"><p>Primitives</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><cite>tods.reinforcement.rule_filter</cite></p></td>
+<td><p><a class="reference internal" href="tods.reinforcement.html#tods-reinforcement-rulebasedfilter"><span class="std std-ref">tods.reinforcement.RuleBasedFilter:RuleBasedFilter</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="getting_started.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Getting Started</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="tods.data_processing.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">tods.data_processing</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By DataLab@Rice University<br/>
+  
+      &copy; Copyright 2022, DataLab@Rice University.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>tods.data_processing &#8212; TODS 0.0.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tods.timeseries_processing" href="tods.timeseries_processing.html" />
+    <link rel="prev" title="Python Path Cheat Sheet" href="PythonPathCheatSheet.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/tods_menu_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">TODS 0.0.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Documentation:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PythonPathCheatSheet.html">
+   Python Path Cheat Sheet
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API Documents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   tods.data_processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.timeseries_processing.html">
+   tods.timeseries_processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.feature_analysis.html">
+   tods.feature_analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.detection_algorithm.html">
+   tods.detection_algorithm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tods.reinforcement.html">
+   tods.reinforcement
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/datamllab/tods"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/tods.data_processing.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categoricaltobinary">
+   CategoricalToBinary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#columnfilter">
+   ColumnFilter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#columnparser">
+   ColumnParser
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructpredictions">
+   ConstructPredictions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuityvalidation">
+   ContinuityValidation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datasettodataframe">
+   DatasetToDataframe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#duplicationvalidation">
+   DuplicationValidation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extractcolumnsbysemantictypes">
+   ExtractColumnsBySemanticTypes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skimputer">
+   SKImputer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#timeintervaltransform">
+   TimeIntervalTransform
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#timestampvalidation">
+   TimeStampValidation
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>tods.data_processing</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categoricaltobinary">
+   CategoricalToBinary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#columnfilter">
+   ColumnFilter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#columnparser">
+   ColumnParser
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructpredictions">
+   ConstructPredictions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuityvalidation">
+   ContinuityValidation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datasettodataframe">
+   DatasetToDataframe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#duplicationvalidation">
+   DuplicationValidation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extractcolumnsbysemantictypes">
+   ExtractColumnsBySemanticTypes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skimputer">
+   SKImputer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#timeintervaltransform">
+   TimeIntervalTransform
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#timestampvalidation">
+   TimeStampValidation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="tods-data-processing">
+<h1>tods.data_processing<a class="headerlink" href="#tods-data-processing" title="Permalink to this headline">#</a></h1>
+<section id="categoricaltobinary">
+<span id="tods-data-processing-categoricaltobinary"></span><h2>CategoricalToBinary<a class="headerlink" href="#categoricaltobinary" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.data_processing.CategoricalToBinary.CategoricalToBinaryPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.data_processing.CategoricalToBinary.</span></span><span class="sig-name descname"><span class="pre">CategoricalToBinaryPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tods.data_processing.CategoricalToBinary.Hyperparams</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/data_processing/CategoricalToBinary.py#L119"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.data_processing.CategoricalToBinary.CategoricalToBinaryPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>A primitive which will convert all the distinct values present in a column to a binary represntation with each distinct value having a different column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>return_result</strong> (<em>Enumeration</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p></li>
+<li><p><strong>use_semantic_types</strong> (<em>Bool</em>) – Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe.</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
+<li><p><strong>error_on_no_input</strong> (<em>Bool</em><em>(</em>) – Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p></li>
+<li><p><strong>return_semantic_type</strong> (<em>Enumeration</em><em>[</em><em>str</em><em>]</em><em>(</em>) – Decides what semantic type to attach to generated attributes’</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="columnfilter">
+<span id="tods-data-processing-columnfilter"></span><h2>ColumnFilter<a class="headerlink" href="#columnfilter" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.data_processing.ColumnFilter.ColumnFilterPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.data_processing.ColumnFilter.</span></span><span class="sig-name descname"><span class="pre">ColumnFilterPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tods.data_processing.ColumnFilter.Hyperparams</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/data_processing/ColumnFilter.py#L91"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.data_processing.ColumnFilter.ColumnFilterPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>A primitive that filters out columns of wrong shape in DataFrame (specifically columns generated by some features analysis).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataframe_resource</strong> (<em>union</em><em>[</em><em>str</em><em>, </em><em>None</em><em>]</em>) – Resource ID of a DataFrame to extract if there are multiple tabular resources inside a Dataset and none is a dataset entry point.</p></li>
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>return_result</strong> (<em>hyperparams.Enumeration</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p></li>
+<li><p><strong>use_semantic_types</strong> (<em>Bool</em>) – Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
+<li><p><strong>error_on_no_input</strong> (<em>Bool</em>) – Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p></li>
+<li><p><strong>return_semantic_type</strong> (<em>Enumeration</em><em>[</em><em>str</em><em>]</em>) – Decides what semantic type to attach to generated attributes</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="columnparser">
+<span id="tods-data-processing-columnparser"></span><h2>ColumnParser<a class="headerlink" href="#columnparser" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.data_processing.ColumnParser.ColumnParserPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.data_processing.ColumnParser.</span></span><span class="sig-name descname"><span class="pre">ColumnParserPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">d3m.primitive_interfaces.base.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/data_processing/ColumnParser.py#L81"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.data_processing.ColumnParser.ColumnParserPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>A primitive which parses strings into their parsed values.</p>
+<p>It goes over all columns (by default, controlled by <code class="docutils literal notranslate"><span class="pre">use_columns</span></code>, <code class="docutils literal notranslate"><span class="pre">exclude_columns</span></code>)
+and checks those with structural type <code class="docutils literal notranslate"><span class="pre">str</span></code> if they have a semantic type suggesting
+that they are a boolean value, categorical, integer, float, or time (by default,
+controlled by <code class="docutils literal notranslate"><span class="pre">parse_semantic_types</span></code>). Categorical values are converted with
+hash encoding.</p>
+<p>What is returned is controlled by <code class="docutils literal notranslate"><span class="pre">return_result</span></code> and <code class="docutils literal notranslate"><span class="pre">add_index_columns</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parse_semantic_types</strong> (<em>Set</em>) – A set of semantic types to parse. One can provide a subset of supported semantic types to limit what the primitive parses.</p></li>
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>return_result</strong> (<em>Enumeration</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned?</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
+<li><p><strong>hyperparams.UniformBool</strong> (<em>parse_categorical_target_columns =</em>) – Should it parse also categorical target columns?</p></li>
+<li><p><strong>replace_index_columns</strong> (<em>Bool</em>) – Replace primary index columns even if otherwise appending columns. Applicable only if “return_result” is set to “append”.</p></li>
+<li><p><strong>fuzzy_time_parsing</strong> (<em>Bool</em>) – Use fuzzy time parsing.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="constructpredictions">
+<span id="tods-data-processing-constructpredictions"></span><h2>ConstructPredictions<a class="headerlink" href="#constructpredictions" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.data_processing.ConstructPredictions.ConstructPredictionsPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.data_processing.ConstructPredictions.</span></span><span class="sig-name descname"><span class="pre">ConstructPredictionsPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">d3m.primitive_interfaces.base.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/data_processing/ConstructPredictions.py#L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.data_processing.ConstructPredictions.ConstructPredictionsPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>A primitive which takes as input a DataFrame and outputs a DataFrame in Lincoln Labs predictions
+format: first column is a d3mIndex column (and other primary index columns, e.g., for object detection
+problem), and then predicted targets, each in its column, followed by optional confidence column(s).</p>
+<p>It supports both input columns annotated with semantic types (<code class="docutils literal notranslate"><span class="pre">https://metadata.datadrivendiscovery.org/types/PrimaryKey</span></code>,
+<code class="docutils literal notranslate"><span class="pre">https://metadata.datadrivendiscovery.org/types/PrimaryMultiKey</span></code>, <code class="docutils literal notranslate"><span class="pre">https://metadata.datadrivendiscovery.org/types/PredictedTarget</span></code>,
+<code class="docutils literal notranslate"><span class="pre">https://metadata.datadrivendiscovery.org/types/Confidence</span></code>), or trying to reconstruct metadata.
+This is why the primitive takes also additional input of a reference DataFrame which should
+have metadata to help reconstruct missing metadata. If metadata is missing, the primitive
+assumes that all <code class="docutils literal notranslate"><span class="pre">inputs</span></code> columns are predicted targets, without confidence column(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If metadata reconstruction happens, this is used for reference columns.
+If any specified column is not a primary index or a predicted target, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. If metadata reconstruction happens, this is used for reference columns. Applicable only if “use_columns” is not provided.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="continuityvalidation">
+<span id="tods-data-processing-continuityvalidation"></span><h2>ContinuityValidation<a class="headerlink" href="#continuityvalidation" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.data_processing.ContinuityValidation.ContinuityValidationPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.data_processing.ContinuityValidation.</span></span><span class="sig-name descname"><span class="pre">ContinuityValidationPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">d3m.primitive_interfaces.base.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/data_processing/ContinuityValidation.py#L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.data_processing.ContinuityValidation.ContinuityValidationPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>Check whether the seires data is consitent in time interval and provide processing if not consistent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>continuity_option</strong> (<em>enumeration</em>) – Choose ablation or imputation.
+ablation: delete some rows and increase timestamp interval to keep the timestamp consistent
+imputation: linearly imputate the absent timestamps to keep the timestamp consistent</p></li>
+<li><p><strong>interval</strong> (<em>float</em>) – Only used in imputation, give the timestamp interval. ‘interval’ should be an integral multiple of ‘timestamp’ or ‘timestamp’ should be an integral multiple of ‘interval’</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="datasettodataframe">
+<span id="tods-data-processing-datasettodataframe"></span><h2>DatasetToDataframe<a class="headerlink" href="#datasettodataframe" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.data_processing.DatasetToDataframe.DatasetToDataFramePrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.data_processing.DatasetToDataframe.</span></span><span class="sig-name descname"><span class="pre">DatasetToDataFramePrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">d3m.primitive_interfaces.base.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/data_processing/DatasetToDataframe.py#L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.data_processing.DatasetToDataframe.DatasetToDataFramePrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>A primitive which extracts a DataFrame out of a Dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataframe_resource</strong> – Resource ID of a DataFrame to extract if there are multiple tabular resources inside a Dataset and none is a dataset entry point.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="duplicationvalidation">
+<span id="tods-data-processing-duplicationvalidation"></span><h2>DuplicationValidation<a class="headerlink" href="#duplicationvalidation" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.data_processing.DuplicationValidation.DuplicationValidationPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.data_processing.DuplicationValidation.</span></span><span class="sig-name descname"><span class="pre">DuplicationValidationPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">d3m.primitive_interfaces.base.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/data_processing/DuplicationValidation.py#L29"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.data_processing.DuplicationValidation.DuplicationValidationPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>Check whether the seires data involves duplicate data in one timestamp, and provide processing if the duplication exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keep_option</strong> (<em>enumeration</em>) – When dropping rows, choose to keep the first one or calculate the average</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="extractcolumnsbysemantictypes">
+<span id="tods-data-processing-extractcolumnsbysemantictypes"></span><h2>ExtractColumnsBySemanticTypes<a class="headerlink" href="#extractcolumnsbysemantictypes" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.data_processing.ExtractColumnsBySemanticTypes.ExtractColumnsBySemanticTypesPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.data_processing.ExtractColumnsBySemanticTypes.</span></span><span class="sig-name descname"><span class="pre">ExtractColumnsBySemanticTypesPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">d3m.primitive_interfaces.base.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/data_processing/ExtractColumnsBySemanticTypes.py#L54"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.data_processing.ExtractColumnsBySemanticTypes.ExtractColumnsBySemanticTypesPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>A primitive which extracts columns from input data based on semantic types provided.
+Columns which match any of the listed semantic types are extracted.</p>
+<p>If you want to extract only attributes, you can use <code class="docutils literal notranslate"><span class="pre">https://metadata.datadrivendiscovery.org/types/Attribute</span></code>
+semantic type (also default).</p>
+<p>For real targets (not suggested targets) use <code class="docutils literal notranslate"><span class="pre">https://metadata.datadrivendiscovery.org/types/Target</span></code>.
+For this to work, columns have to be are marked as targets by the TA2 in a dataset before passing the dataset
+through a pipeline. Or something else has to mark them at some point in a pipeline.</p>
+<p>It uses <code class="docutils literal notranslate"><span class="pre">use_columns</span></code> and <code class="docutils literal notranslate"><span class="pre">exclude_columns</span></code> to control which columns it considers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>semantic_types</strong> (<em>Set</em>) – Semantic types to use to extract columns. If any of them matches, by default.</p></li>
+<li><p><strong>match_logic</strong> (<em>Enumeration</em>) – Should a column have all of semantic types in “semantic_types” to be extracted, or any of them?</p></li>
+<li><p><strong>negate</strong> (<em>Bool</em>) – Should columns which do not match semantic types in “semantic_types” be extracted?</p></li>
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column does not match any semantic type, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="skimputer">
+<span id="tods-data-processing-skimputer"></span><h2>SKImputer<a class="headerlink" href="#skimputer" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.data_processing.SKImputer.SKImputerPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.data_processing.SKImputer.</span></span><span class="sig-name descname"><span class="pre">SKImputerPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tods.data_processing.SKImputer.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/data_processing/SKImputer.py#L126"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.data_processing.SKImputer.SKImputerPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>Primitive wrapping for sklearn SimpleImputer
+sklearn documentation :<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html">https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>missing_values</strong> (<em>Union</em>) – The placeholder for the missing values. All occurrences of <cite>missing_values</cite> will be imputed.</p></li>
+<li><p><strong>strategy</strong> (<em>Enumeration</em><em>[</em><em>str</em><em>]</em>) – The imputation strategy.  - If “mean”, then replace missing values using the mean along each column. Can only be used with numeric data. - If “median”, then replace missing values using the median along each column. Can only be used with numeric data. - If “most_frequent”, then replace missing using the most frequent value along each column. Can be used with strings or numeric data. - If “constant”, then replace missing values with fill_value. Can be used with strings or numeric data.  .. versionadded:: 0.20 strategy=”constant” for fixed value imputation.</p></li>
+<li><p><strong>add_indicator</strong> (<em>Bool</em>) – </p></li>
+<li><p><strong>fill_value</strong> (<em>Union</em>) – When strategy == “constant”, fill_value is used to replace all occurrences of missing_values. If left to the default, fill_value will be 0 when imputing numerical data and “missing_value” for strings or object data types.’</p></li>
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>return_result</strong> (<em>Enumeration</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p></li>
+<li><p><strong>use_semantic_types</strong> (<em>Bool</em>) – Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
+<li><p><strong>error_on_no_input</strong> (<em>Bool</em>) – Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p></li>
+<li><p><strong>return_semantic_type</strong> (<em>Enumeration</em><em>[</em><em>str</em><em>]</em>) – Decides what semantic type to attach to generated attributes’</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="timeintervaltransform">
+<span id="tods-data-processing-timeintervaltransform"></span><h2>TimeIntervalTransform<a class="headerlink" href="#timeintervaltransform" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.data_processing.TimeIntervalTransform.TimeIntervalTransformPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.data_processing.TimeIntervalTransform.</span></span><span class="sig-name descname"><span class="pre">TimeIntervalTransformPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">d3m.primitive_interfaces.base.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/data_processing/TimeIntervalTransform.py#L82"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.data_processing.TimeIntervalTransform.TimeIntervalTransformPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>A primitive which configures the time interval of the dataframe.
+Resample the timestamps based on the time_interval passed as hyperparameter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_interval</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>None</em><em>]</em>) – timestamp to transform.</p></li>
+<li><p><strong>dataframe_resource</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>None</em><em>]</em>) – Resource ID of a DataFrame to extract if there are multiple tabular resources inside a Dataset and none is a dataset entry point.</p></li>
+<li><p><strong>use_columns</strong> (<em>Set</em>) – A set of column indices to force primitive to operate on. If any specified column cannot be parsed, it is skipped.</p></li>
+<li><p><strong>exclude_columns</strong> (<em>Set</em>) – A set of column indices to not operate on. Applicable only if “use_columns” is not provided.</p></li>
+<li><p><strong>return_result</strong> (<em>Enumeration</em>) – Should parsed columns be appended, should they replace original columns, or should only parsed columns be returned? This hyperparam is ignored if use_semantic_types is set to false.</p></li>
+<li><p><strong>use_semantic_types</strong> (<em>Bool</em>) – Controls whether semantic_types metadata will be used for filtering columns in input dataframe. Setting this to false makes the code ignore return_result and will produce only the output dataframe</p></li>
+<li><p><strong>add_index_columns</strong> (<em>Bool</em>) – Also include primary index columns if input data has them. Applicable only if “return_result” is set to “new”.</p></li>
+<li><p><strong>error_on_no_input</strong> (<em>Bool</em>) – Throw an exception if no input column is selected/provided. Defaults to true to behave like sklearn. To prevent pipelines from breaking set this to False.</p></li>
+<li><p><strong>return_semantic_type</strong> (<em>Enumeration</em><em>[</em><em>str</em><em>]</em>) – Decides what semantic type to attach to generated attributes</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="timestampvalidation">
+<span id="tods-data-processing-timestampvalidation"></span><h2>TimeStampValidation<a class="headerlink" href="#timestampvalidation" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tods.data_processing.TimeStampValidation.TimeStampValidationPrimitive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tods.data_processing.TimeStampValidation.</span></span><span class="sig-name descname"><span class="pre">TimeStampValidationPrimitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">d3m.primitive_interfaces.base.Hyperparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_containers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">d3m.primitive_interfaces.base.DockerContainer</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/datamllab/tods/blob/master/tods/data_processing/TimeStampValidation.py#L22"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tods.data_processing.TimeStampValidation.TimeStampValidationPrimitive" title="Permalink to this definition">#</a></dt>
+<dd><p>A primitive to check time series is sorted by time stamp , if not then return sorted time series</p>
+</dd></dl>
+
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="PythonPathCheatSheet.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python Path Cheat Sheet</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="tods.timeseries_processing.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">tods.timeseries_processing</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By DataLab@Rice University<br/>
+  
+      &copy; Copyright 2022, DataLab@Rice University.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
