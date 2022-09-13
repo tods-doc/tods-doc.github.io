@@ -42,25 +42,25 @@ Timeseries Processing
 
       * - Python Path
         - Primitives
-      * - `tods.timeseries_processing.transformation.holt_smoothing`
+      * - `tods.timeseries_processing.holt_smoothing`
         - :ref:`tods.timeseries_processing.HoltSmoothing:HoltSmoothingPrimitive<tods.timeseries_processing.HoltSmoothing>`
-      * - `tods.timeseries_processing.transformation.holt_winters_exponential_smoothing`
+      * - `tods.timeseries_processing.holt_winters_exponential_smoothing`
         - :ref:`tods.timeseries_processing.HoltWintersExponentialSmoothing:HoltWintersExponentialSmoothingPrimitive<tods.timeseries_processing.HoltWintersExponentialSmoothing>`
-      * - `tods.timeseries_processing.transformation.moving_average_transform`
+      * - `tods.timeseries_processing.moving_average_transform`
         - :ref:`tods.timeseries_processing.MovingAverageTransformer:MovingAverageTransformerPrimitive<tods.timeseries_processing.MovingAverageTransformer>`
-      * - `tods.timeseries_processing.transformation.axiswise_scaler`
+      * - `tods.timeseries_processing.axiswise_scaler`
         - :ref:`tods.timeseries_processing.SKAxiswiseScaler:SKAxiswiseScalerPrimitive<tods.timeseries_processing.SKAxiswiseScaler>`
-      * - `tods.timeseries_processing.transformation.power_transformer`
+      * - `tods.timeseries_processing.power_transformer`
         - :ref:`tods.timeseries_processing.SKPowerTransformer:SKPowerTransformerPrimitive<tods.timeseries_processing.SKPowerTransformer>`
-      * - `tods.timeseries_processing.transformation.quantile_transformer`
+      * - `tods.timeseries_processing.quantile_transformer`
         - :ref:`tods.timeseries_processing.SKQuantileTransformer:SKQuantileTransformerPrimitive<tods.timeseries_processing.SKQuantileTransformer>`
-      * - `tods.timeseries_processing.transformation.standard_scaler`
+      * - `tods.timeseries_processing.standard_scaler`
         - :ref:`tods.timeseries_processing.SKStandardScaler:SKStandardScalerPrimitive<tods.timeseries_processing.SKStandardScaler>`
-      * - `tods.timeseries_processing.transformation.simple_exponential_smoothing`
+      * - `tods.timeseries_processing.simple_exponential_smoothing`
         - :ref:`tods.timeseries_processing.SimpleExponentialSmoothing:SimpleExponentialSmoothingPrimitive<tods.timeseries_processing.SimpleExponentialSmoothing>`
       * - `tods.timeseries_processing.subsequence_segmentation`
         - :ref:`tods.timeseries_processing.SubsequenceSegmentation:SubsequenceSegmentationPrimitive<tods.timeseries_processing.SubsequenceSegmentation>`
-      * - `tods.timeseries_processing.decomposition.time_series_seasonality_trend_decomposition`
+      * - `tods.timeseries_processing.time_series_seasonality_trend_decomposition`
         - :ref:`tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition:TimeSeriesSeasonalityTrendDecompositionPrimitive<tods.timeseries_processing.TimeSeriesSeasonalityTrendDecomposition>`
 
 Feature Analysis
